@@ -1,10 +1,10 @@
 angular.module('app.controllers', [])
 
-.controller('myCasesCtrl', function($scope) {
+.controller('projectsCtrl', function($scope) {
 
 })
 
-.controller('h1BCtrl', function($scope) {
+.controller('projectDetailsCtrl', function($scope) {
 
 })
 
@@ -12,7 +12,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('diplomasCtrl', function($scope) {
+.controller('documentCategoriesCtrl', function($scope) {
 
 })
 
@@ -20,7 +20,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('detailsCtrl', function($scope) {
+.controller('documentDetailsCtrl', function($scope) {
 
 })
 

@@ -10,12 +10,12 @@ angular.module('app.routes', [])
 
 
 
-    .state('menu.myCases', {
+  .state('menu.projects', {
     url: '/projects',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/myCases.html',
-        controller: 'myCasesCtrl'
+        templateUrl: 'templates/projects.html',
+        controller: 'projectsCtrl'
       }
     }
   })
@@ -26,12 +26,12 @@ angular.module('app.routes', [])
     abstract:true
   })
 
-  .state('menu.h1B', {
+  .state('menu.projectDetails', {
     url: '/project_detail',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/h1B.html',
-        controller: 'h1BCtrl'
+        templateUrl: 'templates/projectDetails.html',
+        controller: 'projectDetailsCtrl'
       }
     }
   })
@@ -46,12 +46,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.diplomas', {
-    url: '/document_category',
+  .state('menu.documentCategories', {
+    url: '/document_categories',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/diplomas.html',
-        controller: 'diplomasCtrl'
+        templateUrl: 'templates/documentCategories.html',
+        controller: 'documentCategoriesCtrl'
       }
     }
   })
@@ -66,12 +66,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.details', {
+  .state('menu.documentDetails', {
     url: '/document_detail',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/details.html',
-        controller: 'detailsCtrl'
+        templateUrl: 'templates/documentDetails.html',
+        controller: 'documentDetailsCtrl'
       }
     }
   })
