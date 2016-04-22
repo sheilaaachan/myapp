@@ -18,9 +18,70 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+
+@import "_variables";
+
+
+// All application syles are as follows:
+h1{
+
+}
+h2.title{
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
+  text-align: left;
+  font-size: 24px;
+  line-height: 25px;
+}
+p.description{
+  font-family: $font-family-sans-serif;
+  font-weight: 200;
+  text-align: left;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+
+// Projects Page
+
+ion-view#projects {
+  background-color: $grey-color-0;
+  div.project{
+    margin-top: 10px;
+    box-shadow: 0.5px 2px 2px #CFD8DC;
+      div.progressbar{
+        width: 100%;
+        display: block;
+        height: 3px;
+        background-color: $grey-color-0;
+        span.progress{
+          width: 60%;
+          float: left;
+          display: inline;
+          height: 3px;
+          background-color: $success-color-0;
+        }
+      }
+      a{
+        padding: 2%;
+        border-radius:0px;
+        margin-top: 0px;
+        color: $primary-color-0;
+        background-color: #fff;
+        h2.title{
+
+        }
+        p.description{
+          // float: left;
+        }
+      }
+
+  }
+}
+
+
+
+
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-@import "variables";
-
-
-//

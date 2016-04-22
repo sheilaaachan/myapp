@@ -1,7 +1,7 @@
 angular.module('app.controllers', [])
 
 .controller('projectsCtrl', function($scope) {
-
+  $scope.projlist = ["H1-B", "Angola Business Visa", "China Business Visa", "Some Other Business Visa"];
 })
 
 .controller('projectDetailsCtrl', function($scope) {
