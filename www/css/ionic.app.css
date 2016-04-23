@@ -15,6 +15,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+div.title {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 p.percentage {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
