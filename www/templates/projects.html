@@ -6,9 +6,15 @@
               </span>
             </div>
             <a ui-sref="menu.projectDetails" class="button button-large button-full">
-              <p class="percentage">{{ proj[1] }}%</p>
-              <h2 class="title">{{ proj[0] }}</h2>
-              <p class="description">{{ proj[2] }}</p>
+              <div class="row row-center">
+                <div class="col col-20">
+                  <p class="percentage">{{ proj[1] }}%</p>
+                </div>
+                <div class="col col-80">
+                  <h2 class="title">{{ proj[0] }}</h2>
+                  <p class="description">{{ proj[2] }}</p>
+                </div>
+              </div>
             </a>
         </div>
         <div class="project inactive" ng-repeat="proj in inactive_projs">
@@ -17,9 +23,15 @@
               </span>
             </div>
             <a ui-sref="menu.projectDetails" class="button button-large button-full">
-              <p class="percentage">{{ proj[1] }}%</p>
-              <h2 class="title">{{ proj[0] }}</h2>
-              <p class="description">{{ proj[2] }}</p>
+              <div class="row">
+                <div class="col col-20">
+                  <p class="percentage">{{ proj[1] }}%</p>
+                </div>
+                <div class="col col-80">
+                  <h2 class="title">{{ proj[0] }}</h2>
+                  <p class="description">{{ proj[2] }}</p>
+                </div>
+              </div>
             </a>
         </div>
     </ion-content>

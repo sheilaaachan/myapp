@@ -24,8 +24,7 @@ p.percentage {
   font-size: 20px;
   color: #42BCBA;
   display: inline-block;
-  float: left;
-  margin: 3% 5% 5% 2%; }
+  height: 100%; }
 
 h2.title {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -65,6 +64,8 @@ ion-view#projects {
       margin-top: 0px;
       color: #0091EA;
       background-color: #fff; }
+      ion-view#projects div.project a div.row {
+        padding: 0; }
     ion-view#projects div.project.inactive span.progress {
       opacity: 0.5; }
     ion-view#projects div.project.inactive a {

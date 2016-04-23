@@ -32,8 +32,8 @@ p.percentage{
   font-size: 20px;
   color: $success-color-0;
   display: inline-block;
-  float: left;
-  margin: 3% 5% 5% 2%;
+  // float: left;
+  height: 100%;
 }
 h2.title{
   font-family: $font-family-sans-serif;
@@ -67,7 +67,6 @@ ion-view#projects {
         height: 3px;
         background-color: $grey-color-3;
         span.progress{
-          // width: random(100)+%;
           float: left;
           display: inline;
           height: 3px;
@@ -80,6 +79,9 @@ ion-view#projects {
         margin-top: 0px;
         color: $primary-color-0;
         background-color: #fff;
+        div.row{
+          padding: 0;
+        }
       }
       &.inactive{
         span.progress{
