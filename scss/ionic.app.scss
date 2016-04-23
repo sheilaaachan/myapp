@@ -23,8 +23,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 
 // All application syles are as follows:
-h1{
-
+p.percentage{
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: $success-color-0;
+  display: inline-block;
+  float: left;
+  margin: 3% 5% 5% 2%;
 }
 h2.title{
   font-family: $font-family-sans-serif;
