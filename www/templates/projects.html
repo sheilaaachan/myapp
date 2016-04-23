@@ -1,12 +1,23 @@
-<ion-view title="My Requests" id="projects">
+<ion-view title="My Requests" id="projects" ng-controller="projectsCtrl">
     <ion-content class="has-header">
-        <div class="project" ng-repeat="proj in projlist">
+        <div class="project" ng-repeat="proj in active_projs">
             <div class="progressbar">
-              <span class="progress"></span>
+              <span class="progress" style="width: {{proj[1]}}%">
+              </span>
             </div>
             <a ui-sref="menu.projectDetails" class="button button-large button-full">
-              <h2 class="title">{{ proj }}</h2>
-              <p class="description">This is the description text for this element.</p>
+              <h2 class="title">{{ proj[0] }}</h2>
+              <p class="description">{{ proj[2] }}</p>
+            </a>
+        </div>
+        <div class="project inactive" ng-repeat="proj in inactive_projs">
+            <div class="progressbar">
+              <span class="progress" style="width: {{proj[1]}}%">
+              </span>
+            </div>
+            <a ui-sref="menu.projectDetails" class="button button-large button-full">
+              <h2 class="title">{{ proj[0] }}</h2>
+              <p class="description">{{ proj[2] }}</p>
             </a>
         </div>
     </ion-content>

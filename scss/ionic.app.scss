@@ -32,6 +32,7 @@ h2.title{
   text-align: left;
   font-size: 24px;
   line-height: 25px;
+  color: $grey-color-0;
 }
 p.description{
   font-family: $font-family-sans-serif;
@@ -39,23 +40,25 @@ p.description{
   text-align: left;
   font-size: 14px;
   line-height: 15px;
+  color: $grey-color-1;
+  font-style: italic;
 }
 
 
 // Projects Page
 
 ion-view#projects {
-  background-color: $grey-color-0;
+  background-color: $grey-color-3;
   div.project{
     margin-top: 10px;
-    box-shadow: 0.5px 2px 2px #CFD8DC;
+    box-shadow: $box-shadow;
       div.progressbar{
         width: 100%;
         display: block;
         height: 3px;
-        background-color: $grey-color-0;
+        background-color: $grey-color-3;
         span.progress{
-          width: 60%;
+          // width: random(100)+%;
           float: left;
           display: inline;
           height: 3px;
@@ -68,14 +71,22 @@ ion-view#projects {
         margin-top: 0px;
         color: $primary-color-0;
         background-color: #fff;
+      }
+      &.inactive{
+        span.progress{
+          opacity: 0.5;
+        }
+        a{
+          background-color: $grey-color-4;
+          opacity: 0.5;
+        }
         h2.title{
-
+          color: $grey-color-1;
         }
         p.description{
-          // float: left;
+          color: $grey-color-1;
         }
       }
-
   }
 }
 

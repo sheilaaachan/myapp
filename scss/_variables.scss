@@ -20,14 +20,24 @@ $secondary-color-2: #FF6E40;
 $secondary-color-3: #FF9E80;
 
 // Green
-$success-color-0: #00E676;
+$success-color-0: #42BCBA;
 
 // Grey
-$grey-color-0: #ECEFF1;
-
+$grey-color-0: #37474F;
+$grey-color-1: #78909C;
+$grey-color-2: #CFD8DC;
+$grey-color-3: #ECEFF1;
+$grey-color-4: #F2F6F7;
 
 // --------------------------------------------------
 // Typography
 // --------------------------------------------------
 
 $font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+
+// --------------------------------------------------
+// Other
+// --------------------------------------------------
+
+$box-shadow: 0.5px 2px 2px $grey-color-2;

@@ -20,14 +20,17 @@ h2.title {
   font-weight: 300;
   text-align: left;
   font-size: 24px;
-  line-height: 25px; }
+  line-height: 25px;
+  color: #37474F; }
 
 p.description {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
   text-align: left;
   font-size: 14px;
-  line-height: 15px; }
+  line-height: 15px;
+  color: #78909C;
+  font-style: italic; }
 
 ion-view#projects {
   background-color: #ECEFF1; }
@@ -40,17 +43,25 @@ ion-view#projects {
       height: 3px;
       background-color: #ECEFF1; }
       ion-view#projects div.project div.progressbar span.progress {
-        width: 60%;
         float: left;
         display: inline;
         height: 3px;
-        background-color: #00E676; }
+        background-color: #42BCBA; }
     ion-view#projects div.project a {
       padding: 2%;
       border-radius: 0px;
       margin-top: 0px;
       color: #0091EA;
       background-color: #fff; }
+    ion-view#projects div.project.inactive span.progress {
+      opacity: 0.5; }
+    ion-view#projects div.project.inactive a {
+      background-color: #F2F6F7;
+      opacity: 0.5; }
+    ion-view#projects div.project.inactive h2.title {
+      color: #78909C; }
+    ion-view#projects div.project.inactive p.description {
+      color: #78909C; }
 
 /*!
   Ionicons, v2.0.1
