@@ -43,37 +43,37 @@ p.description {
   color: #78909C;
   font-style: italic; }
 
-ion-view#projects {
+ion-view#projects, ion-view#projectDetails {
   background-color: #ECEFF1; }
-  ion-view#projects div.project {
+  ion-view#projects div.linkcard, ion-view#projectDetails div.linkcard {
     margin-top: 10px;
     box-shadow: 0.5px 2px 2px #CFD8DC; }
-    ion-view#projects div.project div.progressbar {
+    ion-view#projects div.linkcard div.progressbar, ion-view#projectDetails div.linkcard div.progressbar {
       width: 100%;
       display: block;
       height: 3px;
       background-color: #ECEFF1; }
-      ion-view#projects div.project div.progressbar span.progress {
+      ion-view#projects div.linkcard div.progressbar span.progress, ion-view#projectDetails div.linkcard div.progressbar span.progress {
         float: left;
         display: inline;
         height: 3px;
         background-color: #42BCBA; }
-    ion-view#projects div.project a {
+    ion-view#projects div.linkcard a, ion-view#projectDetails div.linkcard a {
       padding: 2%;
       border-radius: 0px;
       margin-top: 0px;
       color: #0091EA;
       background-color: #fff; }
-      ion-view#projects div.project a div.row {
+      ion-view#projects div.linkcard a div.row, ion-view#projectDetails div.linkcard a div.row {
         padding: 0; }
-    ion-view#projects div.project.inactive span.progress {
+    ion-view#projects div.linkcard.inactive span.progress, ion-view#projectDetails div.linkcard.inactive span.progress {
       opacity: 0.5; }
-    ion-view#projects div.project.inactive a {
+    ion-view#projects div.linkcard.inactive a, ion-view#projectDetails div.linkcard.inactive a {
       background-color: #F2F6F7;
       opacity: 0.5; }
-    ion-view#projects div.project.inactive h2.title {
+    ion-view#projects div.linkcard.inactive h2.title, ion-view#projectDetails div.linkcard.inactive h2.title {
       color: #78909C; }
-    ion-view#projects div.project.inactive p.description {
+    ion-view#projects div.linkcard.inactive p.description, ion-view#projectDetails div.linkcard.inactive p.description {
       color: #78909C; }
 
 /*!

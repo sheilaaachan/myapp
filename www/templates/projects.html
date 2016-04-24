@@ -1,6 +1,6 @@
 <ion-view title="My Requests" id="projects" ng-controller="projectsCtrl">
     <ion-content class="has-header">
-        <div class="project" ng-repeat="proj in active_projs">
+        <div class="linkcard" ng-repeat="proj in active_projs">
             <div class="progressbar">
               <span class="progress" style="width: {{proj[1]}}%">
               </span>
@@ -17,7 +17,7 @@
               </div>
             </a>
         </div>
-        <div class="project inactive" ng-repeat="proj in inactive_projs">
+        <div class="linkcard inactive" ng-repeat="proj in inactive_projs">
             <div class="progressbar">
               <span class="progress" style="width: {{proj[1]}}%">
               </span>
