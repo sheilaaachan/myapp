@@ -1,18 +1,23 @@
 <ion-view title="Documents" id="documents">
     <ion-content padding="true" class="has-header">
-        <div class="list card">
-            <div class="item item-divider">Diplomas</div>
-            <div class="item item-body">
-                <a ui-sref="menu.documentCategories" id="documents-button20" style="border-radius:0px 0px 0px 0px;" class="button button-positive ">View</a>
-                <button id="documents-button21" style="border-radius:0px 0px 0px 0px;" class="button button-balanced  icon ion-ios-upload-outline"></button>
+        <div class="linkcard" ng-repeat="document in documents">
+          <div class="progressbar">
+            <span class="progress completed" style="width: 100%"></span>
+          </div>
+          <a ui-sref="menu.documentCategories" class="button button-full">
+            <div class="row row-center">
+              <div class="col col-20">
+                <p class="percentage">
+                  <i class="icon icon ion-android-upload"></i>
+                </p>
+              </div>
+              <div class="col col-80">
+                <h2 class="title">{{document.title}}</h2>
+                <p class="description">{{document.description}}</p>
+              </div>
             </div>
+          </a>
         </div>
-        <div class="list card">
-            <div class="item item-divider">Resume</div>
-            <div class="item item-body">
-                <a ui-sref="menu.documentCategories" id="documents-button18" style="border-radius:0px 0px 0px 0px;" class="button button-positive ">View</a>
-                <button id="documents-button19" style="border-radius:0px 0px 0px 0px;" class="button button-balanced  icon ion-ios-upload-outline"></button>
-            </div>
         </div>
     </ion-content>
 </ion-view>

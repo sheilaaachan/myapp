@@ -45,7 +45,28 @@ angular.module('app.controllers', [])
 })
 
 .controller('documentsCtrl', function($scope) {
-
+  $scope.documents = [
+    {
+      title: "Diploma(s)",
+      description: "Copies of all degrees, diplomas, and transcripts, if applicable",
+      status: "Completed"
+    },{
+      title: "Passport(s)",
+      description: "Copy of passport biographic and signature pages",
+      status: "Completed"
+    },{
+      title: "Resume",
+      description: "Copy of up-to-date resume (CV) that includes dates with each employer, each position held, and duties",
+      status: "Completed"
+    },{
+      title: "US Visa(s)",
+      description: "Copies of current U.S. visa and of all previous U.S. visas, if applicable",
+      status: "Completed"
+    },{
+      title: "Immigration Paperwork",
+      description: "Copies of all previous U.S. immigration paperwork including prior approval notices (Form I-797), Form IAP-66, Form DS-2019, and/or Form(s) I-20, and/or Employment Authorization Card, if applicable",
+      status: "Completed"
+    }];
 })
 
 .controller('documentCategoriesCtrl', function($scope) {
