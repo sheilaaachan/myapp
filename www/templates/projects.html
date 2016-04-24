@@ -2,34 +2,40 @@
     <ion-content class="has-header">
         <div class="linkcard" ng-repeat="proj in active_projs">
             <div class="progressbar">
-              <span class="progress" style="width: {{proj[1]}}%">
+              <span class="progress" style="width: {{proj.progress}}%">
               </span>
             </div>
             <a ui-sref="menu.projectDetails" class="button button-large button-full">
               <div class="row row-center">
                 <div class="col col-20">
-                  <p class="percentage">{{ proj[1] }}%</p>
+                  <p class="percentage" ng-switch="proj.type">
+                    <i ng-switch-when="Not Visa" class="icon icon ion-clipboard"></i>
+                    <i ng-switch-when="Visa" class="icon icon ion-earth"></i>
+                  </p>
                 </div>
                 <div class="col col-80">
-                  <h2 class="title">{{ proj[0] }}</h2>
-                  <p class="description">{{ proj[2] }}</p>
+                  <h2 class="title">{{ proj.title }}</h2>
+                  <p class="description">Initiated: {{ proj.initiation_date }}</p>
                 </div>
               </div>
             </a>
         </div>
         <div class="linkcard inactive" ng-repeat="proj in inactive_projs">
             <div class="progressbar">
-              <span class="progress" style="width: {{proj[1]}}%">
+              <span class="progress" style="width: {{proj.progress}}%">
               </span>
             </div>
             <a ui-sref="menu.projectDetails" class="button button-large button-full">
               <div class="row">
                 <div class="col col-20">
-                  <p class="percentage">{{ proj[1] }}%</p>
+                  <p class="percentage" ng-switch="proj.type">
+                    <i ng-switch-when="Not Visa" class="icon icon ion-clipboard"></i>
+                    <i ng-switch-when="Visa" class="icon icon ion-earth"></i>
+                  </p>
                 </div>
                 <div class="col col-80">
-                  <h2 class="title">{{ proj[0] }}</h2>
-                  <p class="description">{{ proj[2] }}</p>
+                  <h2 class="title">{{ proj.title }}</h2>
+                  <p class="description">Initiated: {{ proj.initiation_date }}</p>
                 </div>
               </div>
             </a>

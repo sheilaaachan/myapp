@@ -2,13 +2,42 @@ angular.module('app.controllers', [])
 
 .controller('projectsCtrl', function($scope) {
   $scope.active_projs = [
-    ["H1-B", 60, "The H1B visa is a non-immigrant visa. It is designed to allow U.S. employers to recruit & employ foreign professionals in specialty occupations within the USA for a specified period of time."],
-    ["Angola Business Visa", 20, "Angola Business Visa description"],
-    ["China Business Visa",80,"Hello World"],
-    ["Some Other Business Visa",75,"Hello World"]];
-  $scope.inactive_projs = [
-    ["OPT Stem", 100, "OPT Stem description"],
-    ["Australia Business Visa", 100, "Australia Business Visa description"]];
+    {
+      title: "H1-B",
+      progress: 60,
+      type: "Not Visa",
+      initiation_date: "9 APR 2016"
+    },
+    {
+      title: "Angola Business Visa",
+      progress: 20,
+      type: "Visa",
+      initiation_date: "31 JAN 2016"
+    },
+    {
+      title: "China Business Visa",
+      progress: 80,
+      type: "Visa",
+      initiation_date: "12 NOV 2015"
+    },
+    {
+      title: "Saudi Arabia Business Visa",
+      progress: 75,
+      type: "Visa",
+      initiation_date: "4 JUL 2015"
+    }];
+  $scope.inactive_projs = [{
+      title: "OPT Stem",
+      progress: 100,
+      type: "Not Visa",
+      initiation_date: "13 MAR 2015"
+    },
+    {
+      title: "Australia Business Visa",
+      progress: 100,
+      type: "Visa",
+      initiation_date: "4 JAN 2015"
+    }];
 })
 
 .controller('projectDetailsCtrl', function($scope) {
@@ -27,15 +56,15 @@ angular.module('app.controllers', [])
   $scope.project_status = [
     {
       title: "Project Initiated",
-      update: ["9 APR 2015 - Case initiated. Awaiting return of completed questionnaires.",
-      "15 NOV 2014 - Questionnaires and supporting documents received. Awaiting Employment Details from HR."],
+      update: ["9 APR 2016 - Case initiated. Awaiting return of completed questionnaires.",
+      "15 NOV 2015 - Questionnaires and supporting documents received. Awaiting Employment Details from HR."],
       progress: 100,
       status: "Completed"
     },
     {
       title: "Preparing Application",
-      update: ["19 NOV 2014 - Preparing H-1B Petition.",
-      "20 NOV 2014 - Sent documents to company for signatures."],
+      update: ["19 NOV 2015 - Preparing H-1B Petition.",
+      "20 NOV 2015 - Sent documents to company for signatures."],
       progress: 50,
       status: "In Progress"
     },
