@@ -24,6 +24,34 @@ angular.module('app.controllers', [])
 })
 
 .controller('statusCtrl', function($scope) {
+  $scope.project_status = [
+    {
+      title: "Project Initiated",
+      update: ["9 APR 2015 - Case initiated. Awaiting return of completed questionnaires.",
+      "15 NOV 2014 - Questionnaires and supporting documents received. Awaiting Employment Details from HR."],
+      progress: 100,
+      status: "Completed"
+    },
+    {
+      title: "Preparing Application",
+      update: ["19 NOV 2014 - Preparing H-1B Petition.",
+      "20 NOV 2014 - Sent documents to company for signatures."],
+      progress: 50,
+      status: "In Progress"
+    },
+    {
+      title: "Submit Application to USCIS",
+      update: "",
+      progress: 0,
+      status: "Not Started"
+    },
+    {
+      title: "Application Approved",
+      update: "",
+      progress: 0,
+      status: "Not Started"
+    }
+  ];
 
 })
 

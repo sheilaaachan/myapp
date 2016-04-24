@@ -34,6 +34,15 @@ p.percentage{
   display: inline-block;
   // float: left;
   height: 100%;
+  i.completed{
+    color: $success-color-0;
+  }
+  i.in-progress{
+    color: $secondary-color-3;
+  }
+  i.not-started{
+    color: $grey-color-1;
+  }
 }
 h2.title{
   font-family: $font-family-sans-serif;
@@ -56,7 +65,7 @@ p.description{
 
 // Projects Page
 
-ion-view#projects, ion-view#projectDetails {
+ion-view#projects, ion-view#projectDetails, ion-view#projectStatus {
   background-color: $grey-color-3;
   div.linkcard{
     margin-top: 10px;
@@ -71,6 +80,15 @@ ion-view#projects, ion-view#projectDetails {
           display: inline;
           height: 3px;
           background-color: $success-color-0;
+          &.completed{
+            background-color: $success-color-0;
+          }
+          &.in-progress{
+            background-color: $secondary-color-3;
+          }
+          &.not-started{
+            background-color: $grey-color-1;
+          }
         }
       }
       a{
