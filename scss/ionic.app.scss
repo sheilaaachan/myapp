@@ -38,7 +38,7 @@ p.percentage{
     color: $success-color-0;
   }
   i.in-progress{
-    color: $secondary-color-3;
+    color: $progress-color-0;
   }
   i.not-started{
     color: $grey-color-1;
@@ -89,7 +89,7 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
             background-color: $success-color-0;
           }
           &.in-progress{
-            background-color: $secondary-color-3;
+            background-color: $progress-color-0;
           }
           &.not-started{
             background-color: $grey-color-1;
@@ -148,17 +148,66 @@ ion-view#projects{
       }
       div{
         text-align: center;
-        color: $success-color-0;
+        // color: $success-color-0;
+        color: $progress-color-0;
         border-top: 1px solid $grey-color-4;
         padding-top: 10px;
         i{
-          color: $success-color-0;
+          color: $primary-color-0;
+          &.in-progress{
+            color: $progress-color-0;
+          }
         }
         p{
           text-align: center;
         }
       }
     }
+  }
+}
+
+// Project Detail Page
+
+ion-view#projectDetails{
+  // height: 100%;
+  div.linkcard{
+    // height: 33%;
+    div.appstatus{
+      position: relative;
+      margin: 5% 0 20% 0;
+      span.progresscircle{
+        height: 16px;
+        width: 16px;
+        border-radius: 16px;
+        position: absolute;
+        &.pc1{
+          left: 0;
+          top: -7px;
+          background-color: $success-color-0;
+        }
+        &.pc2{
+          left: 33%;
+          top: -7px;
+          background-color: $progress-color-0;
+        }
+        &.pc3{
+          left: 66%;
+          top: -7px;
+          background-color: $grey-color-3;
+        }
+        &.pc4{
+          left: 100%;
+          top: -7px;
+          background-color: $grey-color-3;
+        }
+      }
+      p{
+        position: absolute;
+        left: 25%;
+        top: 10px;
+      }
+    }
+
   }
 }
 
