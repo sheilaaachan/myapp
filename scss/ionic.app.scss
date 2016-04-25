@@ -163,6 +163,18 @@ ion-view#projects{
         }
       }
     }
+    &.inactive{
+      div.tribar{
+        background-color: $grey-color-4;
+        opacity: 0.9;
+        div{
+          color: $success-color-0;
+          i.completed{
+            color: $success-color-0;
+          }
+        }
+      }
+    }
   }
 }
 

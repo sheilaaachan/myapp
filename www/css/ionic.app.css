@@ -115,6 +115,14 @@ ion-view#projects div.linkcard div.tribar {
     ion-view#projects div.linkcard div.tribar div p {
       text-align: center; }
 
+ion-view#projects div.linkcard.inactive div.tribar {
+  background-color: #F2F6F7;
+  opacity: 0.9; }
+  ion-view#projects div.linkcard.inactive div.tribar div {
+    color: #1DE9B6; }
+    ion-view#projects div.linkcard.inactive div.tribar div i.completed {
+      color: #1DE9B6; }
+
 ion-view#projectDetails div.linkcard div.appstatus {
   position: relative;
   margin: 5% 0 20% 0; }
