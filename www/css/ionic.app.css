@@ -49,6 +49,9 @@ p.description {
   color: #78909C;
   font-style: italic; }
 
+ion-side-menu#side-menu21 {
+  background-color: #ECEFF1; }
+
 ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#documents, ion-view#documentCategory {
   background-color: #ECEFF1; }
   ion-view#projects div.linkcard, ion-view#projectDetails div.linkcard, ion-view#projectStatus div.linkcard, ion-view#documents div.linkcard, ion-view#documentCategory div.linkcard {
@@ -87,6 +90,14 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
       color: #78909C; }
     ion-view#projects div.linkcard.inactive p.description, ion-view#projectDetails div.linkcard.inactive p.description, ion-view#projectStatus div.linkcard.inactive p.description, ion-view#documents div.linkcard.inactive p.description, ion-view#documentCategory div.linkcard.inactive p.description {
       color: #78909C; }
+
+ion-view#documentDetail {
+  background-color: #ECEFF1; }
+  ion-view#documentDetail div.linkcard {
+    margin-top: 10px;
+    box-shadow: 0.5px 2px 2px #CFD8DC;
+    background-color: white;
+    padding: 5%; }
 
 /*!
   Ionicons, v2.0.1

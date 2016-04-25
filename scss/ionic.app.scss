@@ -62,6 +62,11 @@ p.description{
   font-style: italic;
 }
 
+// Side menu
+ion-side-menu#side-menu21{
+  background-color: $grey-color-3;
+}
+
 
 // Projects Page
 
@@ -119,6 +124,18 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
   }
 }
 
+
+// Document Detail Page
+
+ion-view#documentDetail{
+  background-color: $grey-color-3;
+  div.linkcard{
+    margin-top: 10px;
+    box-shadow: $box-shadow;
+    background-color: white;
+    padding: 5%;
+  }
+}
 
 
 
