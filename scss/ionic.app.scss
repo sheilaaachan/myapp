@@ -59,7 +59,7 @@ p.description{
   font-size: 14px;
   line-height: 15px;
   color: $grey-color-1;
-  font-style: italic;
+  // font-style: italic;
 }
 
 // Side menu
@@ -68,7 +68,7 @@ ion-side-menu#side-menu21{
 }
 
 
-// Projects Page
+// App Pages
 
 ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#documents, ion-view#documentCategory {
   background-color: $grey-color-3;
@@ -124,6 +124,43 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
   }
 }
 
+// Projects Page
+
+ion-view#projects{
+  div.linkcard{
+    a{
+      margin-bottom: 0;
+      padding-bottom: 0;
+      h2{
+
+      }
+      p{
+        float: right;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+    div.tribar{
+      background-color: #FFFFFF;
+      div:nth-child(2){
+        border-left: 1.5px solid $grey-color-4;
+        border-right: 1.5px solid $grey-color-4;
+      }
+      div{
+        text-align: center;
+        color: $success-color-0;
+        border-top: 1px solid $grey-color-4;
+        padding-top: 10px;
+        i{
+          color: $success-color-0;
+        }
+        p{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 
 // Document Detail Page
 
