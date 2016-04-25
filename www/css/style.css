@@ -1,0 +1,55 @@
+/* Empty. Add your own CSS if you like */
+.attachment-holder{
+  height: 60px;
+  overflow: hidden;
+}
+
+.attachment-photo{
+  width: 25%;
+  float: left;
+}
+
+.attachment-photo img{
+  width: 100%;
+  height: 100%;
+}
+
+#attachment-photo-view .scroll, #attachment-photo-view .slider, #attachment-photo-view .slider-slides {
+	height: 100%;
+}
+
+.slide-img-holder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-img-holder img{
+  width: 100%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+}
+
+.field-label-icon{
+	background:#f2f2f2;
+	height: 50px;
+	line-height:50px;
+	padding-left: 15px;
+}
+.field-label-icon .field-label{
+	float:left;
+	width:80%;
+}
+.field-label-icon .icon{
+	float: right;
+	font-size:32px;
+	line-height:50px;
+	padding-left:15px;
+	display: block;
+	width: 50px;
+	height: 50px;
+}
+.field-label-icon + div.item{
+	width:100%;
+}

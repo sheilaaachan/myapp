@@ -1,0 +1,21 @@
+<!--Developed by PwC 2016-->
+<ion-view id="attachment-photo-view" class="f2-bg">
+    <ion-header-bar class="bar-stable">
+        <a class="button icon-left icon button-clear button-positive" ng-click="closeAttachmentPhotosModal()">
+            Cancel
+        </a>
+        <h1 class="title">{{attachmentFrom}} Attachment</h1>
+        <a class="button icon-right icon button-clear button-positive" ng-click="deletePhoto(slideIndex)">
+            Delete
+        </a>
+    </ion-header-bar>
+    <ion-content>
+        <ion-slide-box delegate-handle="attachmentSlide" show-pager="true" class="f2-bg">
+            <ion-slide ng-repeat="photo in arrPhotos track by $index">
+                <div class="slide-img-holder">
+                    <img src="{{photo}}" alt="" />
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>
