@@ -101,19 +101,20 @@ ion-view#projects div.linkcard a {
 ion-view#projects div.linkcard div.tribar {
   background-color: #FFFFFF; }
   ion-view#projects div.linkcard div.tribar div:nth-child(2) {
-    border-left: 1.5px solid #F2F6F7;
-    border-right: 1.5px solid #F2F6F7; }
+    border-left: 1px solid #F2F6F7;
+    border-right: 1px solid #F2F6F7; }
   ion-view#projects div.linkcard div.tribar div {
     text-align: center;
     color: #FFEB3B;
-    border-top: 1px solid #F2F6F7;
+    border-top: 0.5px solid #F2F6F7;
     padding-top: 10px; }
     ion-view#projects div.linkcard div.tribar div i {
       color: #0091EA; }
       ion-view#projects div.linkcard div.tribar div i.in-progress {
         color: #FFEB3B; }
     ion-view#projects div.linkcard div.tribar div p {
-      text-align: center; }
+      text-align: center;
+      color: #37474F; }
 
 ion-view#projects div.linkcard.inactive div.tribar {
   background-color: #F2F6F7;
@@ -151,6 +152,20 @@ ion-view#projectDetails div.linkcard div.appstatus {
     position: absolute;
     left: 25%;
     top: 10px; }
+
+ion-view#documents div.tabs a {
+  background-color: #F2F6F7; }
+  ion-view#documents div.tabs a p.description {
+    color: #78909C;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10% 0; }
+  ion-view#documents div.tabs a.active {
+    border: 2px solid #0091EA; }
+
+ion-view#documents ion-content {
+  margin-top: 50px; }
 
 ion-view#documentDetail {
   background-color: #ECEFF1; }

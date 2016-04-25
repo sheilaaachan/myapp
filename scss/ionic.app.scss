@@ -143,14 +143,14 @@ ion-view#projects{
     div.tribar{
       background-color: #FFFFFF;
       div:nth-child(2){
-        border-left: 1.5px solid $grey-color-4;
-        border-right: 1.5px solid $grey-color-4;
+        border-left: 1px solid $grey-color-4;
+        border-right: 1px solid $grey-color-4;
       }
       div{
         text-align: center;
         // color: $success-color-0;
         color: $progress-color-0;
-        border-top: 1px solid $grey-color-4;
+        border-top: 0.5px solid $grey-color-4;
         padding-top: 10px;
         i{
           color: $primary-color-0;
@@ -160,6 +160,8 @@ ion-view#projects{
         }
         p{
           text-align: center;
+          color: $grey-color-0;
+          // font-weight: 400;
         }
       }
     }
@@ -220,6 +222,29 @@ ion-view#projectDetails{
       }
     }
 
+  }
+}
+
+// Documents Page
+
+ion-view#documents{
+  div.tabs{
+    a{
+      background-color: $grey-color-4;
+      p.description{
+        color: $grey-color-1;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10% 0;
+      }
+      &.active{
+        border: 2px solid $primary-color-0;
+      }
+    }
+  }
+  ion-content{
+    margin-top: 50px;
   }
 }
 
