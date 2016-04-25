@@ -158,6 +158,32 @@ angular.module('app.controllers', ['ngCordova'])
       });
   };
 
+  $scope.getCameraRoll = function() {
+      var options = {
+          quality: 75,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 300,
+          targetHeight: 300,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+          if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
+              $scope.document.attachment.forEach(function(img) {
+                  $scope.arrPhotos.push(img.FilePath);
+              });
+          }
+          $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
+          _updateDisplayPhoto();
+      }, function(err) {
+          console.log(err);
+      });
+  };
+  
   $scope.viewPhoto = function(index) {
       $scope.attachmentFrom = 'Document';
       if ($scope.arrPhotos.length === 0) {
