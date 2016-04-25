@@ -11,11 +11,27 @@ Variable overrides are defined in /scss/variables.scss
 ### Controller
 /www/js/controllers.js
 
-## Start Ionic Server
+## Please install ngCordova in your project folder with following command 
+bower install ngCordova
+
+## Adding a platform target
+ionic platform ios android
+
+## Start Ionic Server in laptop
 ionic serve
+
+## Ionic command for build and run app in emulator and mobile device
+ionic build ios
+ionic emulate ios  (camera capbility only works in device)
+ionic run ios      (you might face iOS provision file Problem, it is better you run app from Xcode under platforms/ios/***.xcodeproj)
 
 ## Upload latest app to Ionic server
 ionic upload
 
 ## Ionic View
 Use Ionic View app to preview myapp on mobile devices.
+
+
+
+
+
