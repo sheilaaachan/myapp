@@ -5,7 +5,7 @@ npm install -g cordova ionic
 # App Structure
 Styling --
 - Styling is in /scss/ionic.app.scss
-- Variable overrides are defined in /scss/_variables.scss
+- Variable overrides are defined in /scss/\_variables.scss
 html --
 - /www/templates/
 controller --
