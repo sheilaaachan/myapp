@@ -68,6 +68,9 @@ angular.module('app.routes', [])
 
   .state('menu.documentDetails', {
     url: '/document_detail',
+    params:{
+      "photos":""
+    },
     views: {
       'side-menu21': {
         templateUrl: 'templates/documentDetails.html',

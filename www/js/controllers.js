@@ -44,7 +44,7 @@ angular.module('app.controllers', ['ngCordova'])
 
 })
 
-.controller('documentsCtrl', function($scope) {
+.controller('documentsCtrl', function($scope, $state, $cordovaCamera) {
   $scope.documents = [
     {
       title: "Diploma(s)",
@@ -67,6 +67,80 @@ angular.module('app.controllers', ['ngCordova'])
       description: "Copies of all previous U.S. immigration paperwork including prior approval notices (Form I-797), Form IAP-66, Form DS-2019, and/or Form(s) I-20, and/or Employment Authorization Card, if applicable",
       status: "Completed"
     }];
+
+    $scope.arrPhotos = [];
+    $scope.document = {};
+    var _updateDisplayPhoto = function() {
+        var _countPhoto = $scope.arrPhotos.length;
+        $scope.document.attachment = [];
+        if (_countPhoto > 4) {
+            for (var i = _countPhoto - 4; i < _countPhoto; i++) {
+                $scope.document.attachment.push({
+                    'FilePath': $scope.arrPhotos[i].indexOf("base64") > 0 ? $scope.arrPhotos[i] : "data:image/jpeg;base64,"+$scope.arrPhotos[i]
+                });
+            }
+        } else {
+            for (var j = 0; j < $scope.arrPhotos.length; j++) {
+                $scope.document.attachment.push({
+                    'FilePath': $scope.arrPhotos[j].indexOf("base64") > 0 ? $scope.arrPhotos[j] : "data:image/jpeg;base64,"+$scope.arrPhotos[j]
+                });
+            }
+        }
+    };
+
+    $scope.getPhoto = function() {
+      var options = {
+          quality: 75,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 300,
+          targetHeight: 300,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+          if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
+              $scope.document.attachment.forEach(function(img) {
+                  $scope.arrPhotos.push(img.FilePath);
+              });
+          }
+          $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
+          // _updateDisplayPhoto();
+          $state.go('menu.documentDetails',{"photos":$scope.arrPhotos});
+      }, function(err) {
+          console.log(err);
+      });
+  };
+
+  $scope.getCameraRoll = function() {
+      var options = {
+          quality: 75,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 300,
+          targetHeight: 300,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+          if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
+              $scope.document.attachment.forEach(function(img) {
+                  $scope.arrPhotos.push(img.FilePath);
+              });
+          }
+          $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
+          // _updateDisplayPhoto();
+          $state.go('menu.documentDetails',{"photos":$scope.arrPhotos});
+      }, function(err) {
+          console.log(err);
+      });
+  };
 })
 
 .controller('documentCategoriesCtrl', function($scope) {
@@ -105,16 +179,16 @@ angular.module('app.controllers', ['ngCordova'])
 
 })
 
-.controller('documentDetailsCtrl', function($scope, $cordovaCamera, $ionicModal) {
+.controller('documentDetailsCtrl', function($scope, $cordovaCamera, $ionicModal,$stateParams) {
 
-  $scope.arrPhotos = [];
+  $scope.arrPhotos = $stateParams.photos;
   $scope.document = {};
   // $scope.arrPhotos = ['data:image/png;base64,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'];
   // $scope.document.attachment = [{
   //   'FilePath': 'data:image/png;base64,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'
   // }];
-
   var _updateDisplayPhoto = function() {
+
       var _countPhoto = $scope.arrPhotos.length;
       $scope.document.attachment = [];
       if (_countPhoto > 4) {
@@ -132,57 +206,7 @@ angular.module('app.controllers', ['ngCordova'])
       }
   };
 
-  $scope.getPhoto = function() {
-      var options = {
-          quality: 75,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.CAMERA,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 300,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false
-      };
-
-      $cordovaCamera.getPicture(options).then(function(imageData) {
-          if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
-              $scope.document.attachment.forEach(function(img) {
-                  $scope.arrPhotos.push(img.FilePath);
-              });
-          }
-          $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
-          _updateDisplayPhoto();
-      }, function(err) {
-          console.log(err);
-      });
-  };
-
-  $scope.getCameraRoll = function() {
-      var options = {
-          quality: 75,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 300,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false
-      };
-
-      $cordovaCamera.getPicture(options).then(function(imageData) {
-          if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
-              $scope.document.attachment.forEach(function(img) {
-                  $scope.arrPhotos.push(img.FilePath);
-              });
-          }
-          $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
-          _updateDisplayPhoto();
-      }, function(err) {
-          console.log(err);
-      });
-  };
+  _updateDisplayPhoto();
   
   $scope.viewPhoto = function(index) {
       $scope.attachmentFrom = 'Document';

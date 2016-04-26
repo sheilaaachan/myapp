@@ -4,11 +4,6 @@
 <!--           <div>
               <img src="img/FIF1lcFgSJa2qu1J5L99_diploma_carnegie_mellon.jpg">
           </div> -->
-          <div class="field-label-icon">
-              <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i>
-              <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
-              <label>Upload Photos</label>
-          </div>
           <div class="attachment-holder" ng-if='document.attachment[0]'>
               <div class="attachment-photo" ng-repeat='photo in document.attachment track by $index | limitTo: 4'>
                   <img src="{{photo.FilePath}}" ng-if='photo.FilePath' alt="" ng-click='viewPhoto($index)' />

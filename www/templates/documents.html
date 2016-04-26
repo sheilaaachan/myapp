@@ -1,4 +1,4 @@
-<ion-view title="Documents" id="documents">
+<ion-view title="Documents" id="documents" ng-controller="documentsCtrl">
     <div class="tabs-striped tabs-top">
       <div class="tabs">
         <a class="tab-item active" href="#"><p class="description">All</p></a>
@@ -10,6 +10,11 @@
         <div class="linkcard" ng-repeat="document in documents">
           <div class="progressbar">
             <span class="progress completed" style="width: 100%"></span>
+          </div>
+          <div class="field-label-icon">
+              <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i>
+              <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
+              <label>Upload Photos</label>
           </div>
           <a ui-sref="menu.documentCategories" class="button button-full">
             <div class="row row-center">
