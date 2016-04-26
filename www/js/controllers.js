@@ -38,6 +38,8 @@ angular.module('app.controllers', ['ngCordova'])
       type: "Visa",
       initiation_date: "4 JAN 2015"
     }];
+
+
 })
 
 .controller('projectDetailsCtrl', function($scope) {
@@ -207,7 +209,7 @@ angular.module('app.controllers', ['ngCordova'])
   };
 
   _updateDisplayPhoto();
-  
+
   $scope.viewPhoto = function(index) {
       $scope.attachmentFrom = 'Document';
       if ($scope.arrPhotos.length === 0) {

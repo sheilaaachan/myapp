@@ -48,6 +48,10 @@ p.description {
   line-height: 15px;
   color: #78909C; }
 
+i.ion-chevron-right:before {
+  font-size: 10px;
+  color: #ECEFF1; }
+
 ion-side-menu#side-menu21 {
   background-color: #ECEFF1; }
 
@@ -90,39 +94,115 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
     ion-view#projects div.linkcard.inactive p.description, ion-view#projectDetails div.linkcard.inactive p.description, ion-view#projectStatus div.linkcard.inactive p.description, ion-view#documents div.linkcard.inactive p.description, ion-view#documentCategory div.linkcard.inactive p.description {
       color: #78909C; }
 
-ion-view#projects div.linkcard a {
-  margin-bottom: 0;
-  padding-bottom: 0; }
-  ion-view#projects div.linkcard a p {
-    float: right;
-    font-size: 12px;
-    font-style: italic; }
-
-ion-view#projects div.linkcard div.tribar {
-  background-color: #FFFFFF; }
-  ion-view#projects div.linkcard div.tribar div:nth-child(2) {
-    border-left: 1px solid #F2F6F7;
-    border-right: 1px solid #F2F6F7; }
-  ion-view#projects div.linkcard div.tribar div {
-    text-align: center;
-    color: #FFC107;
-    border-top: 0.5px solid #F2F6F7;
-    padding-top: 10px; }
-    ion-view#projects div.linkcard div.tribar div i {
-      color: #40C4FF; }
-      ion-view#projects div.linkcard div.tribar div i.in-progress {
-        color: #FFC107; }
-    ion-view#projects div.linkcard div.tribar div p {
+ion-view#projects {
+  /* -------------------------------------
+   * Bar container
+   * ------------------------------------- */
+  /* -------------------------------------
+   * Optional centered circle w/text
+   * ------------------------------------- */
+  /* -------------------------------------
+   * Mixin for progress-% class
+   * ------------------------------------- */ }
+  ion-view#projects div.linkcard a {
+    margin-bottom: 0;
+    padding-bottom: 0; }
+  ion-view#projects div.linkcard i.ion-chevron-right::before {
+    font-size: 20px;
+    color: #ECEFF1;
+    float: right; }
+  ion-view#projects div.linkcard div.tribar {
+    background-color: #FFFFFF; }
+    ion-view#projects div.linkcard div.tribar div:nth-child(1) {
+      border-right: 1px solid #F2F6F7; }
+    ion-view#projects div.linkcard div.tribar div {
       text-align: center;
-      color: #37474F; }
-
-ion-view#projects div.linkcard.inactive div.tribar {
-  background-color: #F2F6F7;
-  opacity: 0.9; }
-  ion-view#projects div.linkcard.inactive div.tribar div {
-    color: #81C784; }
-    ion-view#projects div.linkcard.inactive div.tribar div i.completed {
+      color: #FFC107;
+      border-top: 0.5px solid #F2F6F7;
+      padding-top: 10px; }
+      ion-view#projects div.linkcard div.tribar div i {
+        color: #40C4FF; }
+        ion-view#projects div.linkcard div.tribar div i.in-progress {
+          color: #FFC107; }
+      ion-view#projects div.linkcard div.tribar div p {
+        text-align: center;
+        color: #37474F; }
+  ion-view#projects div.linkcard.inactive div.tribar {
+    background-color: #F2F6F7;
+    opacity: 0.9; }
+    ion-view#projects div.linkcard.inactive div.tribar div {
       color: #81C784; }
+      ion-view#projects div.linkcard.inactive div.tribar div i.completed {
+        color: #81C784; }
+  ion-view#projects body {
+    padding: 30px 0;
+    background-color: #F2F6F7; }
+  ion-view#projects .wrap {
+    width: 600px;
+    margin: 0 auto; }
+  ion-view#projects .progress-radial {
+    float: left;
+    margin-right: 30px;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 0.5px solid #F2F6F7;
+    background-color: #81C784; }
+  ion-view#projects .progress-radial .overlay {
+    color: #81C784;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-top: 4px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 16px; }
+  ion-view#projects .progress-0 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(90deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-5 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(108deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-10 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(126deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-15 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(144deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-20 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(162deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-25 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(180deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-30 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(198deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-35 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(216deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-40 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(234deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-45 {
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(252deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-50 {
+    background-image: linear-gradient(-90deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-55 {
+    background-image: linear-gradient(-72deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-60 {
+    background-image: linear-gradient(-54deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-65 {
+    background-image: linear-gradient(-36deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-70 {
+    background-image: linear-gradient(-18deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-75 {
+    background-image: linear-gradient(0deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-80 {
+    background-image: linear-gradient(18deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-85 {
+    background-image: linear-gradient(36deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-90 {
+    background-image: linear-gradient(54deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-95 {
+    background-image: linear-gradient(72deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+  ion-view#projects .progress-100 {
+    background-image: linear-gradient(90deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
 
 ion-view#projectDetails div.linkcard div.appstatus {
   position: relative;
