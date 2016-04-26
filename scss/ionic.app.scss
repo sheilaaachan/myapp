@@ -197,12 +197,14 @@ ion-view#projectDetails{
         &.pc1{
           left: 0;
           top: -7px;
-          background-color: $success-color-0;
+          border: 3px solid $success-color-0;
+          background-color: white;
         }
         &.pc2{
           left: 33%;
           top: -7px;
-          background-color: $progress-color-0;
+          border: 3px solid $progress-color-0;
+          background-color: white;
         }
         &.pc3{
           left: 66%;
@@ -224,6 +226,59 @@ ion-view#projectDetails{
 
   }
 }
+
+// Status Page
+
+ion-view#projectStatus{
+  div.appstatus{
+    position: relative;
+    margin: 5% 3% 10% 3%;
+    width: 90%;
+    display: block;
+    height: 3px;
+    background-color: $grey-color-2;
+    span.progresscircle{
+      height: 16px;
+      width: 16px;
+      border-radius: 16px;
+      position: absolute;
+      &.pc1{
+        left: 0;
+        top: -7px;
+        border: 3px solid $success-color-0;
+        background-color: white;
+      }
+      &.pc2{
+        left: 33%;
+        top: -7px;
+        border: 3px solid $progress-color-0;
+        background-color: white;
+      }
+      &.pc3{
+        left: 66%;
+        top: -7px;
+        background-color: $grey-color-2;
+      }
+      &.pc4{
+        left: 100%;
+        top: -7px;
+        background-color: $grey-color-2;
+      }
+    }
+    span.progress{
+      float: left;
+      display: inline;
+      height: 3px;
+      background-color: $success-color-0;
+    }
+    p{
+      position: absolute;
+      left: 25%;
+      top: 10px;
+    }
+  }
+}
+
 
 // Documents Page
 

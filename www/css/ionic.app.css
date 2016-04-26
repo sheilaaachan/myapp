@@ -135,11 +135,13 @@ ion-view#projectDetails div.linkcard div.appstatus {
     ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc1 {
       left: 0;
       top: -7px;
-      background-color: #81C784; }
+      border: 3px solid #81C784;
+      background-color: white; }
     ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc2 {
       left: 33%;
       top: -7px;
-      background-color: #FFC107; }
+      border: 3px solid #FFC107;
+      background-color: white; }
     ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc3 {
       left: 66%;
       top: -7px;
@@ -149,6 +151,46 @@ ion-view#projectDetails div.linkcard div.appstatus {
       top: -7px;
       background-color: #ECEFF1; }
   ion-view#projectDetails div.linkcard div.appstatus p {
+    position: absolute;
+    left: 25%;
+    top: 10px; }
+
+ion-view#projectStatus div.appstatus {
+  position: relative;
+  margin: 5% 3% 10% 3%;
+  width: 90%;
+  display: block;
+  height: 3px;
+  background-color: #CFD8DC; }
+  ion-view#projectStatus div.appstatus span.progresscircle {
+    height: 16px;
+    width: 16px;
+    border-radius: 16px;
+    position: absolute; }
+    ion-view#projectStatus div.appstatus span.progresscircle.pc1 {
+      left: 0;
+      top: -7px;
+      border: 3px solid #81C784;
+      background-color: white; }
+    ion-view#projectStatus div.appstatus span.progresscircle.pc2 {
+      left: 33%;
+      top: -7px;
+      border: 3px solid #FFC107;
+      background-color: white; }
+    ion-view#projectStatus div.appstatus span.progresscircle.pc3 {
+      left: 66%;
+      top: -7px;
+      background-color: #CFD8DC; }
+    ion-view#projectStatus div.appstatus span.progresscircle.pc4 {
+      left: 100%;
+      top: -7px;
+      background-color: #CFD8DC; }
+  ion-view#projectStatus div.appstatus span.progress {
+    float: left;
+    display: inline;
+    height: 3px;
+    background-color: #81C784; }
+  ion-view#projectStatus div.appstatus p {
     position: absolute;
     left: 25%;
     top: 10px; }
