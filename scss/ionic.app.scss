@@ -51,6 +51,7 @@ h2.title{
   font-size: 24px;
   line-height: 25px;
   color: $grey-color-0;
+  margin: auto auto 5px 3%;
 }
 p.description{
   font-family: $font-family-sans-serif;
@@ -59,12 +60,13 @@ p.description{
   font-size: 14px;
   line-height: 15px;
   color: $grey-color-1;
+  margin-left: 3%;
   // font-style: italic;
 }
-i.ion-chevron-right:before{
-  font-size: 10px;
-  color: $grey-color-3;
-}
+// i.ion-chevron-right:before{
+//   font-size: 10px;
+//   color: $grey-color-3;
+// }
 
 
 // Side menu
@@ -101,6 +103,7 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
           }
         }
       }
+
       a{
         padding: 2%;
         border-radius:0px;
@@ -109,6 +112,11 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
         background-color: #fff;
         div.row{
           padding: 0;
+        }
+        i.ion-chevron-right::before{
+          font-size: 20px;
+          color: $grey-color-3;
+          float: right;
         }
       }
       &.inactive{
@@ -137,11 +145,7 @@ ion-view#projects{
       margin-bottom: 0;
       padding-bottom: 0;
     }
-    i.ion-chevron-right::before{
-      font-size: 20px;
-      color: $grey-color-3;
-      float: right;
-    }
+
     div.tribar{
       background-color: #FFFFFF;
       div:nth-child(1){

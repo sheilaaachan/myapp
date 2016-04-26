@@ -8,11 +8,11 @@
         <span class="progress" style="width: 33%"></span>
       </div>
       <div class="linkcard" ng-repeat="statusUpdate in project_status">
-        <div class="progressbar" ng-switch="statusUpdate.progress">
+        <!-- <div class="progressbar" ng-switch="statusUpdate.progress">
           <span ng-switch-when="100" class="progress completed" style="width: {{statusUpdate.progress}}%"></span>
           <span ng-switch-default class="progress in-progress" style="width: {{statusUpdate.progress}}%"></span>
           <span ng-switch-when="0" class="progress not-started" style="width: {{statusUpdate.progress}}%"></span>
-        </div>
+        </div> -->
         <a ui-sref="menu.status" class="button button-full">
           <div class="row row-center">
             <div class="col col-20">

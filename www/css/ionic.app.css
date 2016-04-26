@@ -38,7 +38,8 @@ h2.title {
   text-align: left;
   font-size: 24px;
   line-height: 25px;
-  color: #37474F; }
+  color: #37474F;
+  margin: auto auto 5px 3%; }
 
 p.description {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -46,11 +47,8 @@ p.description {
   text-align: left;
   font-size: 14px;
   line-height: 15px;
-  color: #78909C; }
-
-i.ion-chevron-right:before {
-  font-size: 10px;
-  color: #ECEFF1; }
+  color: #78909C;
+  margin-left: 3%; }
 
 ion-side-menu#side-menu21 {
   background-color: #ECEFF1; }
@@ -84,6 +82,10 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
       background-color: #fff; }
       ion-view#projects div.linkcard a div.row, ion-view#projectDetails div.linkcard a div.row, ion-view#projectStatus div.linkcard a div.row, ion-view#documents div.linkcard a div.row, ion-view#documentCategory div.linkcard a div.row {
         padding: 0; }
+      ion-view#projects div.linkcard a i.ion-chevron-right::before, ion-view#projectDetails div.linkcard a i.ion-chevron-right::before, ion-view#projectStatus div.linkcard a i.ion-chevron-right::before, ion-view#documents div.linkcard a i.ion-chevron-right::before, ion-view#documentCategory div.linkcard a i.ion-chevron-right::before {
+        font-size: 20px;
+        color: #ECEFF1;
+        float: right; }
     ion-view#projects div.linkcard.inactive span.progress, ion-view#projectDetails div.linkcard.inactive span.progress, ion-view#projectStatus div.linkcard.inactive span.progress, ion-view#documents div.linkcard.inactive span.progress, ion-view#documentCategory div.linkcard.inactive span.progress {
       opacity: 0.5; }
     ion-view#projects div.linkcard.inactive a, ion-view#projectDetails div.linkcard.inactive a, ion-view#projectStatus div.linkcard.inactive a, ion-view#documents div.linkcard.inactive a, ion-view#documentCategory div.linkcard.inactive a {
@@ -107,10 +109,6 @@ ion-view#projects {
   ion-view#projects div.linkcard a {
     margin-bottom: 0;
     padding-bottom: 0; }
-  ion-view#projects div.linkcard i.ion-chevron-right::before {
-    font-size: 20px;
-    color: #ECEFF1;
-    float: right; }
   ion-view#projects div.linkcard div.tribar {
     background-color: #FFFFFF; }
     ion-view#projects div.linkcard div.tribar div:nth-child(1) {
