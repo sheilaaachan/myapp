@@ -15,6 +15,15 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+ion-header-bar.bar.bar-header {
+  background-color: #42BCBA; }
+  ion-header-bar.bar.bar-header button i, ion-header-bar.bar.bar-header button span {
+    color: white; }
+  ion-header-bar.bar.bar-header div.buttons button {
+    color: white; }
+  ion-header-bar.bar.bar-header div.title {
+    color: white; }
+
 div.title {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 

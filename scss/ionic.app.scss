@@ -21,6 +21,25 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 @import "_variables";
 
+// NavBar
+ion-header-bar.bar {
+  &.bar-header{
+    background-color: $primary-color-4;
+    button{
+      i, span{
+        color: white;
+      }
+    }
+    div.buttons{
+      button{
+        color: white;
+      }
+    }
+    div.title{
+      color: white;
+    }
+  }
+}
 
 // All application syles are as follows:
 div.title{
