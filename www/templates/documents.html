@@ -1,31 +1,44 @@
 <ion-view title="Documents" id="documents" ng-controller="documentsCtrl">
     <div class="tabs-striped tabs-top">
       <div class="tabs">
-        <a class="tab-item active" href="#"><p class="description">All</p></a>
-        <a class="tab-item" href="#"><p class="description">Not Uploaded</p></a>
-        <a class="tab-item" href="#"><p class="description">Uploaded</p></a>
+        <a class="tab-item active" id="showall"><p class="description">All</p></a>
+        <a class="tab-item" href="#"><p class="description">To Upload (3)</p></a>
+        <a class="tab-item" href="#"><p class="description">Uploaded (2)</p></a>
       </div>
     </div>
     <ion-content padding="true" class="has-header">
-        <div class="linkcard" ng-repeat="document in documents">
-          <div class="progressbar">
-            <span class="progress completed" style="width: 100%"></span>
-          </div>
-          <div class="field-label-icon">
-              <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i>
-              <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
-              <label>Upload Photos</label>
-          </div>
+        <p class="description">To Upload</p>
+        <div class="linkcard" id="toupload" ng-repeat="document in toupload_documents">
           <a ui-sref="menu.documentCategories" class="button button-full">
             <div class="row row-center">
-              <!-- <div class="col col-20">
-                <p class="percentage">
-                  <i class="icon icon ion-android-upload"></i>
-                </p>
-              </div> -->
-              <div class="col col-80">
+              <div class="col col-70">
                 <h2 class="title">{{document.title}}</h2>
                 <p class="description">{{document.description}}</p>
+              </div>
+              <div class="docupload col col-20">
+                <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i><br>
+                <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
+              </div>
+              <div class="col col-10">
+                <i class="icon icon ion-chevron-right"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <p class="description">Uploaded</p>
+        <div class="linkcard uploaded" ng-repeat="document in uploaded_documents">
+          <a ui-sref="menu.documentCategories" class="button button-full">
+            <div class="row row-center">
+              <div class="col col-70">
+                <h2 class="title">{{document.title}}</h2>
+                <p class="description">{{document.description}}</p>
+              </div>
+              <div class="docupload col col-20">
+                <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i><br>
+                <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
+              </div>
+              <div class="col col-10">
+                <i class="icon icon ion-chevron-right"></i>
               </div>
             </div>
           </a>

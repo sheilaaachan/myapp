@@ -83,24 +83,16 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
     margin-top: 10px;
     box-shadow: $box-shadow;
       div.progressbar{
-        width: 100%;
+        width: 3px;
         display: block;
-        height: 3px;
+        height: 150px;
         background-color: $grey-color-3;
         span.progress{
           float: left;
+          top: 0;
           display: inline;
-          height: 3px;
+          width: 3px;
           background-color: $success-color-0;
-          &.completed{
-            background-color: $success-color-0;
-          }
-          &.in-progress{
-            background-color: $progress-color-0;
-          }
-          &.not-started{
-            background-color: $grey-color-1;
-          }
         }
       }
 
@@ -135,52 +127,9 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
         }
       }
   }
-}
 
-// Projects Page
 
-ion-view#projects{
-  div.linkcard{
-    a{
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    div.tribar{
-      background-color: #FFFFFF;
-      div:nth-child(1){
-        border-right: 1px solid $grey-color-4;
-      }
-      div{
-        text-align: center;
-        color: $progress-color-0;
-        border-top: 0.5px solid $grey-color-4;
-        padding-top: 10px;
-        i{
-          color: $primary-color-2;
-          &.in-progress{
-            color: $progress-color-0;
-          }
-        }
-        p{
-          text-align: center;
-          color: $grey-color-0;
-        }
-      }
-    }
-    &.inactive{
-      div.tribar{
-        background-color: $grey-color-4;
-        opacity: 0.9;
-        div{
-          color: $success-color-0;
-          i.completed{
-            color: $success-color-0;
-          }
-        }
-      }
-    }
-  }
+  // Progress Circles
 
   // Colors
   $barColor: $success-color-0;
@@ -252,6 +201,52 @@ ion-view#projects{
   }
 }
 
+// Projects Page
+
+ion-view#projects{
+  div.linkcard{
+    a{
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    div.tribar{
+      background-color: #FFFFFF;
+      div:nth-child(1){
+        border-right: 1px solid $grey-color-4;
+      }
+      div{
+        text-align: center;
+        color: $progress-color-0;
+        border-top: 0.5px solid $grey-color-4;
+        padding-top: 10px;
+        i{
+          color: $primary-color-2;
+          &.in-progress{
+            color: $progress-color-0;
+          }
+        }
+        p{
+          text-align: center;
+          color: $grey-color-0;
+        }
+      }
+    }
+    &.inactive{
+      div.tribar{
+        background-color: $grey-color-4;
+        opacity: 0.9;
+        div{
+          color: $success-color-0;
+          i.completed{
+            color: $success-color-0;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 
@@ -270,25 +265,25 @@ ion-view#projectDetails{
         border-radius: 16px;
         position: absolute;
         &.pc1{
-          left: 0;
-          top: -7px;
+          left: -7px;
+          top: 0;
           border: 3px solid $success-color-0;
           background-color: white;
         }
         &.pc2{
-          left: 33%;
-          top: -7px;
+          left: -7px;
+          top: 33%;
           border: 3px solid $progress-color-0;
           background-color: white;
         }
         &.pc3{
-          left: 66%;
-          top: -7px;
+          left: -7px;
+          top: 66%;
           background-color: $grey-color-3;
         }
         &.pc4{
-          left: 100%;
-          top: -7px;
+          left: -7px;
+          top: 100%;
           background-color: $grey-color-3;
         }
       }
