@@ -46,7 +46,7 @@ angular.module('app.controllers', ['ngCordova'])
 
 })
 
-.controller('documentsCtrl', function($scope, $state, $cordovaCamera) {
+.controller('documentsCtrl', function($scope, $state, $cordovaCamera, Drive) {
   $scope.toupload_documents = [
     {
       title: "Diploma(s)",
@@ -120,30 +120,44 @@ angular.module('app.controllers', ['ngCordova'])
   };
 
   $scope.getCameraRoll = function() {
-      var options = {
-          quality: 75,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 300,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false
-      };
+      //Commented temporary for google integration test
+      // var options = {
+      //     quality: 75,
+      //     destinationType: Camera.DestinationType.DATA_URL,
+      //     sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      //     allowEdit: true,
+      //     encodingType: Camera.EncodingType.JPEG,
+      //     targetWidth: 300,
+      //     targetHeight: 300,
+      //     popoverOptions: CameraPopoverOptions,
+      //     saveToPhotoAlbum: false
+      // };
 
-      $cordovaCamera.getPicture(options).then(function(imageData) {
-          if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
-              $scope.document.attachment.forEach(function(img) {
-                  $scope.arrPhotos.push(img.FilePath);
-              });
+      // $cordovaCamera.getPicture(options).then(function(imageData) {
+      //     if ($scope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
+      //         $scope.document.attachment.forEach(function(img) {
+      //             $scope.arrPhotos.push(img.FilePath);
+      //         });
+      //     }
+      //     $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
+      //     // _updateDisplayPhoto();
+      //     $state.go('menu.documentDetails',{"photos":$scope.arrPhotos});
+      // }, function(err) {
+      //     console.log(err);
+      // });
+      var client_id = "303684445331-3tblts89ihiuljohmldducuv9tfggtpu.apps.googleusercontent.com";//web-app
+      var scopes = ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/userinfo.email'];
+      Drive.authenticate(client_id, scopes, {redirect_uri: 'http://localhost/callback'})
+      .then(function (response) {//authenticate
+          if (response) {
+              var token = response.access_token;
+              gapi.auth.setToken(response);
+              $state.go('drive');
           }
-          $scope.arrPhotos.push("data:image/jpeg;base64," + imageData);
-          // _updateDisplayPhoto();
-          $state.go('menu.documentDetails',{"photos":$scope.arrPhotos});
-      }, function(err) {
-          console.log(err);
-      });
+        },
+        function (error) {
+          console.log("" + error);
+        });
   };
 })
 
@@ -249,3 +263,18 @@ angular.module('app.controllers', ['ngCordova'])
 .controller('logInCtrl', function($scope) {
 
 })
+
+.controller('DriveCtrl', function ($scope, Drive) {
+  $scope.files = [];
+
+  $scope.readFiles = function () {
+    Drive.readFiles().then(function (files) {
+      $scope.files = files;
+      console.log("FileRead: success.");
+    }, function () {
+      console.log("FileRead: error.");
+    });
+  };
+  $scope.readFiles();
+
+});

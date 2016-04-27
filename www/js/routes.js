@@ -85,6 +85,12 @@ angular.module('app.routes', [])
     controller: 'logInCtrl'
   })
 
+  .state('drive', {
+    url: '/drive',
+    templateUrl: 'templates/drive.html',
+    controller: 'DriveCtrl'
+  })
+
 $urlRouterProvider.otherwise('/side-menu21/projects')
 
 

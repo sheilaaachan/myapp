@@ -9,16 +9,21 @@
     <ion-content padding="true" class="has-header">
         <p class="description">To Upload</p>
         <div class="linkcard" id="toupload" ng-repeat="document in toupload_documents">
+              <div class="field-label-icon">
+                <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i>
+                <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
+                <label>Upload Photos</label>
+              </div>
           <a ui-sref="menu.documentCategories" class="button button-full">
             <div class="row row-center">
               <div class="col col-70">
                 <h2 class="title">{{document.title}}</h2>
                 <p class="description">{{document.description}}</p>
               </div>
-              <div class="docupload col col-20">
+ <!--              <div class="docupload col col-20">
                 <i class="icon positive icon-ion-camera" ng-click="getPhoto()"></i><br>
                 <i class="icon positive icon-ion-eye" ng-click="getCameraRoll()"></i>
-              </div>
+              </div> -->
               <div class="col col-10">
                 <i class="icon icon ion-chevron-right"></i>
               </div>
