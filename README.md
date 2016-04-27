@@ -14,6 +14,9 @@ Variable overrides are defined in /scss/variables.scss
 ## Please install ngCordova in your project folder with following command 
 bower install ngCordova
 
+## Please install ng-cordova-oauth in your project folder with following command 
+bower install ng-cordova-oauth
+
 ## Adding a platform target
 ionic platform ios android
 
