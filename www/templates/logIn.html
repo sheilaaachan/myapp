@@ -1,16 +1,16 @@
-<ion-view title="Log in" id="page9">
+<ion-view title="Log in" id="page9" ng-controller="logInCtrl">
     <ion-content padding="true" class="has-header">
         <form class="list">
             <ion-list>
                 <label class="item item-input">
-                    <input type="text" placeholder="Username">
+                    <input type="text" ng-model="login.username" placeholder="Username">
                 </label>
                 <label class="item item-input">
-                    <input type="password" placeholder="Password">
+                    <input type="password" ng-model="login.password" placeholder="Password">
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
-            <a ui-sref="menu.projects" id="logIn-button33" class="button button-stable  button-block">Log in</a>
+            <button type="button" id="logIn-button33" class="button button-stable  button-block" ng-click="login()">Log in</button>
         </form>
     </ion-content>
 </ion-view>
