@@ -1,7 +1,7 @@
 <ion-view title="My Applications" id="projects" ng-controller="projectsCtrl">
     <ion-content padding="false" class="has-header">
         <div class="linkcard" ng-repeat="proj in active_projs">
-            <a ui-sref="menu.projectDetails" class="button button-large button-full">
+            <a ui-sref="menu.status" class="button button-large button-full">
               <div class="row row-center">
                 <div class="col col-20">
                   <div class="wrap">
@@ -19,13 +19,13 @@
                 </div>
               </div>
             </a>
-            <div class="row row-center tribar">
+            <!-- <div class="row row-center tribar">
               <div ui-sref="menu.status" class="col col-50"><p class="description">In Progress</p></div>
               <div ui-sref="menu.documents" class="col col-50"><p class="description">Upload Documents</p></div>
-            </div>
+            </div> -->
         </div>
         <div class="linkcard inactive" ng-repeat="proj in inactive_projs">
-          <a ui-sref="menu.projectDetails" class="button button-large button-full">
+          <a ui-sref="menu.status" class="button button-large button-full">
             <div class="row row-center">
               <div class="col col-20">
                 <div class="wrap">
@@ -43,10 +43,10 @@
               </div>
             </div>
           </a>
-          <div class="row row-center tribar">
+          <!-- <div class="row row-center tribar">
             <div ui-sref="menu.status" class="col col-50"><p class="description">Completed</p></div>
             <div ui-sref="menu.documents" class="col col-50"><p class="description">Upload Documents</p></div>
-          </div>
+          </div> -->
         </div>
     </ion-content>
 </ion-view>

@@ -210,29 +210,6 @@ ion-view#projects div.linkcard.inactive div.tribar {
 ion-view#projectDetails div.linkcard div.appstatus {
   position: relative;
   margin: 5% 0 20% 0; }
-  ion-view#projectDetails div.linkcard div.appstatus span.progresscircle {
-    height: 16px;
-    width: 16px;
-    border-radius: 16px;
-    position: absolute; }
-    ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc1 {
-      left: -7px;
-      top: 0;
-      border: 3px solid #81C784;
-      background-color: white; }
-    ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc2 {
-      left: -7px;
-      top: 33%;
-      border: 3px solid #FFC107;
-      background-color: white; }
-    ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc3 {
-      left: -7px;
-      top: 66%;
-      background-color: #ECEFF1; }
-    ion-view#projectDetails div.linkcard div.appstatus span.progresscircle.pc4 {
-      left: -7px;
-      top: 100%;
-      background-color: #ECEFF1; }
   ion-view#projectDetails div.linkcard div.appstatus p {
     position: absolute;
     left: 25%;

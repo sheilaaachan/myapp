@@ -278,34 +278,6 @@ ion-view#projectDetails{
     div.appstatus{
       position: relative;
       margin: 5% 0 20% 0;
-      span.progresscircle{
-        height: 16px;
-        width: 16px;
-        border-radius: 16px;
-        position: absolute;
-        &.pc1{
-          left: -7px;
-          top: 0;
-          border: 3px solid $success-color-0;
-          background-color: white;
-        }
-        &.pc2{
-          left: -7px;
-          top: 33%;
-          border: 3px solid $progress-color-0;
-          background-color: white;
-        }
-        &.pc3{
-          left: -7px;
-          top: 66%;
-          background-color: $grey-color-3;
-        }
-        &.pc4{
-          left: -7px;
-          top: 100%;
-          background-color: $grey-color-3;
-        }
-      }
       p{
         position: absolute;
         left: 25%;

@@ -266,7 +266,7 @@ angular.module('app.controllers', ['ngCordova'])
       $state.go('menu.notification');
     }
     else {
-      $state.go('menu.projects');
+      $state.go('menu.projectDetails');
     }
   };
 })
