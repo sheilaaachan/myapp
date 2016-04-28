@@ -70,7 +70,7 @@ h2.title{
   font-size: 24px;
   line-height: 25px;
   color: $grey-color-0;
-  margin: auto auto 5px 3%;
+  margin: 15px auto 15px 5%;
 }
 p.description{
   font-family: $font-family-sans-serif;
@@ -79,7 +79,7 @@ p.description{
   font-size: 14px;
   line-height: 15px;
   color: $grey-color-1;
-  margin-left: 3%;
+  margin-left: 5%;
   // font-style: italic;
 }
 // i.ion-chevron-right:before{
@@ -116,7 +116,7 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
       }
 
       a{
-        padding: 2%;
+        padding: 3% 2%;
         border-radius:0px;
         margin-top: 0px;
         color: $primary-color-0;
@@ -272,19 +272,11 @@ ion-view#projects{
 // Project Detail Page
 
 ion-view#projectDetails{
-  // height: 100%;
-  div.linkcard{
-    // height: 33%;
-    div.appstatus{
-      position: relative;
-      margin: 5% 0 20% 0;
-      p{
-        position: absolute;
-        left: 25%;
-        top: 10px;
+  div.scroll{
+    div.linkcard{
+      a{
       }
     }
-
   }
 }
 
