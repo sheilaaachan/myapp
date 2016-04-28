@@ -91,11 +91,20 @@ angular.module('app.routes', [])
     controller: 'DriveCtrl'
   })
 
-  .state('notification', {
+  .state('menu.notification', {
     url: '/notification',
-    templateUrl: 'templates/notification.html',
-    controller: 'NotificationCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/notification.html',
+        controller: 'NotificationCtrl'
+      }
+    }
   })
+  // .state('notification', {
+  //   url: '/notification',
+  //   templateUrl: 'templates/notification.html',
+  //   controller: 'NotificationCtrl'
+  // })
 
 $urlRouterProvider.otherwise('/login')
 
