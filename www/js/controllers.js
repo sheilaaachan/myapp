@@ -298,24 +298,24 @@ angular.module('app.controllers', ['ngCordova'])
         text: "Changed in application status.",
         at: _1_sec_from_now
     });
-    cordova.plugins.notification.local.on("trigger", function (notification) {
-        var message = "";
-        if (notification.id == 1){
-            message = "Case initiated, document(s) are required from user.";
-        }
-        else if (notification.id == 2){
-            message = "Document(s) received by BAL case manager.";
-        }
-        else if (notification.id == 3){
-            message = "Changed in application status.";
-        }
-        else return;
-        $cordovaDialogs.alert('', message, 'OK')
-          .then(function() {
-            // callback success
-          });
-        });
-    };
+    // cordova.plugins.notification.local.on("trigger", function (notification) {
+    //     var message = "";
+    //     if (notification.id == 1){
+    //         message = "Case initiated, document(s) are required from user.";
+    //     }
+    //     else if (notification.id == 2){
+    //         message = "Document(s) received by BAL case manager.";
+    //     }
+    //     else if (notification.id == 3){
+    //         message = "Changed in application status.";
+    //     }
+    //     else return;
+    //     $cordovaDialogs.alert('', message, 'OK')
+    //       .then(function() {
+    //         // callback success
+    //     });
+    // });
+  };
 })
 
 .controller('DriveCtrl', function ($scope, Drive) {
