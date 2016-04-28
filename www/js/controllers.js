@@ -94,13 +94,13 @@ angular.module('app.controllers', ['ngCordova'])
 
     $scope.getPhoto = function() {
       var options = {
-          quality: 75,
+          quality: 100,
           destinationType: Camera.DestinationType.DATA_URL,
           sourceType: Camera.PictureSourceType.CAMERA,
-          allowEdit: true,
+          allowEdit: false,
           encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 300,
+          targetWidth: 525,
+          targetHeight: 745,
           popoverOptions: CameraPopoverOptions,
           saveToPhotoAlbum: false
       };
@@ -122,13 +122,13 @@ angular.module('app.controllers', ['ngCordova'])
   $scope.getCameraRoll = function() {
       //Commented temporary for google integration test
       // var options = {
-      //     quality: 75,
+      //     quality: 100,
       //     destinationType: Camera.DestinationType.DATA_URL,
       //     sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-      //     allowEdit: true,
+      //     allowEdit: false,
       //     encodingType: Camera.EncodingType.JPEG,
-      //     targetWidth: 300,
-      //     targetHeight: 300,
+      //     targetWidth: 525,
+      //     targetHeight: 745,
       //     popoverOptions: CameraPopoverOptions,
       //     saveToPhotoAlbum: false
       // };
@@ -260,8 +260,62 @@ angular.module('app.controllers', ['ngCordova'])
 
 })
 
-.controller('logInCtrl', function($scope) {
+.controller('logInCtrl', function($scope, $state) {
+  $scope.login = function() {
+    if (($scope.login.username == "attorney") && ($scope.login.password == "attorney")) {
+      $state.go('notification');
+    }
+    else {
+      $state.go('menu.projects');
+    }
+  };
+})
 
+.controller('NotificationCtrl', function($scope, $state, $cordovaDialogs) {
+  $scope.caseInitiated = function() {
+    var now = new Date().getTime(),
+    _5_sec_from_now = new Date(now + 5 * 1000);
+    cordova.plugins.notification.local.schedule({
+        id: 1,
+        text: "Case initiated, document(s) are required from user.",
+        at: _5_sec_from_now
+    });
+  };
+  $scope.documentReceived = function() {
+    var now = new Date().getTime(),
+    _3_sec_from_now = new Date(now + 3 * 1000);
+    cordova.plugins.notification.local.schedule({
+        id: 2,
+        text: "Document(s) received by BAL case manager.",
+        at: _3_sec_from_now
+    });
+  };
+  $scope.statusChanged = function() {
+    var now = new Date().getTime(),
+    _1_sec_from_now = new Date(now + 1 * 1000);
+    cordova.plugins.notification.local.schedule({
+        id: 3,
+        text: "Changed in application status.",
+        at: _1_sec_from_now
+    });
+    cordova.plugins.notification.local.on("trigger", function (notification) {
+        var message = "";
+        if (notification.id == 1){
+            message = "Case initiated, document(s) are required from user.";
+        }
+        else if (notification.id == 2){
+            message = "Document(s) received by BAL case manager.";
+        }
+        else if (notification.id == 3){
+            message = "Changed in application status.";
+        }
+        else return;
+        $cordovaDialogs.alert('', message, 'OK')
+          .then(function() {
+            // callback success
+          });
+        });
+    };
 })
 
 .controller('DriveCtrl', function ($scope, Drive) {
