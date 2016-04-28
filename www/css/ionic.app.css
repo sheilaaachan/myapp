@@ -266,9 +266,6 @@ ion-view#documents div.tabs a {
   ion-view#documents div.tabs a.active {
     border: 2px solid #0091EA; }
 
-ion-view#documents ion-content {
-  margin-top: 50px; }
-
 ion-view#documentDetail {
   background-color: #ECEFF1; }
   ion-view#documentDetail div.linkcard {
