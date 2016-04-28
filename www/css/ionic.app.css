@@ -247,16 +247,18 @@ ion-view#projectStatus div.appstatus {
     left: 25%;
     top: 10px; }
 
-ion-view#documents div.tabs a {
-  background-color: #F2F6F7; }
-  ion-view#documents div.tabs a p.description {
-    color: #78909C;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 10% 0; }
-  ion-view#documents div.tabs a.active {
-    border: 2px solid #0091EA; }
+ion-view#documents ion-content div.button-upload {
+  text-align: center;
+  margin: 5%; }
+  ion-view#documents ion-content div.button-upload button {
+    border-radius: 0;
+    margin: 2%;
+    background-color: white;
+    color: #42BCBA;
+    box-shadow: 0.5px 2px 2px #CFD8DC; }
+    ion-view#documents ion-content div.button-upload button i::before {
+      font-size: 36px;
+      padding: 5% 0px 0px 0px; }
 
 ion-view#documentDetail {
   background-color: #ECEFF1; }

@@ -336,23 +336,37 @@ ion-view#projectStatus{
 // Documents Page
 
 ion-view#documents{
-  div.tabs{
-    a{
-      background-color: $grey-color-4;
-      p.description{
-        color: $grey-color-1;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 10% 0;
-      }
-      &.active{
-        border: 2px solid $primary-color-0;
+  // div.tabs{
+  //   a{
+  //     background-color: $grey-color-4;
+  //     p.description{
+  //       color: $grey-color-1;
+  //       text-align: center;
+  //       font-size: 16px;
+  //       font-weight: 400;
+  //       padding: 10% 0;
+  //     }
+  //     &.active{
+  //       border: 2px solid $primary-color-0;
+  //     }
+  //   }
+  // }
+  ion-content{
+    div.button-upload{
+      text-align: center;
+      margin: 5%;
+      button{
+        border-radius: 0;
+        margin: 2%;
+        background-color: white;
+        color: $primary-color-4;
+        box-shadow: $box-shadow;
+        i::before{
+          font-size: 36px;
+          padding: 5% 0px 0px 0px;
+        }
       }
     }
-  }
-  ion-content{
-    // margin-top: 50px;
   }
 }
 
