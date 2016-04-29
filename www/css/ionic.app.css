@@ -62,23 +62,25 @@ p.description {
 ion-side-menu#side-menu21 {
   background-color: #ECEFF1; }
 
-ion-view#login {
-  background-color: #ECEFF1; }
-  ion-view#login div.login_contain {
-    background-color: white;
+ion-view#login div.login_contain {
+  background-color: transparent;
+  padding: 10%;
+  margin-top: 20%; }
+  ion-view#login div.login_contain h2.title {
+    text-align: center;
+    margin-bottom: 15%;
+    color: #42BCBA;
+    font-size: 2.5em; }
+  ion-view#login div.login_contain label {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5%; }
+  ion-view#login div.login_contain button {
+    background-color: #42BCBA;
+    color: white;
     box-shadow: 0.5px 2px 2px #CFD8DC;
-    padding: 10%;
-    margin-top: 20%; }
-    ion-view#login div.login_contain label {
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      margin-bottom: 5%; }
-    ion-view#login div.login_contain button {
-      background-color: #42BCBA;
-      color: white;
-      box-shadow: 0.5px 2px 2px #CFD8DC;
-      border-radius: 0px; }
+    border-radius: 0px; }
 
 ion-view#projects,
 ion-view#projectDetails,

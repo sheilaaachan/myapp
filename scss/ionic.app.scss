@@ -94,12 +94,16 @@ ion-side-menu#side-menu21{
 }
 
 ion-view#login{
-  background-color: $grey-color-3;
   div.login_contain{
-    background-color: white;
-    box-shadow: $box-shadow;
+    background-color: rgba(0, 0, 0, 0);;
     padding: 10%;
     margin-top: 20%;
+    h2.title{
+      text-align: center;
+      margin-bottom: 15%;
+      color: $primary-color-4;
+      font-size: 2.5em;
+    }
     label{
       border-top: none;
       border-left: none;
