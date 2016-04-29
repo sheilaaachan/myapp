@@ -91,6 +91,16 @@ angular.module('app.routes', [])
     controller: 'DriveCtrl'
   })
 
+  .state('menu.localFile', {
+    url: '/localfile',
+     views: {
+         'side-menu21': {
+         templateUrl: 'templates/localFile.html',
+         controller: 'LocalFileCtrl'
+         }
+     }
+  })
+
   .state('menu.notification', {
     url: '/notification',
     views: {
