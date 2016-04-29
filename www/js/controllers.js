@@ -1,5 +1,11 @@
 angular.module('app.controllers', ['ngCordova'])
 
+.controller('menuCtrl', function($scope, $state) {
+  $scope.inState = function(state){
+      return $state.is(state);
+  }
+})
+
 .controller('projectsCtrl', function($scope) {
   $scope.active_projs = [
     {
