@@ -96,7 +96,14 @@ ion-side-menu#side-menu21{
 
 // App Pages
 
-ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#documents, ion-view#documentCategory {
+ion-view#projects,
+ion-view#projectDetails,
+ion-view#projectStatus,
+ion-view#documents,
+ion-view#documentCategory,
+ion-view#notificationPage,
+ion-view#bal_projects,
+ion-view#bal_project_details {
   background-color: $grey-color-3;
   div.linkcard{
     margin-top: 10px;
@@ -354,10 +361,11 @@ ion-view#documents{
   ion-content{
     div.button-upload{
       text-align: center;
-      margin: 5%;
+      margin: 3%;
       button{
+        width: 46%;
         border-radius: 0;
-        margin: 2%;
+        margin: 2% 1%;
         background-color: white;
         color: $primary-color-4;
         box-shadow: $box-shadow;

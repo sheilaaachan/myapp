@@ -62,7 +62,14 @@ p.description {
 ion-side-menu#side-menu21 {
   background-color: #ECEFF1; }
 
-ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#documents, ion-view#documentCategory {
+ion-view#projects,
+ion-view#projectDetails,
+ion-view#projectStatus,
+ion-view#documents,
+ion-view#documentCategory,
+ion-view#notificationPage,
+ion-view#bal_projects,
+ion-view#bal_project_details {
   background-color: #ECEFF1;
   /* -------------------------------------
    * Bar container
@@ -73,48 +80,139 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
   /* -------------------------------------
    * Mixin for progress-% class
    * ------------------------------------- */ }
-  ion-view#projects div.linkcard, ion-view#projectDetails div.linkcard, ion-view#projectStatus div.linkcard, ion-view#documents div.linkcard, ion-view#documentCategory div.linkcard {
+  ion-view#projects div.linkcard,
+  ion-view#projectDetails div.linkcard,
+  ion-view#projectStatus div.linkcard,
+  ion-view#documents div.linkcard,
+  ion-view#documentCategory div.linkcard,
+  ion-view#notificationPage div.linkcard,
+  ion-view#bal_projects div.linkcard,
+  ion-view#bal_project_details div.linkcard {
     margin-top: 10px;
     box-shadow: 0.5px 2px 2px #CFD8DC; }
-    ion-view#projects div.linkcard div.progressbar, ion-view#projectDetails div.linkcard div.progressbar, ion-view#projectStatus div.linkcard div.progressbar, ion-view#documents div.linkcard div.progressbar, ion-view#documentCategory div.linkcard div.progressbar {
+    ion-view#projects div.linkcard div.progressbar,
+    ion-view#projectDetails div.linkcard div.progressbar,
+    ion-view#projectStatus div.linkcard div.progressbar,
+    ion-view#documents div.linkcard div.progressbar,
+    ion-view#documentCategory div.linkcard div.progressbar,
+    ion-view#notificationPage div.linkcard div.progressbar,
+    ion-view#bal_projects div.linkcard div.progressbar,
+    ion-view#bal_project_details div.linkcard div.progressbar {
       width: 3px;
       display: block;
       height: 150px;
       background-color: #ECEFF1; }
-      ion-view#projects div.linkcard div.progressbar span.progress, ion-view#projectDetails div.linkcard div.progressbar span.progress, ion-view#projectStatus div.linkcard div.progressbar span.progress, ion-view#documents div.linkcard div.progressbar span.progress, ion-view#documentCategory div.linkcard div.progressbar span.progress {
+      ion-view#projects div.linkcard div.progressbar span.progress,
+      ion-view#projectDetails div.linkcard div.progressbar span.progress,
+      ion-view#projectStatus div.linkcard div.progressbar span.progress,
+      ion-view#documents div.linkcard div.progressbar span.progress,
+      ion-view#documentCategory div.linkcard div.progressbar span.progress,
+      ion-view#notificationPage div.linkcard div.progressbar span.progress,
+      ion-view#bal_projects div.linkcard div.progressbar span.progress,
+      ion-view#bal_project_details div.linkcard div.progressbar span.progress {
         float: left;
         top: 0;
         display: inline;
         width: 3px;
         background-color: #81C784; }
-    ion-view#projects div.linkcard a, ion-view#projectDetails div.linkcard a, ion-view#projectStatus div.linkcard a, ion-view#documents div.linkcard a, ion-view#documentCategory div.linkcard a {
+    ion-view#projects div.linkcard a,
+    ion-view#projectDetails div.linkcard a,
+    ion-view#projectStatus div.linkcard a,
+    ion-view#documents div.linkcard a,
+    ion-view#documentCategory div.linkcard a,
+    ion-view#notificationPage div.linkcard a,
+    ion-view#bal_projects div.linkcard a,
+    ion-view#bal_project_details div.linkcard a {
       padding: 3% 2%;
       border-radius: 0px;
       margin-top: 0px;
       color: #0091EA;
       background-color: #fff; }
-      ion-view#projects div.linkcard a div.row, ion-view#projectDetails div.linkcard a div.row, ion-view#projectStatus div.linkcard a div.row, ion-view#documents div.linkcard a div.row, ion-view#documentCategory div.linkcard a div.row {
+      ion-view#projects div.linkcard a div.row,
+      ion-view#projectDetails div.linkcard a div.row,
+      ion-view#projectStatus div.linkcard a div.row,
+      ion-view#documents div.linkcard a div.row,
+      ion-view#documentCategory div.linkcard a div.row,
+      ion-view#notificationPage div.linkcard a div.row,
+      ion-view#bal_projects div.linkcard a div.row,
+      ion-view#bal_project_details div.linkcard a div.row {
         padding: 0; }
-      ion-view#projects div.linkcard a i.ion-chevron-right::before, ion-view#projectDetails div.linkcard a i.ion-chevron-right::before, ion-view#projectStatus div.linkcard a i.ion-chevron-right::before, ion-view#documents div.linkcard a i.ion-chevron-right::before, ion-view#documentCategory div.linkcard a i.ion-chevron-right::before {
+      ion-view#projects div.linkcard a i.ion-chevron-right::before,
+      ion-view#projectDetails div.linkcard a i.ion-chevron-right::before,
+      ion-view#projectStatus div.linkcard a i.ion-chevron-right::before,
+      ion-view#documents div.linkcard a i.ion-chevron-right::before,
+      ion-view#documentCategory div.linkcard a i.ion-chevron-right::before,
+      ion-view#notificationPage div.linkcard a i.ion-chevron-right::before,
+      ion-view#bal_projects div.linkcard a i.ion-chevron-right::before,
+      ion-view#bal_project_details div.linkcard a i.ion-chevron-right::before {
         font-size: 20px;
         color: #ECEFF1;
         float: right; }
-    ion-view#projects div.linkcard.inactive span.progress, ion-view#projectDetails div.linkcard.inactive span.progress, ion-view#projectStatus div.linkcard.inactive span.progress, ion-view#documents div.linkcard.inactive span.progress, ion-view#documentCategory div.linkcard.inactive span.progress {
+    ion-view#projects div.linkcard.inactive span.progress,
+    ion-view#projectDetails div.linkcard.inactive span.progress,
+    ion-view#projectStatus div.linkcard.inactive span.progress,
+    ion-view#documents div.linkcard.inactive span.progress,
+    ion-view#documentCategory div.linkcard.inactive span.progress,
+    ion-view#notificationPage div.linkcard.inactive span.progress,
+    ion-view#bal_projects div.linkcard.inactive span.progress,
+    ion-view#bal_project_details div.linkcard.inactive span.progress {
       opacity: 0.5; }
-    ion-view#projects div.linkcard.inactive a, ion-view#projectDetails div.linkcard.inactive a, ion-view#projectStatus div.linkcard.inactive a, ion-view#documents div.linkcard.inactive a, ion-view#documentCategory div.linkcard.inactive a {
+    ion-view#projects div.linkcard.inactive a,
+    ion-view#projectDetails div.linkcard.inactive a,
+    ion-view#projectStatus div.linkcard.inactive a,
+    ion-view#documents div.linkcard.inactive a,
+    ion-view#documentCategory div.linkcard.inactive a,
+    ion-view#notificationPage div.linkcard.inactive a,
+    ion-view#bal_projects div.linkcard.inactive a,
+    ion-view#bal_project_details div.linkcard.inactive a {
       background-color: #F2F6F7;
       opacity: 0.5; }
-    ion-view#projects div.linkcard.inactive h2.title, ion-view#projectDetails div.linkcard.inactive h2.title, ion-view#projectStatus div.linkcard.inactive h2.title, ion-view#documents div.linkcard.inactive h2.title, ion-view#documentCategory div.linkcard.inactive h2.title {
+    ion-view#projects div.linkcard.inactive h2.title,
+    ion-view#projectDetails div.linkcard.inactive h2.title,
+    ion-view#projectStatus div.linkcard.inactive h2.title,
+    ion-view#documents div.linkcard.inactive h2.title,
+    ion-view#documentCategory div.linkcard.inactive h2.title,
+    ion-view#notificationPage div.linkcard.inactive h2.title,
+    ion-view#bal_projects div.linkcard.inactive h2.title,
+    ion-view#bal_project_details div.linkcard.inactive h2.title {
       color: #78909C; }
-    ion-view#projects div.linkcard.inactive p.description, ion-view#projectDetails div.linkcard.inactive p.description, ion-view#projectStatus div.linkcard.inactive p.description, ion-view#documents div.linkcard.inactive p.description, ion-view#documentCategory div.linkcard.inactive p.description {
+    ion-view#projects div.linkcard.inactive p.description,
+    ion-view#projectDetails div.linkcard.inactive p.description,
+    ion-view#projectStatus div.linkcard.inactive p.description,
+    ion-view#documents div.linkcard.inactive p.description,
+    ion-view#documentCategory div.linkcard.inactive p.description,
+    ion-view#notificationPage div.linkcard.inactive p.description,
+    ion-view#bal_projects div.linkcard.inactive p.description,
+    ion-view#bal_project_details div.linkcard.inactive p.description {
       color: #78909C; }
-  ion-view#projects body, ion-view#projectDetails body, ion-view#projectStatus body, ion-view#documents body, ion-view#documentCategory body {
+  ion-view#projects body,
+  ion-view#projectDetails body,
+  ion-view#projectStatus body,
+  ion-view#documents body,
+  ion-view#documentCategory body,
+  ion-view#notificationPage body,
+  ion-view#bal_projects body,
+  ion-view#bal_project_details body {
     padding: 30px 0;
     background-color: #F2F6F7; }
-  ion-view#projects .wrap, ion-view#projectDetails .wrap, ion-view#projectStatus .wrap, ion-view#documents .wrap, ion-view#documentCategory .wrap {
+  ion-view#projects .wrap,
+  ion-view#projectDetails .wrap,
+  ion-view#projectStatus .wrap,
+  ion-view#documents .wrap,
+  ion-view#documentCategory .wrap,
+  ion-view#notificationPage .wrap,
+  ion-view#bal_projects .wrap,
+  ion-view#bal_project_details .wrap {
     width: 600px;
     margin: 0 auto; }
-  ion-view#projects .progress-radial, ion-view#projectDetails .progress-radial, ion-view#projectStatus .progress-radial, ion-view#documents .progress-radial, ion-view#documentCategory .progress-radial {
+  ion-view#projects .progress-radial,
+  ion-view#projectDetails .progress-radial,
+  ion-view#projectStatus .progress-radial,
+  ion-view#documents .progress-radial,
+  ion-view#documentCategory .progress-radial,
+  ion-view#notificationPage .progress-radial,
+  ion-view#bal_projects .progress-radial,
+  ion-view#bal_project_details .progress-radial {
     float: left;
     margin-right: 30px;
     position: relative;
@@ -123,7 +221,14 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
     border-radius: 50%;
     border: 0.5px solid #F2F6F7;
     background-color: #81C784; }
-  ion-view#projects .progress-radial .overlay, ion-view#projectDetails .progress-radial .overlay, ion-view#projectStatus .progress-radial .overlay, ion-view#documents .progress-radial .overlay, ion-view#documentCategory .progress-radial .overlay {
+  ion-view#projects .progress-radial .overlay,
+  ion-view#projectDetails .progress-radial .overlay,
+  ion-view#projectStatus .progress-radial .overlay,
+  ion-view#documents .progress-radial .overlay,
+  ion-view#documentCategory .progress-radial .overlay,
+  ion-view#notificationPage .progress-radial .overlay,
+  ion-view#bal_projects .progress-radial .overlay,
+  ion-view#bal_project_details .progress-radial .overlay {
     color: #81C784;
     position: absolute;
     width: 50px;
@@ -135,47 +240,194 @@ ion-view#projects, ion-view#projectDetails, ion-view#projectStatus, ion-view#doc
     text-align: center;
     line-height: 48px;
     font-size: 16px; }
-  ion-view#projects .progress-0, ion-view#projectDetails .progress-0, ion-view#projectStatus .progress-0, ion-view#documents .progress-0, ion-view#documentCategory .progress-0 {
+  ion-view#projects .progress-0,
+  ion-view#projectDetails .progress-0,
+  ion-view#projectStatus .progress-0,
+  ion-view#documents .progress-0,
+  ion-view#documentCategory .progress-0,
+  ion-view#notificationPage .progress-0,
+  ion-view#bal_projects .progress-0,
+  ion-view#bal_project_details .progress-0 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(90deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-5, ion-view#projectDetails .progress-5, ion-view#projectStatus .progress-5, ion-view#documents .progress-5, ion-view#documentCategory .progress-5 {
+  ion-view#projects .progress-5,
+  ion-view#projectDetails .progress-5,
+  ion-view#projectStatus .progress-5,
+  ion-view#documents .progress-5,
+  ion-view#documentCategory .progress-5,
+  ion-view#notificationPage .progress-5,
+  ion-view#bal_projects .progress-5,
+  ion-view#bal_project_details .progress-5 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(108deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-10, ion-view#projectDetails .progress-10, ion-view#projectStatus .progress-10, ion-view#documents .progress-10, ion-view#documentCategory .progress-10 {
+  ion-view#projects .progress-10,
+  ion-view#projectDetails .progress-10,
+  ion-view#projectStatus .progress-10,
+  ion-view#documents .progress-10,
+  ion-view#documentCategory .progress-10,
+  ion-view#notificationPage .progress-10,
+  ion-view#bal_projects .progress-10,
+  ion-view#bal_project_details .progress-10 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(126deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-15, ion-view#projectDetails .progress-15, ion-view#projectStatus .progress-15, ion-view#documents .progress-15, ion-view#documentCategory .progress-15 {
+  ion-view#projects .progress-15,
+  ion-view#projectDetails .progress-15,
+  ion-view#projectStatus .progress-15,
+  ion-view#documents .progress-15,
+  ion-view#documentCategory .progress-15,
+  ion-view#notificationPage .progress-15,
+  ion-view#bal_projects .progress-15,
+  ion-view#bal_project_details .progress-15 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(144deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-20, ion-view#projectDetails .progress-20, ion-view#projectStatus .progress-20, ion-view#documents .progress-20, ion-view#documentCategory .progress-20 {
+  ion-view#projects .progress-20,
+  ion-view#projectDetails .progress-20,
+  ion-view#projectStatus .progress-20,
+  ion-view#documents .progress-20,
+  ion-view#documentCategory .progress-20,
+  ion-view#notificationPage .progress-20,
+  ion-view#bal_projects .progress-20,
+  ion-view#bal_project_details .progress-20 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(162deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-25, ion-view#projectDetails .progress-25, ion-view#projectStatus .progress-25, ion-view#documents .progress-25, ion-view#documentCategory .progress-25 {
+  ion-view#projects .progress-25,
+  ion-view#projectDetails .progress-25,
+  ion-view#projectStatus .progress-25,
+  ion-view#documents .progress-25,
+  ion-view#documentCategory .progress-25,
+  ion-view#notificationPage .progress-25,
+  ion-view#bal_projects .progress-25,
+  ion-view#bal_project_details .progress-25 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(180deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-30, ion-view#projectDetails .progress-30, ion-view#projectStatus .progress-30, ion-view#documents .progress-30, ion-view#documentCategory .progress-30 {
+  ion-view#projects .progress-30,
+  ion-view#projectDetails .progress-30,
+  ion-view#projectStatus .progress-30,
+  ion-view#documents .progress-30,
+  ion-view#documentCategory .progress-30,
+  ion-view#notificationPage .progress-30,
+  ion-view#bal_projects .progress-30,
+  ion-view#bal_project_details .progress-30 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(198deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-35, ion-view#projectDetails .progress-35, ion-view#projectStatus .progress-35, ion-view#documents .progress-35, ion-view#documentCategory .progress-35 {
+  ion-view#projects .progress-35,
+  ion-view#projectDetails .progress-35,
+  ion-view#projectStatus .progress-35,
+  ion-view#documents .progress-35,
+  ion-view#documentCategory .progress-35,
+  ion-view#notificationPage .progress-35,
+  ion-view#bal_projects .progress-35,
+  ion-view#bal_project_details .progress-35 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(216deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-40, ion-view#projectDetails .progress-40, ion-view#projectStatus .progress-40, ion-view#documents .progress-40, ion-view#documentCategory .progress-40 {
+  ion-view#projects .progress-40,
+  ion-view#projectDetails .progress-40,
+  ion-view#projectStatus .progress-40,
+  ion-view#documents .progress-40,
+  ion-view#documentCategory .progress-40,
+  ion-view#notificationPage .progress-40,
+  ion-view#bal_projects .progress-40,
+  ion-view#bal_project_details .progress-40 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(234deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-45, ion-view#projectDetails .progress-45, ion-view#projectStatus .progress-45, ion-view#documents .progress-45, ion-view#documentCategory .progress-45 {
+  ion-view#projects .progress-45,
+  ion-view#projectDetails .progress-45,
+  ion-view#projectStatus .progress-45,
+  ion-view#documents .progress-45,
+  ion-view#documentCategory .progress-45,
+  ion-view#notificationPage .progress-45,
+  ion-view#bal_projects .progress-45,
+  ion-view#bal_project_details .progress-45 {
     background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(252deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-50, ion-view#projectDetails .progress-50, ion-view#projectStatus .progress-50, ion-view#documents .progress-50, ion-view#documentCategory .progress-50 {
+  ion-view#projects .progress-50,
+  ion-view#projectDetails .progress-50,
+  ion-view#projectStatus .progress-50,
+  ion-view#documents .progress-50,
+  ion-view#documentCategory .progress-50,
+  ion-view#notificationPage .progress-50,
+  ion-view#bal_projects .progress-50,
+  ion-view#bal_project_details .progress-50 {
     background-image: linear-gradient(-90deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-55, ion-view#projectDetails .progress-55, ion-view#projectStatus .progress-55, ion-view#documents .progress-55, ion-view#documentCategory .progress-55 {
+  ion-view#projects .progress-55,
+  ion-view#projectDetails .progress-55,
+  ion-view#projectStatus .progress-55,
+  ion-view#documents .progress-55,
+  ion-view#documentCategory .progress-55,
+  ion-view#notificationPage .progress-55,
+  ion-view#bal_projects .progress-55,
+  ion-view#bal_project_details .progress-55 {
     background-image: linear-gradient(-72deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-60, ion-view#projectDetails .progress-60, ion-view#projectStatus .progress-60, ion-view#documents .progress-60, ion-view#documentCategory .progress-60 {
+  ion-view#projects .progress-60,
+  ion-view#projectDetails .progress-60,
+  ion-view#projectStatus .progress-60,
+  ion-view#documents .progress-60,
+  ion-view#documentCategory .progress-60,
+  ion-view#notificationPage .progress-60,
+  ion-view#bal_projects .progress-60,
+  ion-view#bal_project_details .progress-60 {
     background-image: linear-gradient(-54deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-65, ion-view#projectDetails .progress-65, ion-view#projectStatus .progress-65, ion-view#documents .progress-65, ion-view#documentCategory .progress-65 {
+  ion-view#projects .progress-65,
+  ion-view#projectDetails .progress-65,
+  ion-view#projectStatus .progress-65,
+  ion-view#documents .progress-65,
+  ion-view#documentCategory .progress-65,
+  ion-view#notificationPage .progress-65,
+  ion-view#bal_projects .progress-65,
+  ion-view#bal_project_details .progress-65 {
     background-image: linear-gradient(-36deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-70, ion-view#projectDetails .progress-70, ion-view#projectStatus .progress-70, ion-view#documents .progress-70, ion-view#documentCategory .progress-70 {
+  ion-view#projects .progress-70,
+  ion-view#projectDetails .progress-70,
+  ion-view#projectStatus .progress-70,
+  ion-view#documents .progress-70,
+  ion-view#documentCategory .progress-70,
+  ion-view#notificationPage .progress-70,
+  ion-view#bal_projects .progress-70,
+  ion-view#bal_project_details .progress-70 {
     background-image: linear-gradient(-18deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-75, ion-view#projectDetails .progress-75, ion-view#projectStatus .progress-75, ion-view#documents .progress-75, ion-view#documentCategory .progress-75 {
+  ion-view#projects .progress-75,
+  ion-view#projectDetails .progress-75,
+  ion-view#projectStatus .progress-75,
+  ion-view#documents .progress-75,
+  ion-view#documentCategory .progress-75,
+  ion-view#notificationPage .progress-75,
+  ion-view#bal_projects .progress-75,
+  ion-view#bal_project_details .progress-75 {
     background-image: linear-gradient(0deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-80, ion-view#projectDetails .progress-80, ion-view#projectStatus .progress-80, ion-view#documents .progress-80, ion-view#documentCategory .progress-80 {
+  ion-view#projects .progress-80,
+  ion-view#projectDetails .progress-80,
+  ion-view#projectStatus .progress-80,
+  ion-view#documents .progress-80,
+  ion-view#documentCategory .progress-80,
+  ion-view#notificationPage .progress-80,
+  ion-view#bal_projects .progress-80,
+  ion-view#bal_project_details .progress-80 {
     background-image: linear-gradient(18deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-85, ion-view#projectDetails .progress-85, ion-view#projectStatus .progress-85, ion-view#documents .progress-85, ion-view#documentCategory .progress-85 {
+  ion-view#projects .progress-85,
+  ion-view#projectDetails .progress-85,
+  ion-view#projectStatus .progress-85,
+  ion-view#documents .progress-85,
+  ion-view#documentCategory .progress-85,
+  ion-view#notificationPage .progress-85,
+  ion-view#bal_projects .progress-85,
+  ion-view#bal_project_details .progress-85 {
     background-image: linear-gradient(36deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-90, ion-view#projectDetails .progress-90, ion-view#projectStatus .progress-90, ion-view#documents .progress-90, ion-view#documentCategory .progress-90 {
+  ion-view#projects .progress-90,
+  ion-view#projectDetails .progress-90,
+  ion-view#projectStatus .progress-90,
+  ion-view#documents .progress-90,
+  ion-view#documentCategory .progress-90,
+  ion-view#notificationPage .progress-90,
+  ion-view#bal_projects .progress-90,
+  ion-view#bal_project_details .progress-90 {
     background-image: linear-gradient(54deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-95, ion-view#projectDetails .progress-95, ion-view#projectStatus .progress-95, ion-view#documents .progress-95, ion-view#documentCategory .progress-95 {
+  ion-view#projects .progress-95,
+  ion-view#projectDetails .progress-95,
+  ion-view#projectStatus .progress-95,
+  ion-view#documents .progress-95,
+  ion-view#documentCategory .progress-95,
+  ion-view#notificationPage .progress-95,
+  ion-view#bal_projects .progress-95,
+  ion-view#bal_project_details .progress-95 {
     background-image: linear-gradient(72deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
-  ion-view#projects .progress-100, ion-view#projectDetails .progress-100, ion-view#projectStatus .progress-100, ion-view#documents .progress-100, ion-view#documentCategory .progress-100 {
+  ion-view#projects .progress-100,
+  ion-view#projectDetails .progress-100,
+  ion-view#projectStatus .progress-100,
+  ion-view#documents .progress-100,
+  ion-view#documentCategory .progress-100,
+  ion-view#notificationPage .progress-100,
+  ion-view#bal_projects .progress-100,
+  ion-view#bal_project_details .progress-100 {
     background-image: linear-gradient(90deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
 
 ion-view#projects div.linkcard a {
@@ -249,10 +501,11 @@ ion-view#projectStatus div.appstatus {
 
 ion-view#documents ion-content div.button-upload {
   text-align: center;
-  margin: 5%; }
+  margin: 3%; }
   ion-view#documents ion-content div.button-upload button {
+    width: 46%;
     border-radius: 0;
-    margin: 2%;
+    margin: 2% 1%;
     background-color: white;
     color: #42BCBA;
     box-shadow: 0.5px 2px 2px #CFD8DC; }

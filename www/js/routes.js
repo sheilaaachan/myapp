@@ -95,16 +95,29 @@ angular.module('app.routes', [])
     url: '/notification',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/notification.html',
+        templateUrl: 'templates/bal_assistant/notification.html',
         controller: 'NotificationCtrl'
       }
     }
   })
-  // .state('notification', {
-  //   url: '/notification',
-  //   templateUrl: 'templates/notification.html',
-  //   controller: 'NotificationCtrl'
-  // })
+  .state('menu.bal_projects', {
+    url: '/bal_projects',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/bal_assistant/bal_projects.html',
+        controller: 'balprojectsCtrl'
+      }
+    }
+  })
+  .state('menu.bal_project_details', {
+    url: '/bal_project_details',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/bal_assistant/bal_project_details.html',
+        controller: 'balprojectdetailsCtrl'
+      }
+    }
+  })
 
 $urlRouterProvider.otherwise('/login')
 

@@ -262,11 +262,14 @@ angular.module('app.controllers', ['ngCordova'])
 
 .controller('logInCtrl', function($scope, $state) {
   $scope.login = function() {
-    if (($scope.login.username == "BALAssistant") && ($scope.login.password == "pass123")) {
+    if (($scope.login.username == "Baluser") && ($scope.login.password == "pass123")) {
       $state.go('menu.notification');
     }
-    else {
+    else if (($scope.login.username == "Employee") && ($scope.login.password == "pass123")) {
       $state.go('menu.projectDetails');
+    }
+    else {
+      alert("Invalid Username/Password");
     }
   };
 })
@@ -278,18 +281,67 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 1,
         text: "Case initiated, document(s) are required from user.",
-        // at: _5_sec_from_now
-        at: _30_sec_from_now
+        at: _5_sec_from_now
+        // at: _30_sec_from_now
     });
   };
+    // cordova.plugins.notification.local.on("trigger", function (notification) {
+    //     var message = "";
+    //     if (notification.id == 1){
+    //         message = "Case initiated, document(s) are required from user.";
+    //     }
+    //     else if (notification.id == 2){
+    //         message = "Document(s) received by BAL case manager.";
+    //     }
+    //     else if (notification.id == 3){
+    //         message = "Changed in application status.";
+    //     }
+    //     else return;
+    //     $cordovaDialogs.alert('', message, 'OK')
+    //       .then(function() {
+    //         // callback success
+    //     });
+    // });
+    // };
+})
+
+.controller('balprojectsCtrl', function($scope) {
+  $scope.active_projs = [
+    {
+      title: "H1-B",
+      progress: 60,
+      type: "Not Visa",
+      initiation_date: "9 APR 2016"
+    },
+    {
+      title: "Angola Business Visa",
+      progress: 20,
+      type: "Visa",
+      initiation_date: "31 JAN 2016"
+    },
+    {
+      title: "China Business Visa",
+      progress: 80,
+      type: "Visa",
+      initiation_date: "12 NOV 2015"
+    },
+    {
+      title: "Saudi Arabia Business Visa",
+      progress: 75,
+      type: "Visa",
+      initiation_date: "4 JUL 2015"
+    }];
+})
+
+.controller('balprojectdetailsCtrl', function($scope) {
   $scope.documentReceived = function() {
     var now = new Date().getTime(),
     _3_sec_from_now = new Date(now + 3 * 1000);
     cordova.plugins.notification.local.schedule({
         id: 2,
         text: "Document(s) received by BAL case manager.",
-        // at: _3_sec_from_now
-        at: _35_sec_from_now
+        at: _3_sec_from_now
+        // at: _35_sec_from_now
     });
   };
   $scope.statusChanged = function() {
@@ -298,8 +350,8 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 3,
         text: "Changed in application status.",
-        // at: _1_sec_from_now
-        at: _40_sec_from_now
+        at: _1_sec_from_now
+        // at: _40_sec_from_now
     });
     // cordova.plugins.notification.local.on("trigger", function (notification) {
     //     var message = "";
