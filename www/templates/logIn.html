@@ -1,5 +1,6 @@
-<ion-view title="Log in" id="page9" ng-controller="logInCtrl">
+<ion-view title="iMS Assist" id="login" ng-controller="logInCtrl">
     <ion-content padding="true" class="has-header">
+      <div class="login_contain">
         <form class="list">
             <ion-list>
                 <label class="item item-input">
@@ -9,8 +10,11 @@
                     <input type="password" ng-model="login.password" placeholder="Password">
                 </label>
             </ion-list>
-            <div class="spacer" style="height: 40px;"></div>
-            <button type="submit" id="logIn-button33" class="button button-stable  button-block" ng-click="login()">Log in</button>
+            <button type="submit" id="logIn-button33" class="button button-block" ng-click="login()">Log in</button>
+            <br>
+            <p class="description">BAL Assistant Login: <br>Baluser/pass123</p>
+            <p class="description">Employee Login: <br>Employee/pass123</p>
         </form>
+      </div>
     </ion-content>
 </ion-view>
