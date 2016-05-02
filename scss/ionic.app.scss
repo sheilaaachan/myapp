@@ -94,15 +94,15 @@ ion-side-menu#side-menu21{
 }
 
 ion-view#login{
+  // background-color: $primary-color-4;
   div.login_contain{
-    background-color: rgba(0, 0, 0, 0);;
+    background-color: rgba(255, 255, 255, 0);
     padding: 10%;
-    margin-top: 20%;
-    h2.title{
-      text-align: center;
-      margin-bottom: 15%;
-      color: $primary-color-4;
-      font-size: 2.5em;
+    margin-top: 5%;
+    text-align: center;
+    img{
+      max-height: 100px;
+      margin-bottom: 10%;
     }
     label{
       border-top: none;
@@ -114,7 +114,8 @@ ion-view#login{
       background-color: $primary-color-4;
       color: white;
       box-shadow: $box-shadow;
-      border-radius: 0px;
+      border-radius: 2px;
+      margin: 5% 2%;
     }
   }
 }

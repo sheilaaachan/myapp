@@ -4,6 +4,7 @@ angular.module('app.directives', [])
 
 }])
 
+
 .run(['$templateCache', function($templateCache) {
         $templateCache.put('src/slidepoints.html',
             '<div class="slider-pager">' +
@@ -38,6 +39,3 @@ angular.module('app.directives', [])
             templateUrl: 'src/slidepoints.html'
         };
     });
-
-
-
