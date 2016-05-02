@@ -31,11 +31,11 @@ p.percentage {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 20px;
-  color: #81C784;
+  color: #42BCBA;
   display: inline-block;
   height: 100%; }
   p.percentage i.completed {
-    color: #81C784; }
+    color: #42BCBA; }
   p.percentage i.in-progress {
     color: #FFC107; }
   p.percentage i.not-started {
@@ -134,7 +134,7 @@ ion-view#bal_project_details {
         top: 0;
         display: inline;
         width: 3px;
-        background-color: #81C784; }
+        background-color: #42BCBA; }
     ion-view#projects div.linkcard a,
     ion-view#projectDetails div.linkcard a,
     ion-view#projectStatus div.linkcard a,
@@ -240,7 +240,7 @@ ion-view#bal_project_details {
     height: 60px;
     border-radius: 50%;
     border: 0.5px solid #F2F6F7;
-    background-color: #81C784; }
+    background-color: #42BCBA; }
   ion-view#projects .progress-radial .overlay,
   ion-view#projectDetails .progress-radial .overlay,
   ion-view#projectStatus .progress-radial .overlay,
@@ -249,7 +249,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-radial .overlay,
   ion-view#bal_projects .progress-radial .overlay,
   ion-view#bal_project_details .progress-radial .overlay {
-    color: #81C784;
+    color: #42BCBA;
     position: absolute;
     width: 50px;
     height: 50px;
@@ -268,7 +268,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-0,
   ion-view#bal_projects .progress-0,
   ion-view#bal_project_details .progress-0 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(90deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(90deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-5,
   ion-view#projectDetails .progress-5,
   ion-view#projectStatus .progress-5,
@@ -277,7 +277,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-5,
   ion-view#bal_projects .progress-5,
   ion-view#bal_project_details .progress-5 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(108deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(108deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-10,
   ion-view#projectDetails .progress-10,
   ion-view#projectStatus .progress-10,
@@ -286,7 +286,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-10,
   ion-view#bal_projects .progress-10,
   ion-view#bal_project_details .progress-10 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(126deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(126deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-15,
   ion-view#projectDetails .progress-15,
   ion-view#projectStatus .progress-15,
@@ -295,7 +295,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-15,
   ion-view#bal_projects .progress-15,
   ion-view#bal_project_details .progress-15 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(144deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(144deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-20,
   ion-view#projectDetails .progress-20,
   ion-view#projectStatus .progress-20,
@@ -304,7 +304,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-20,
   ion-view#bal_projects .progress-20,
   ion-view#bal_project_details .progress-20 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(162deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(162deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-25,
   ion-view#projectDetails .progress-25,
   ion-view#projectStatus .progress-25,
@@ -313,7 +313,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-25,
   ion-view#bal_projects .progress-25,
   ion-view#bal_project_details .progress-25 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(180deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(180deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-30,
   ion-view#projectDetails .progress-30,
   ion-view#projectStatus .progress-30,
@@ -322,7 +322,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-30,
   ion-view#bal_projects .progress-30,
   ion-view#bal_project_details .progress-30 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(198deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(198deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-35,
   ion-view#projectDetails .progress-35,
   ion-view#projectStatus .progress-35,
@@ -331,7 +331,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-35,
   ion-view#bal_projects .progress-35,
   ion-view#bal_project_details .progress-35 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(216deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(216deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-40,
   ion-view#projectDetails .progress-40,
   ion-view#projectStatus .progress-40,
@@ -340,7 +340,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-40,
   ion-view#bal_projects .progress-40,
   ion-view#bal_project_details .progress-40 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(234deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(234deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-45,
   ion-view#projectDetails .progress-45,
   ion-view#projectStatus .progress-45,
@@ -349,7 +349,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-45,
   ion-view#bal_projects .progress-45,
   ion-view#bal_project_details .progress-45 {
-    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(252deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #F2F6F7 50%, transparent 50%, transparent), linear-gradient(252deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-50,
   ion-view#projectDetails .progress-50,
   ion-view#projectStatus .progress-50,
@@ -358,7 +358,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-50,
   ion-view#bal_projects .progress-50,
   ion-view#bal_project_details .progress-50 {
-    background-image: linear-gradient(-90deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(-90deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-55,
   ion-view#projectDetails .progress-55,
   ion-view#projectStatus .progress-55,
@@ -367,7 +367,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-55,
   ion-view#bal_projects .progress-55,
   ion-view#bal_project_details .progress-55 {
-    background-image: linear-gradient(-72deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(-72deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-60,
   ion-view#projectDetails .progress-60,
   ion-view#projectStatus .progress-60,
@@ -376,7 +376,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-60,
   ion-view#bal_projects .progress-60,
   ion-view#bal_project_details .progress-60 {
-    background-image: linear-gradient(-54deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(-54deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-65,
   ion-view#projectDetails .progress-65,
   ion-view#projectStatus .progress-65,
@@ -385,7 +385,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-65,
   ion-view#bal_projects .progress-65,
   ion-view#bal_project_details .progress-65 {
-    background-image: linear-gradient(-36deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(-36deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-70,
   ion-view#projectDetails .progress-70,
   ion-view#projectStatus .progress-70,
@@ -394,7 +394,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-70,
   ion-view#bal_projects .progress-70,
   ion-view#bal_project_details .progress-70 {
-    background-image: linear-gradient(-18deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(-18deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-75,
   ion-view#projectDetails .progress-75,
   ion-view#projectStatus .progress-75,
@@ -403,7 +403,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-75,
   ion-view#bal_projects .progress-75,
   ion-view#bal_project_details .progress-75 {
-    background-image: linear-gradient(0deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(0deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-80,
   ion-view#projectDetails .progress-80,
   ion-view#projectStatus .progress-80,
@@ -412,7 +412,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-80,
   ion-view#bal_projects .progress-80,
   ion-view#bal_project_details .progress-80 {
-    background-image: linear-gradient(18deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(18deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-85,
   ion-view#projectDetails .progress-85,
   ion-view#projectStatus .progress-85,
@@ -421,7 +421,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-85,
   ion-view#bal_projects .progress-85,
   ion-view#bal_project_details .progress-85 {
-    background-image: linear-gradient(36deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(36deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-90,
   ion-view#projectDetails .progress-90,
   ion-view#projectStatus .progress-90,
@@ -430,7 +430,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-90,
   ion-view#bal_projects .progress-90,
   ion-view#bal_project_details .progress-90 {
-    background-image: linear-gradient(54deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(54deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-95,
   ion-view#projectDetails .progress-95,
   ion-view#projectStatus .progress-95,
@@ -439,7 +439,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-95,
   ion-view#bal_projects .progress-95,
   ion-view#bal_project_details .progress-95 {
-    background-image: linear-gradient(72deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(72deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
   ion-view#projects .progress-100,
   ion-view#projectDetails .progress-100,
   ion-view#projectStatus .progress-100,
@@ -448,7 +448,7 @@ ion-view#bal_project_details {
   ion-view#notificationPage .progress-100,
   ion-view#bal_projects .progress-100,
   ion-view#bal_project_details .progress-100 {
-    background-image: linear-gradient(90deg, #81C784 50%, transparent 50%, transparent), linear-gradient(270deg, #81C784 50%, #F2F6F7 50%, #F2F6F7); }
+    background-image: linear-gradient(90deg, #42BCBA 50%, transparent 50%, transparent), linear-gradient(270deg, #42BCBA 50%, #F2F6F7 50%, #F2F6F7); }
 
 ion-view#projects div.linkcard a {
   margin-bottom: 0;
@@ -475,9 +475,9 @@ ion-view#projects div.linkcard.inactive div.tribar {
   background-color: #F2F6F7;
   opacity: 0.9; }
   ion-view#projects div.linkcard.inactive div.tribar div {
-    color: #81C784; }
+    color: #42BCBA; }
     ion-view#projects div.linkcard.inactive div.tribar div i.completed {
-      color: #81C784; }
+      color: #42BCBA; }
 
 ion-view#projectStatus div.appstatus {
   position: relative;
@@ -494,7 +494,7 @@ ion-view#projectStatus div.appstatus {
     ion-view#projectStatus div.appstatus span.progresscircle.pc1 {
       left: 0;
       top: -7px;
-      border: 3px solid #81C784;
+      border: 3px solid #42BCBA;
       background-color: white; }
     ion-view#projectStatus div.appstatus span.progresscircle.pc2 {
       left: 33%;
@@ -513,7 +513,7 @@ ion-view#projectStatus div.appstatus {
     float: left;
     display: inline;
     height: 3px;
-    background-color: #81C784; }
+    background-color: #42BCBA; }
   ion-view#projectStatus div.appstatus p {
     position: absolute;
     left: 25%;
