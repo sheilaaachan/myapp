@@ -397,6 +397,34 @@ ion-view#documentDetail{
     box-shadow: $box-shadow;
     background-color: white;
     padding: 5%;
+    text-align: center;
+    label{
+      border: 1px solid $grey-color-3;
+      select.doctype_dropdown{
+        width: 100%;
+        color: $grey-color-1;
+        left: 0;
+      }
+    }
+
+    input{
+      color: $grey-color-0;
+      // height: 100px;
+    }
+    textarea{
+      width: 100%;
+      border: 1px solid $grey-color-3;
+      border-radius: 0px;
+      padding: 3%;
+      -webkit-appearance: none;
+    }
+    a.button{
+      background-color: $primary-color-4;
+      color: white;
+      width: 40%;
+      margin: 3%;
+      box-shadow: $box-shadow;
+    }
   }
   div.button-upload{
     div.col{

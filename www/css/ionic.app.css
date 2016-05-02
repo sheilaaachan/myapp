@@ -525,7 +525,28 @@ ion-view#documentDetail {
     margin-top: 10px;
     box-shadow: 0.5px 2px 2px #CFD8DC;
     background-color: white;
-    padding: 5%; }
+    padding: 5%;
+    text-align: center; }
+    ion-view#documentDetail div.linkcard label {
+      border: 1px solid #ECEFF1; }
+      ion-view#documentDetail div.linkcard label select.doctype_dropdown {
+        width: 100%;
+        color: #78909C;
+        left: 0; }
+    ion-view#documentDetail div.linkcard input {
+      color: #37474F; }
+    ion-view#documentDetail div.linkcard textarea {
+      width: 100%;
+      border: 1px solid #ECEFF1;
+      border-radius: 0px;
+      padding: 3%;
+      -webkit-appearance: none; }
+    ion-view#documentDetail div.linkcard a.button {
+      background-color: #42BCBA;
+      color: white;
+      width: 40%;
+      margin: 3%;
+      box-shadow: 0.5px 2px 2px #CFD8DC; }
   ion-view#documentDetail div.button-upload div.col {
     display: inline-block; }
   ion-view#documentDetail div.button-upload button.button-upload-btn {

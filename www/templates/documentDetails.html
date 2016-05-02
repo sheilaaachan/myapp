@@ -1,49 +1,42 @@
 <ion-view title="Details" id="documentDetail" ng-controller="documentDetailsCtrl">
     <ion-content class="has-header">
-      <div class="linkcard button-upload">
-        <div class="row row-center">
-          <div class="col col-50">
-            <button class="button button-light button-upload-btn" ng-click="getCameraRoll()">
-              <i class="icon icon ion-ios-upload"></i><br>
-              <p class="description">Upload Document</p>
-            </button>
-          </div>
-          <div class="col col-50">
-            <button class="button button-light button-upload-btn" ng-click="getPhoto()">
-              <i class="icon icon ion-ios-camera"></i><br>
-              <p class="description">Scan Document</p>
-            </button>
-          </div>
-          <div class="col col-50">
-            <button class="button button-light button-upload-btn" ng-click="getPhoto()">
-              <i class="icon icon ion-ios-camera"></i><br>
-              <p class="description">Third one</p>
-            </button>
-          </div>
-        </div>
-      </div>
         <div class="linkcard" >
-          <div class="attachment-holder" ng-if='document.attachment[0]'>
-              <div class="attachment-photo" ng-repeat='photo in document.attachment track by $index | limitTo: 4'>
-                  <img src="{{photo.FilePath}}" ng-if='photo.FilePath' alt="" ng-click='viewPhoto($index)' />
-              </div>
+          <label class="item item-select">
+              <select style="float: left;" class="doctype_dropdown">
+                  <option disabled selected>Select a Document Type</option>
+                  <option>Diploma</option>
+                  <option>Passport</option>
+                  <option>Resume</option>
+                  <option>US Visa</option>
+                  <option>Immigration Paperwork</option>
+                  <option>Other</option>
+              </select>
+          </label>
+          <div class="row row-center button-upload">
+            <div class="col col-50">
+              <button class="button button-light button-upload-btn" ng-click="getCameraRoll()">
+                <i class="icon icon ion-ios-upload"></i><br>
+                <p class="description">Upload Document</p>
+              </button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-light button-upload-btn" ng-click="getPhoto()">
+                <i class="icon icon ion-ios-camera"></i><br>
+                <p class="description">Scan Document</p>
+              </button>
+            </div>
           </div>
           <form class="list">
-              <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label>
-              <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label>
-              <label class="item item-select">
-                  <select style="float: left;">
-                      <option disabled selected>Select a Type</option>
-                      <option>Diploma</option>
-                      <option>Passport</option>
-                      <option>Resume</option>
-                      <option>US Visa</option>
-                      <option>Immigration Paperwork</option>
-                      <option>Other</option>
-                  </select>
-              </label>
+              <div class="attachment-holder" ng-if='document.attachment[0]'>
+                  <div class="attachment-photo" ng-repeat='photo in document.attachment track by $index | limitTo: 4'>
+                      <img src="{{photo.FilePath}}" ng-if='photo.FilePath' alt="" ng-click='viewPhoto($index)' />
+                  </div>
+              </div>
+              <!-- <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label> -->
+              <textarea placeholder="OCR String will be populated here." rows="10"></textarea>
           </form>
-          <a ui-sref="menu.documentCategories" style="border-radius:0px 0px 0px 0px;" class="button button-balanced button-block">Save</a>
+          <a ui-sref="menu.documentCategories" style="border-radius:0px 0px 0px 0px;" class="button">Save</a>
+          <a ui-sref="menu.documents" style="border-radius:0px 0px 0px 0px;" class="button">Cancel</a>
       </div>
     </ion-content>
 </ion-view>
