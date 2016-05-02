@@ -384,35 +384,38 @@ ion-view#documents{
   //     }
   //   }
   // }
-  ion-content{
-    div.button-upload{
-      text-align: center;
-      margin: 3%;
-      button{
-        width: 46%;
-        border-radius: 0;
-        margin: 2% 1%;
-        background-color: white;
-        color: $primary-color-4;
-        box-shadow: $box-shadow;
-        i::before{
-          font-size: 36px;
-          padding: 5% 0px 0px 0px;
-        }
-      }
-    }
-  }
+
 }
 
 // Document Detail Page
 
 ion-view#documentDetail{
   background-color: $grey-color-3;
+
   div.linkcard{
     margin-top: 10px;
     box-shadow: $box-shadow;
     background-color: white;
     padding: 5%;
+  }
+  div.button-upload{
+    div.col{
+      display: inline-block;
+    }
+    button.button-upload-btn{
+      border-radius: 0;
+      background-color: white;
+      color: $primary-color-4;
+      i::before{
+        font-size: 36px;
+        padding: 5% 0px 0px 0px;
+      }
+      p{
+        text-align: center;
+        font-weight: 400;
+        margin: 5%;
+      }
+    }
   }
 }
 

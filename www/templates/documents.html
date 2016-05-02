@@ -7,7 +7,26 @@
       </div> -->
     </div>
     <ion-content padding="false" class="has-header">
-      <div class="button-upload">
+      <div class="linkcard">
+
+        <a ui-sref="menu.documentDetails" class="button button-full">
+          <div class="row row-center">
+            <div class="col col-20">
+              <p class="percentage" >
+                <i class="icon icon ion-plus-round"></i>
+              </p>
+            </div>
+            <div class="col col-70">
+              <h2 class="title">Add a New Document</h2>
+              <p class="description">{{document.description}}</p>
+            </div>
+            <div class="col col-10">
+              <i class="icon icon ion-chevron-right"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="button-upload">
         <button class="button button-light" ng-click="getCameraRoll()">
           <i class="icon icon ion-ios-upload"></i><br>
           Upload Document
@@ -16,7 +35,7 @@
           <i class="icon icon ion-ios-camera"></i><br>
           Scan Document
         </button>
-      </div>
+      </div> -->
         <p class="description">To Upload</p>
         <div class="linkcard" id="toupload" ng-repeat="document in toupload_documents">
 

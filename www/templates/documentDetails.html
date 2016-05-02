@@ -1,22 +1,45 @@
 <ion-view title="Details" id="documentDetail" ng-controller="documentDetailsCtrl">
     <ion-content class="has-header">
-        <div class="linkcard">
-<!--           <div>
-              <img src="img/FIF1lcFgSJa2qu1J5L99_diploma_carnegie_mellon.jpg">
-          </div> -->
+      <div class="linkcard button-upload">
+        <div class="row row-center">
+          <div class="col col-50">
+            <button class="button button-light button-upload-btn" ng-click="getCameraRoll()">
+              <i class="icon icon ion-ios-upload"></i><br>
+              <p class="description">Upload Document</p>
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button button-light button-upload-btn" ng-click="getPhoto()">
+              <i class="icon icon ion-ios-camera"></i><br>
+              <p class="description">Scan Document</p>
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button button-light button-upload-btn" ng-click="getPhoto()">
+              <i class="icon icon ion-ios-camera"></i><br>
+              <p class="description">Third one</p>
+            </button>
+          </div>
+        </div>
+      </div>
+        <div class="linkcard" >
           <div class="attachment-holder" ng-if='document.attachment[0]'>
               <div class="attachment-photo" ng-repeat='photo in document.attachment track by $index | limitTo: 4'>
                   <img src="{{photo.FilePath}}" ng-if='photo.FilePath' alt="" ng-click='viewPhoto($index)' />
               </div>
           </div>
           <form class="list">
-              <label class="item item-input"><input type="text" value="B.S. Information Systems"></label>
-              <label class="item item-input"><input type="text" value="Carnegie Mellon"></label>
+              <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label>
+              <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label>
               <label class="item item-select">
-                  <span class="input-label"></span>
-                  <select>
+                  <select style="float: left;">
+                      <option disabled selected>Select a Type</option>
                       <option>Diploma</option>
+                      <option>Passport</option>
                       <option>Resume</option>
+                      <option>US Visa</option>
+                      <option>Immigration Paperwork</option>
+                      <option>Other</option>
                   </select>
               </label>
           </form>

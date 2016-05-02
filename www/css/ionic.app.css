@@ -519,20 +519,6 @@ ion-view#projectStatus div.appstatus {
     left: 25%;
     top: 10px; }
 
-ion-view#documents ion-content div.button-upload {
-  text-align: center;
-  margin: 3%; }
-  ion-view#documents ion-content div.button-upload button {
-    width: 46%;
-    border-radius: 0;
-    margin: 2% 1%;
-    background-color: white;
-    color: #42BCBA;
-    box-shadow: 0.5px 2px 2px #CFD8DC; }
-    ion-view#documents ion-content div.button-upload button i::before {
-      font-size: 36px;
-      padding: 5% 0px 0px 0px; }
-
 ion-view#documentDetail {
   background-color: #ECEFF1; }
   ion-view#documentDetail div.linkcard {
@@ -540,6 +526,19 @@ ion-view#documentDetail {
     box-shadow: 0.5px 2px 2px #CFD8DC;
     background-color: white;
     padding: 5%; }
+  ion-view#documentDetail div.button-upload div.col {
+    display: inline-block; }
+  ion-view#documentDetail div.button-upload button.button-upload-btn {
+    border-radius: 0;
+    background-color: white;
+    color: #42BCBA; }
+    ion-view#documentDetail div.button-upload button.button-upload-btn i::before {
+      font-size: 36px;
+      padding: 5% 0px 0px 0px; }
+    ion-view#documentDetail div.button-upload button.button-upload-btn p {
+      text-align: center;
+      font-weight: 400;
+      margin: 5%; }
 
 /*!
   Ionicons, v2.0.1
