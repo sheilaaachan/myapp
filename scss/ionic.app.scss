@@ -390,6 +390,23 @@ ion-view#projectStatus{
 // Documents Page
 
 ion-view#documents{
+  p.document-header{
+    padding-top: 20px;
+  }
+  div.linkcard{
+    margin-top: 0px;
+
+    a.button{
+      padding-top: 3px;
+      padding-bottom: 3px;
+      margin-bottom: 1px;
+      h2.title{
+        margin-top: 0px;
+        margin-bottom: 5px;
+      }
+    }
+
+  }
   // div.tabs{
   //   a{
   //     background-color: $grey-color-4;

@@ -51,25 +51,30 @@ angular.module('app.controllers', ['ngCordova'])
     {
       title: "Diploma(s)",
       description: "Copies of all degrees, diplomas, and transcripts, if applicable",
-      status: "To Upload"
+      status: "To Upload",
+      projects: "H1-B, OPT Stem"
     },{
       title: "Passport(s)",
       description: "Copy of passport biographic and signature pages",
-      status: "To Upload"
+      status: "To Upload",
+      projects: "H1-B, Angola Business Visa, China Business Visa, OPT Stem"
     },{
       title: "Resume",
       description: "Copy of up-to-date resume (CV) that includes dates with each employer, each position held, and duties",
-      status: "To Upload"
+      status: "To Upload",
+      projects: "H1-B, OPT Stem"
     }];
   $scope.uploaded_documents = [
     {
       title: "US Visa(s)",
       description: "Copies of current U.S. visa and of all previous U.S. visas, if applicable",
-      status: "Uploaded"
+      status: "Uploaded",
+      projects: "H1-B, OPT Stem"
     },{
       title: "Immigration Paperwork",
       description: "Copies of all previous U.S. immigration paperwork including prior approval notices (Form I-797), Form IAP-66, Form DS-2019, and/or Form(s) I-20, and/or Employment Authorization Card, if applicable",
-      status: "Uploaded"
+      status: "Uploaded",
+      projects: "H1-B, OPT Stem"
     }];
 })
 
