@@ -550,15 +550,14 @@ ion-view#projectStatus div.appstatus {
     top: 10px; }
 
 ion-view#documentDetail {
-  background-color: #ECEFF1; }
+  background-color: white; }
   ion-view#documentDetail div.linkcard {
-    margin-top: 10px;
-    box-shadow: 0.5px 2px 2px #CFD8DC;
     background-color: white;
     padding: 5%;
     text-align: center; }
     ion-view#documentDetail div.linkcard label {
-      border: 1px solid #ECEFF1; }
+      border: 1px solid #ECEFF1;
+      margin: 10px auto; }
       ion-view#documentDetail div.linkcard label select.doctype_dropdown {
         width: 100%;
         color: #78909C;
@@ -568,6 +567,7 @@ ion-view#documentDetail {
     ion-view#documentDetail div.linkcard textarea {
       width: 100%;
       border: 1px solid #ECEFF1;
+      margin: 10px auto;
       border-radius: 0px;
       padding: 3%;
       -webkit-appearance: none; }
@@ -576,20 +576,29 @@ ion-view#documentDetail {
       color: white;
       width: 40%;
       margin: 3%;
-      box-shadow: 0.5px 2px 2px #CFD8DC; }
-  ion-view#documentDetail div.button-upload div.col {
-    display: inline-block; }
-  ion-view#documentDetail div.button-upload button.button-upload-btn {
-    border-radius: 0;
+      box-shadow: 0.5px 2px 2px #CFD8DC;
+      border-radius: 2px; }
+    ion-view#documentDetail div.linkcard a.activated {
+      background-color: #3caaa8;
+      box-shadow: none; }
+  ion-view#documentDetail button.button-upload-btn {
+    box-shadow: 0.5px 1px 1px #ECEFF1;
+    border-radius: 2px;
     background-color: white;
-    color: #42BCBA; }
-    ion-view#documentDetail div.button-upload button.button-upload-btn i::before {
+    color: #42BCBA;
+    border: 1px solid #ECEFF1;
+    margin: 10px auto;
+    padding: 0; }
+    ion-view#documentDetail button.button-upload-btn i::before {
       font-size: 36px;
       padding: 5% 0px 0px 0px; }
-    ion-view#documentDetail div.button-upload button.button-upload-btn p {
+    ion-view#documentDetail button.button-upload-btn p {
       text-align: center;
       font-weight: 400;
       margin: 5%; }
+  ion-view#documentDetail button.activated {
+    box-shadow: none;
+    background-color: #f9fafa; }
 
 /*!
   Ionicons, v2.0.1
