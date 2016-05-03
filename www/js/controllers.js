@@ -10,7 +10,7 @@ angular.module('app.controllers', ['ngCordova'])
   $scope.active_projs = [
     {
       title: "H1-B",
-      progress: 60,
+      progress: 65,
       type: "Not Visa",
       initiation_date: "9 APR 2016"
     },
