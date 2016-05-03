@@ -81,6 +81,9 @@ ion-view#login div.login_contain {
     box-shadow: 0.5px 2px 2px #CFD8DC;
     border-radius: 2px;
     margin: 5% 2%; }
+  ion-view#login div.login_contain button.activated {
+    background-color: #3caaa8;
+    box-shadow: none; }
 
 ion-view#projects,
 ion-view#projectDetails,
@@ -168,6 +171,15 @@ ion-view#bal_project_details {
         font-size: 20px;
         color: #ECEFF1;
         float: right; }
+    ion-view#projects div.linkcard a.activated,
+    ion-view#projectDetails div.linkcard a.activated,
+    ion-view#projectStatus div.linkcard a.activated,
+    ion-view#documents div.linkcard a.activated,
+    ion-view#documentCategory div.linkcard a.activated,
+    ion-view#notificationPage div.linkcard a.activated,
+    ion-view#bal_projects div.linkcard a.activated,
+    ion-view#bal_project_details div.linkcard a.activated {
+      background-color: #f9fafa; }
     ion-view#projects div.linkcard.inactive span.progress,
     ion-view#projectDetails div.linkcard.inactive span.progress,
     ion-view#projectStatus div.linkcard.inactive span.progress,
@@ -205,6 +217,15 @@ ion-view#bal_project_details {
     ion-view#bal_projects div.linkcard.inactive p.description,
     ion-view#bal_project_details div.linkcard.inactive p.description {
       color: #78909C; }
+    ion-view#projects div.linkcard div.linkcard:target,
+    ion-view#projectDetails div.linkcard div.linkcard:target,
+    ion-view#projectStatus div.linkcard div.linkcard:target,
+    ion-view#documents div.linkcard div.linkcard:target,
+    ion-view#documentCategory div.linkcard div.linkcard:target,
+    ion-view#notificationPage div.linkcard div.linkcard:target,
+    ion-view#bal_projects div.linkcard div.linkcard:target,
+    ion-view#bal_project_details div.linkcard div.linkcard:target {
+      box-shadow: none; }
   ion-view#projects body,
   ion-view#projectDetails body,
   ion-view#projectStatus body,
@@ -478,6 +499,15 @@ ion-view#projects div.linkcard.inactive div.tribar {
     color: #42BCBA; }
     ion-view#projects div.linkcard.inactive div.tribar div i.completed {
       color: #42BCBA; }
+
+ion-view#projectStatus div.statusdiv {
+  padding: 3% 2%;
+  border-radius: 0px;
+  margin-top: 0px;
+  color: #0091EA;
+  background-color: #fff; }
+  ion-view#projectStatus div.statusdiv div.row {
+    padding: 0; }
 
 ion-view#projectStatus div.appstatus {
   position: relative;

@@ -13,7 +13,7 @@
           <span ng-switch-default class="progress in-progress" style="width: {{statusUpdate.progress}}%"></span>
           <span ng-switch-when="0" class="progress not-started" style="width: {{statusUpdate.progress}}%"></span>
         </div> -->
-        <a ui-sref="menu.status" class="button button-full">
+        <div class="button button-full statusdiv">
           <div class="row row-center">
             <div class="col col-20">
               <p class="percentage" ng-switch="statusUpdate.status">
@@ -31,7 +31,7 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </ion-content>
 </ion-view>

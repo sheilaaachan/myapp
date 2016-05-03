@@ -170,7 +170,7 @@ angular.module('app.controllers', ['ngCordova'])
           $scope.attachmentModal.hide();
       }
   };
-  
+
   $scope.getOpenInFiles = function() {
       //Commented temporary for google integration test
       // var client_id = "303684445331-3tblts89ihiuljohmldducuv9tfggtpu.apps.googleusercontent.com";//web-app
@@ -308,7 +308,7 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 1,
         badge:++$rootScope.badge,
-        text: "Case initiated, document(s) are required from user.",
+        text: "Congratulations, your case has been initiated! Please remember to upload all the required documents so we can begin processing your case!",
         at: _5_sec_from_now
     });
   };
@@ -349,7 +349,7 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 2,
         badge:++$rootScope.badge,
-        text: "Document(s) received by BAL case manager.",
+        text: "Your case manager has just received your documents! You're now one step closer to completing the application process!",
         at: _5_sec_from_now
     });
   };
@@ -359,7 +359,7 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 3,
         badge:++$rootScope.badge,
-        text: "Changed in application status.",
+        text: "The status of your case has been updated. Check it out!",
         at: _5_sec_from_now
     });
   };

@@ -117,6 +117,10 @@ ion-view#login{
       border-radius: 2px;
       margin: 5% 2%;
     }
+    button.activated{
+      background-color: $primary-color-5;
+      box-shadow: none;
+    }
   }
 }
 
@@ -164,6 +168,9 @@ ion-view#bal_project_details {
           float: right;
         }
       }
+      a.activated{
+        background-color: #f9fafa;
+      }
       &.inactive{
         span.progress{
           opacity: 0.5;
@@ -178,6 +185,9 @@ ion-view#bal_project_details {
         p.description{
           color: $grey-color-1;
         }
+      }
+      div.linkcard:target{
+        box-shadow: none;
       }
   }
 
@@ -317,6 +327,16 @@ ion-view#projectDetails{
 // Status Page
 
 ion-view#projectStatus{
+  div.statusdiv{
+    padding: 3% 2%;
+    border-radius:0px;
+    margin-top: 0px;
+    color: $primary-color-0;
+    background-color: #fff;
+    div.row{
+      padding: 0;
+    }
+  }
   div.appstatus{
     position: relative;
     margin: 5% 3% 10% 3%;
