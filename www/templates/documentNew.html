@@ -1,13 +1,13 @@
-<ion-view title="Edit Document" id="documentDetail" ng-controller="documentDetailsCtrl">
+<ion-view title="New Document" id="documentDetail" ng-controller="documentDetailsCtrl">
   <!-- ng-if="$state.$current.parent == 'menu.documents'"  -->
 <!-- <ion-view ng-if="$state.$current.parent == menu.documentCategories" title="Edit Document" id="documentDetail" ng-controller="documentDetailsCtrl"> -->
     <ion-content class="has-header">
         <div class="linkcard" >
           <label class="item item-select">
               <select style="float: left;" class="doctype_dropdown">
-                  <option disabled>Select a Document Type</option>
+                  <option disabled selected>Select a Document Type</option>
                   <option>Diploma</option>
-                  <option selected>Passport</option>
+                  <option>Passport</option>
                   <option>Resume</option>
                   <option>US Visa</option>
                   <option>Immigration Paperwork</option>
@@ -41,47 +41,8 @@
                   <p class="description">Scan Document</p>
                 </button>
               </div>
-              <br><br><br><br><br>
-              <div class="pass_inputs">
-                <label class="item item-input">
-                  <span class="input-label">Passport No</span>
-                  <input type="text" value="568333268">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Surname</span>
-                  <input type="text" value="Smith">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Given Name(s)</span>
-                  <input type="text" value="John Doe">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Nationality</span>
-                  <input type="text" value="United States of America">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Date of Birth</span>
-                  <input type="text" value="17 Jul 1975">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Sex</span>
-                  <input type="text" value="M">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Date of Issue</span>
-                  <input type="text" value="21 May 2009">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Authority</span>
-                  <input type="text" value="United States Department of State">
-                </label>
-                <label class="item item-input">
-                  <span class="input-label">Date of Expiration</span>
-                  <input type="text" value="20 May 2019">
-                </label>
-              </div>
-
-              <!-- <textarea placeholder="OCR String will be populated here." rows="10"></textarea> -->
+              <!-- <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label> -->
+              <textarea placeholder="OCR String will be populated here." rows="10"></textarea>
           </form>
           <a ui-sref="menu.documents" style="border-radius:0px 0px 0px 0px;" class="button">Cancel</a>
 

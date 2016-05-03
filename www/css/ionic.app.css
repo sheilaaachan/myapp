@@ -550,21 +550,28 @@ ion-view#projectStatus div.appstatus {
     top: 10px; }
 
 ion-view#documents p.document-header,
-ion-view#projects p.document-header {
+ion-view#projects p.document-header,
+ion-view#documentCategory p.document-header {
   padding-top: 20px; }
 
 ion-view#documents div.linkcard,
-ion-view#projects div.linkcard {
+ion-view#projects div.linkcard,
+ion-view#documentCategory div.linkcard {
   margin-top: 0px; }
   ion-view#documents div.linkcard a.button,
-  ion-view#projects div.linkcard a.button {
+  ion-view#projects div.linkcard a.button,
+  ion-view#documentCategory div.linkcard a.button {
     padding-top: 7px;
     padding-bottom: 3px;
     margin-bottom: 1px; }
     ion-view#documents div.linkcard a.button h2.title,
-    ion-view#projects div.linkcard a.button h2.title {
+    ion-view#projects div.linkcard a.button h2.title,
+    ion-view#documentCategory div.linkcard a.button h2.title {
       margin-top: 0px;
       margin-bottom: 5px; }
+
+ion-view#documentCategory p {
+  padding: 10px; }
 
 ion-view#documentDetail {
   background-color: white; }
@@ -581,6 +588,17 @@ ion-view#documentDetail {
         left: 0; }
     ion-view#documentDetail div.linkcard input {
       color: #37474F; }
+    ion-view#documentDetail div.linkcard div.pass_inputs {
+      display: block;
+      width: 100%; }
+      ion-view#documentDetail div.linkcard div.pass_inputs label {
+        border: 0px;
+        text-align: left; }
+        ion-view#documentDetail div.linkcard div.pass_inputs label span {
+          font-size: 0.8em;
+          color: #78909C; }
+        ion-view#documentDetail div.linkcard div.pass_inputs label input {
+          border-bottom: 1px solid #ECEFF1; }
     ion-view#documentDetail div.linkcard textarea {
       width: 100%;
       border: 1px solid #ECEFF1;

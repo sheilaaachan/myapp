@@ -78,6 +78,18 @@ angular.module('app.routes', [])
       }
     }
   })
+  .state('menu.documentNew', {
+    url: '/document_new',
+    params:{
+      "photos":""
+    },
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/documentNew.html',
+        controller: 'documentDetailsCtrl'
+      }
+    }
+  })
 
   .state('logIn', {
     url: '/login',

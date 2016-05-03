@@ -390,7 +390,8 @@ ion-view#projectStatus{
 // Documents Page
 
 ion-view#documents,
-ion-view#projects{
+ion-view#projects,
+ion-view#documentCategory{
   p.document-header{
     padding-top: 20px;
   }
@@ -405,6 +406,13 @@ ion-view#projects{
         margin-bottom: 5px;
       }
     }
+  }
+}
+
+// Document Category
+ion-view#documentCategory{
+  p{
+    padding: 10px;
   }
 }
 
@@ -432,6 +440,21 @@ ion-view#documentDetail{
     input{
       color: $grey-color-0;
       // height: 100px;
+    }
+    div.pass_inputs{
+      display: block;
+      width: 100%;
+      label{
+        border: 0px;
+        text-align: left;
+        span{
+          font-size: 0.8em;
+          color: $grey-color-1;
+        }
+        input{
+          border-bottom: 1px solid $grey-color-3;
+        }
+      }
     }
     textarea{
       width: 100%;
