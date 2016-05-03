@@ -549,16 +549,20 @@ ion-view#projectStatus div.appstatus {
     left: 25%;
     top: 10px; }
 
-ion-view#documents p.document-header {
+ion-view#documents p.document-header,
+ion-view#projects p.document-header {
   padding-top: 20px; }
 
-ion-view#documents div.linkcard {
+ion-view#documents div.linkcard,
+ion-view#projects div.linkcard {
   margin-top: 0px; }
-  ion-view#documents div.linkcard a.button {
-    padding-top: 3px;
+  ion-view#documents div.linkcard a.button,
+  ion-view#projects div.linkcard a.button {
+    padding-top: 7px;
     padding-bottom: 3px;
     margin-bottom: 1px; }
-    ion-view#documents div.linkcard a.button h2.title {
+    ion-view#documents div.linkcard a.button h2.title,
+    ion-view#projects div.linkcard a.button h2.title {
       margin-top: 0px;
       margin-bottom: 5px; }
 

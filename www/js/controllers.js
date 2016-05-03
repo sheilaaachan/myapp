@@ -12,31 +12,31 @@ angular.module('app.controllers', ['ngCordova'])
       title: "H1-B",
       progress: 65,
       type: "Not Visa",
-      initiation_date: "9 APR 2016"
+      initiation_date: "04/09/16"
     },
     {
       title: "Angola Business Visa",
       progress: 20,
       type: "Visa",
-      initiation_date: "31 JAN 2016"
+      initiation_date: "01/31/16"
     },
     {
       title: "China Business Visa",
       progress: 80,
       type: "Visa",
-      initiation_date: "12 NOV 2015"
+      initiation_date: "11/12/16"
     }];
   $scope.inactive_projs = [{
       title: "OPT Stem",
       progress: 100,
       type: "Not Visa",
-      initiation_date: "13 MAR 2015"
+      initiation_date: "03/13/15"
     },
     {
       title: "Australia Business Visa",
       progress: 100,
       type: "Visa",
-      initiation_date: "4 JAN 2015"
+      initiation_date: "01/04/15"
     }];
 
 
