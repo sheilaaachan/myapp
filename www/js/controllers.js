@@ -301,35 +301,17 @@ angular.module('app.controllers', ['ngCordova'])
   };
 })
 
-.controller('NotificationCtrl', function($scope, $state, $cordovaDialogs) {
+.controller('NotificationCtrl', function($scope, $rootScope, $state, $cordovaDialogs, $cordovaBadge) {
   $scope.caseInitiated = function() {
     var now = new Date().getTime(),
     _5_sec_from_now = new Date(now + 5 * 1000);
     cordova.plugins.notification.local.schedule({
         id: 1,
-        badge:1,
+        badge:++$rootScope.badge,
         text: "Case initiated, document(s) are required from user.",
         at: _5_sec_from_now
     });
   };
-    // cordova.plugins.notification.local.on("trigger", function (notification) {
-    //     var message = "";
-    //     if (notification.id == 1){
-    //         message = "Case initiated, document(s) are required from user.";
-    //     }
-    //     else if (notification.id == 2){
-    //         message = "Document(s) received by BAL case manager.";
-    //     }
-    //     else if (notification.id == 3){
-    //         message = "Changed in application status.";
-    //     }
-    //     else return;
-        // $cordovaDialogs.alert('', message, 'OK')
-        //   .then(function() {
-        //     // callback success
-        // });
-    // });
-    // };
 })
 
 .controller('balprojectsCtrl', function($scope) {
@@ -360,43 +342,26 @@ angular.module('app.controllers', ['ngCordova'])
     }];
 })
 
-.controller('balprojectdetailsCtrl', function($scope) {
+.controller('balprojectdetailsCtrl', function($scope, $rootScope, $cordovaBadge) {
   $scope.documentReceived = function() {
     var now = new Date().getTime(),
-    _3_sec_from_now = new Date(now + 3 * 1000);
+    _5_sec_from_now = new Date(now + 5 * 1000);
     cordova.plugins.notification.local.schedule({
         id: 2,
-        badge:1,
+        badge:++$rootScope.badge,
         text: "Document(s) received by BAL case manager.",
-        at: _3_sec_from_now
+        at: _5_sec_from_now
     });
   };
   $scope.statusChanged = function() {
     var now = new Date().getTime(),
-    _1_sec_from_now = new Date(now + 1 * 1000);
+    _5_sec_from_now = new Date(now + 5 * 1000);
     cordova.plugins.notification.local.schedule({
         id: 3,
-        badge:1,
+        badge:++$rootScope.badge,
         text: "Changed in application status.",
-        at: _1_sec_from_now
+        at: _5_sec_from_now
     });
-    // cordova.plugins.notification.local.on("trigger", function (notification) {
-    //     var message = "";
-    //     if (notification.id == 1){
-    //         message = "Case initiated, document(s) are required from user.";
-    //     }
-    //     else if (notification.id == 2){
-    //         message = "Document(s) received by BAL case manager.";
-    //     }
-    //     else if (notification.id == 3){
-    //         message = "Changed in application status.";
-    //     }
-    //     else return;
-    //     $cordovaDialogs.alert('', message, 'OK')
-    //       .then(function() {
-    //         // callback success
-    //     });
-    // });
   };
 })
 
