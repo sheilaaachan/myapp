@@ -17,6 +17,9 @@ bower install ngCordova
 ## Please install ng-cordova-oauth in your project folder with following command 
 bower install ng-cordova-oauth
 
+## Please install ngstorage in your project folder with following command 
+bower install ngstorage
+
 ## Adding a platform target
 ionic platform ios android
 
