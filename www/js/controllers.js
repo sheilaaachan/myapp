@@ -247,6 +247,8 @@ angular.module('app.controllers', ['ngCordova'])
               }
               $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
               _updateDisplayPhoto();
+              document.getElementById("form_textarea").style.display = "none";
+              document.getElementById("pass_inputs").style.display = "block";
 
               // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
               // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
@@ -280,6 +282,8 @@ angular.module('app.controllers', ['ngCordova'])
               }
               $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
               _updateDisplayPhoto();
+              document.getElementById("form_textarea").style.display = "none";
+              document.getElementById("pass_inputs").style.display = "block";
               // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
               // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
           }, function(err) {

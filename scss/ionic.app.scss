@@ -441,12 +441,13 @@ ion-view#documentDetail{
       color: $grey-color-0;
       // height: 100px;
     }
-    div.pass_inputs{
-      display: block;
+    div#pass_inputs{
+      // display: none;
       width: 100%;
       label{
         border: 0px;
         text-align: left;
+        margin: 5px;
         span{
           font-size: 0.8em;
           color: $grey-color-1;

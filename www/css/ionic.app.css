@@ -588,16 +588,16 @@ ion-view#documentDetail {
         left: 0; }
     ion-view#documentDetail div.linkcard input {
       color: #37474F; }
-    ion-view#documentDetail div.linkcard div.pass_inputs {
-      display: block;
+    ion-view#documentDetail div.linkcard div#pass_inputs {
       width: 100%; }
-      ion-view#documentDetail div.linkcard div.pass_inputs label {
+      ion-view#documentDetail div.linkcard div#pass_inputs label {
         border: 0px;
-        text-align: left; }
-        ion-view#documentDetail div.linkcard div.pass_inputs label span {
+        text-align: left;
+        margin: 5px; }
+        ion-view#documentDetail div.linkcard div#pass_inputs label span {
           font-size: 0.8em;
           color: #78909C; }
-        ion-view#documentDetail div.linkcard div.pass_inputs label input {
+        ion-view#documentDetail div.linkcard div#pass_inputs label input {
           border-bottom: 1px solid #ECEFF1; }
     ion-view#documentDetail div.linkcard textarea {
       width: 100%;

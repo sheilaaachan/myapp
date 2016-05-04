@@ -33,7 +33,6 @@
                   <div class="attachment-photo" ng-repeat='photo in document.attachment track by $index | limitTo: 4'>
                       <img src="{{photo.FilePath}}" ng-if='photo.FilePath' alt="" ng-click='viewPhoto($index)' />
                   </div>
-
               </div>
               <div class="attachment-photo">
                 <button class="button button-light button-upload-btn" ng-click="getPhoto()">
@@ -41,6 +40,47 @@
                   <p class="description">Scan Document</p>
                 </button>
               </div>
+
+              <div class="pass_inputs">
+                <br><br><br><br><br>
+                <label class="item item-input">
+                  <span class="input-label">Passport No</span>
+                  <input type="text" value="568333268">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Surname</span>
+                  <input type="text" value="Smith">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Given Name(s)</span>
+                  <input type="text" value="John Doe">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Nationality</span>
+                  <input type="text" value="United States of America">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Date of Birth</span>
+                  <input type="text" value="17 Jul 1975">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Sex</span>
+                  <input type="text" value="M">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Date of Issue</span>
+                  <input type="text" value="21 May 2009">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Authority</span>
+                  <input type="text" value="United States Department of State">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Date of Expiration</span>
+                  <input type="text" value="20 May 2019">
+                </label>
+              </div>
+
               <!-- <label class="item item-input"><input type="text" value="Pre-populated OCR Field"></label> -->
               <textarea placeholder="OCR String will be populated here." rows="10"></textarea>
           </form>
