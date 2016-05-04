@@ -45,47 +45,47 @@
 
                 <label class="item item-input">
                   <span class="input-label">Passport No</span>
-                  <input type="text" value="568333268">
+                  <input type="text" ng-model="documentDetail.passportNum" value="568333268">
                 </label>
                 <label class="item item-input">
                   <span class="input-label">Surname</span>
-                  <input type="text" value="Smith">
+                  <input type="text" ng-model="documentDetail.surname" value="Smith">
                 </label>
                 <label class="item item-input">
                   <span class="input-label">Given Name(s)</span>
-                  <input type="text" value="John Doe">
+                  <input type="text" ng-model="documentDetail.givenName" value="John Doe">
                 </label>
                 <label class="item item-input">
                   <span class="input-label">Nationality</span>
-                  <input type="text" value="United States of America">
+                  <input type="text" ng-model="documentDetail.nationality" value="United States of America">
                 </label>
                 <label class="item item-input">
                   <span class="input-label">Date of Birth</span>
-                  <input type="text" value="17 Jul 1975">
+                  <input type="text" ng-model="documentDetail.birthDate" value="17 Jul 1975">
                 </label>
                 <label class="item item-input">
                   <span class="input-label">Sex</span>
-                  <input type="text" value="M">
+                  <input type="text" ng-model="documentDetail.sex" value="M">
                 </label>
-                <label class="item item-input">
+<!--                 <label class="item item-input">
                   <span class="input-label">Date of Issue</span>
                   <input type="text" value="21 May 2009">
-                </label>
+                </label> -->
                 <label class="item item-input">
                   <span class="input-label">Authority</span>
-                  <input type="text" value="United States Department of State">
+                  <input type="text" ng-model="documentDetail.authority" value="United States Department of State">
                 </label>
                 <label class="item item-input">
                   <span class="input-label">Date of Expiration</span>
-                  <input type="text" value="20 May 2019">
+                  <input type="text" ng-model="documentDetail.expiryDate" value="20 May 2019">
                 </label>
               </div>
 
               <textarea id="form_textarea" placeholder="OCR String will be populated here." rows="10"></textarea>
           </form>
-          <a ui-sref="menu.documents" style="border-radius:0px 0px 0px 0px;" class="button">Cancel</a>
+          <a ui-sref="menu.documents" style="border-radius:0px 0px 0px 0px;" class="button" ng-click="cancel()">Cancel</a>
 
-          <a ui-sref="menu.documentCategories" style="border-radius:0px 0px 0px 0px;" class="button">Save</a>
+          <a ui-sref="menu.documentCategories" style="border-radius:0px 0px 0px 0px;" class="button" ng-click="save()">Save</a>
       </div>
     </ion-content>
 </ion-view>
