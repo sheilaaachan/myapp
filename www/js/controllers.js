@@ -12,31 +12,31 @@ angular.module('app.controllers', ['ngCordova'])
       title: "H1-B",
       progress: 65,
       type: "Not Visa",
-      initiation_date: "9 APR 2016"
+      initiation_date: "04/09/16"
     },
     {
       title: "Angola Business Visa",
       progress: 20,
       type: "Visa",
-      initiation_date: "31 JAN 2016"
+      initiation_date: "01/31/16"
     },
     {
       title: "China Business Visa",
       progress: 80,
       type: "Visa",
-      initiation_date: "12 NOV 2015"
+      initiation_date: "11/12/16"
     }];
   $scope.inactive_projs = [{
       title: "OPT Stem",
       progress: 100,
       type: "Not Visa",
-      initiation_date: "13 MAR 2015"
+      initiation_date: "03/13/15"
     },
     {
       title: "Australia Business Visa",
       progress: 100,
       type: "Visa",
-      initiation_date: "4 JAN 2015"
+      initiation_date: "01/04/15"
     }];
 
 
@@ -51,25 +51,30 @@ angular.module('app.controllers', ['ngCordova'])
     {
       title: "Diploma(s)",
       description: "Copies of all degrees, diplomas, and transcripts, if applicable",
-      status: "To Upload"
+      status: "To Upload",
+      projects: "H1-B, OPT Stem"
     },{
       title: "Passport(s)",
       description: "Copy of passport biographic and signature pages",
-      status: "To Upload"
+      status: "To Upload",
+      projects: "H1-B, Angola Business Visa, China Business Visa, OPT Stem"
     },{
       title: "Resume",
       description: "Copy of up-to-date resume (CV) that includes dates with each employer, each position held, and duties",
-      status: "To Upload"
+      status: "To Upload",
+      projects: "H1-B, OPT Stem"
     }];
   $scope.uploaded_documents = [
     {
       title: "US Visa(s)",
       description: "Copies of current U.S. visa and of all previous U.S. visas, if applicable",
-      status: "Uploaded"
+      status: "Uploaded",
+      projects: "H1-B, OPT Stem"
     },{
       title: "Immigration Paperwork",
       description: "Copies of all previous U.S. immigration paperwork including prior approval notices (Form I-797), Form IAP-66, Form DS-2019, and/or Form(s) I-20, and/or Employment Authorization Card, if applicable",
-      status: "Uploaded"
+      status: "Uploaded",
+      projects: "H1-B, OPT Stem"
     }];
 })
 
@@ -170,7 +175,7 @@ angular.module('app.controllers', ['ngCordova'])
           $scope.attachmentModal.hide();
       }
   };
-  
+
   $scope.getOpenInFiles = function() {
       //Commented temporary for google integration test
       // var client_id = "303684445331-3tblts89ihiuljohmldducuv9tfggtpu.apps.googleusercontent.com";//web-app
@@ -242,6 +247,8 @@ angular.module('app.controllers', ['ngCordova'])
               }
               $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
               _updateDisplayPhoto();
+              document.getElementById("form_textarea").style.display = "none";
+              document.getElementById("pass_inputs").style.display = "block";
 
               // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
               // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
@@ -275,6 +282,8 @@ angular.module('app.controllers', ['ngCordova'])
               }
               $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
               _updateDisplayPhoto();
+              document.getElementById("form_textarea").style.display = "none";
+              document.getElementById("pass_inputs").style.display = "block";
               // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
               // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
           }, function(err) {
@@ -308,7 +317,7 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 1,
         badge:++$rootScope.badge,
-        text: "Case initiated, document(s) are required from user.",
+        text: "Congratulations, your case has been initiated! Please remember to upload all the required documents so we can begin processing your case!",
         at: _5_sec_from_now
     });
   };
@@ -349,7 +358,7 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 2,
         badge:++$rootScope.badge,
-        text: "Document(s) received by BAL case manager.",
+        text: "Your case manager has just received your documents! You're now one step closer to completing the application process!",
         at: _5_sec_from_now
     });
   };
@@ -359,7 +368,7 @@ angular.module('app.controllers', ['ngCordova'])
     cordova.plugins.notification.local.schedule({
         id: 3,
         badge:++$rootScope.badge,
-        text: "Changed in application status.",
+        text: "The status of your case has been updated. Check it out!",
         at: _5_sec_from_now
     });
   };

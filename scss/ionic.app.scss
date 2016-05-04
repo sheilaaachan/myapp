@@ -117,6 +117,10 @@ ion-view#login{
       border-radius: 2px;
       margin: 5% 2%;
     }
+    button.activated{
+      background-color: $primary-color-5;
+      box-shadow: none;
+    }
   }
 }
 
@@ -164,6 +168,9 @@ ion-view#bal_project_details {
           float: right;
         }
       }
+      a.activated{
+        background-color: #f9fafa;
+      }
       &.inactive{
         span.progress{
           opacity: 0.5;
@@ -178,6 +185,9 @@ ion-view#bal_project_details {
         p.description{
           color: $grey-color-1;
         }
+      }
+      div.linkcard:target{
+        box-shadow: none;
       }
   }
 
@@ -317,6 +327,16 @@ ion-view#projectDetails{
 // Status Page
 
 ion-view#projectStatus{
+  div.statusdiv{
+    padding: 3% 2%;
+    border-radius:0px;
+    margin-top: 0px;
+    color: $primary-color-0;
+    background-color: #fff;
+    div.row{
+      padding: 0;
+    }
+  }
   div.appstatus{
     position: relative;
     margin: 5% 3% 10% 3%;
@@ -369,38 +389,47 @@ ion-view#projectStatus{
 
 // Documents Page
 
-ion-view#documents{
-  // div.tabs{
-  //   a{
-  //     background-color: $grey-color-4;
-  //     p.description{
-  //       color: $grey-color-1;
-  //       text-align: center;
-  //       font-size: 16px;
-  //       font-weight: 400;
-  //       padding: 10% 0;
-  //     }
-  //     &.active{
-  //       border: 2px solid $primary-color-0;
-  //     }
-  //   }
-  // }
+ion-view#documents,
+ion-view#projects,
+ion-view#documentCategory{
+  p.document-header{
+    padding-top: 20px;
+  }
+  div.linkcard{
+    margin-top: 0px;
+    a.button{
+      padding-top: 7px;
+      padding-bottom: 3px;
+      margin-bottom: 1px;
+      h2.title{
+        margin-top: 0px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
 
+// Document Category
+ion-view#documentCategory{
+  p{
+    padding: 10px;
+  }
 }
 
 // Document Detail Page
 
 ion-view#documentDetail{
-  background-color: $grey-color-3;
-
+  // background-color: $grey-color-3;
+  background-color: white;
   div.linkcard{
-    margin-top: 10px;
-    box-shadow: $box-shadow;
+    // margin-top: 10px;
+    // box-shadow: $box-shadow;
     background-color: white;
     padding: 5%;
     text-align: center;
     label{
       border: 1px solid $grey-color-3;
+      margin: 10px auto;
       select.doctype_dropdown{
         width: 100%;
         color: $grey-color-1;
@@ -412,9 +441,26 @@ ion-view#documentDetail{
       color: $grey-color-0;
       // height: 100px;
     }
+    div#pass_inputs{
+      // display: none;
+      width: 100%;
+      label{
+        border: 0px;
+        text-align: left;
+        margin: 5px;
+        span{
+          font-size: 0.8em;
+          color: $grey-color-1;
+        }
+        input{
+          border-bottom: 1px solid $grey-color-3;
+        }
+      }
+    }
     textarea{
       width: 100%;
       border: 1px solid $grey-color-3;
+      margin: 10px auto;
       border-radius: 0px;
       padding: 3%;
       -webkit-appearance: none;
@@ -425,16 +471,25 @@ ion-view#documentDetail{
       width: 40%;
       margin: 3%;
       box-shadow: $box-shadow;
+      border-radius: 2px;
+    }
+    a.activated{
+      background-color: $primary-color-5;
+      box-shadow: none;
     }
   }
-  div.button-upload{
-    div.col{
-      display: inline-block;
-    }
+  // div.button-upload{
+  //   div.col{
+  //     display: inline-block;
+  //   }
     button.button-upload-btn{
-      border-radius: 0;
+      box-shadow: 0.5px 1px 1px $grey-color-3;
+      border-radius: 2px;
       background-color: white;
       color: $primary-color-4;
+      border: 1px solid $grey-color-3;
+      margin: 10px auto;
+      padding: 0;
       i::before{
         font-size: 36px;
         padding: 5% 0px 0px 0px;
@@ -445,7 +500,11 @@ ion-view#documentDetail{
         margin: 5%;
       }
     }
-  }
+    button.activated{
+      box-shadow: none;
+      background-color: #f9fafa;
+    }
+  // }
 }
 
 

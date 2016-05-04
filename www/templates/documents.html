@@ -20,9 +20,9 @@
               <h2 class="title">Add a New Document</h2>
               <p class="description">{{document.description}}</p>
             </div>
-            <div class="col col-10">
+            <!-- <div class="col col-10">
               <i class="icon icon ion-chevron-right"></i>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -36,19 +36,20 @@
           Scan Document
         </button>
       </div> -->
-        <p class="description">To Upload</p>
+        <p class="description document-header">To Upload (3)</p>
         <div class="linkcard" id="toupload" ng-repeat="document in toupload_documents">
 
           <a ui-sref="menu.documentCategories" class="button button-full">
             <div class="row row-center">
               <div class="col col-20">
                 <p class="percentage" >
-                  <i class="icon icon ion-minus-round not-started"></i>
+                  <!-- <i class="icon icon ion-minus-round not-started"></i> -->
+                  0
                 </p>
               </div>
               <div class="col col-70">
                 <h2 class="title">{{document.title}}</h2>
-                <p class="description">{{document.description}}</p>
+                <p class="description">{{document.projects}}</p>
               </div>
               <div class="col col-10">
                 <i class="icon icon ion-chevron-right"></i>
@@ -56,18 +57,18 @@
             </div>
           </a>
         </div>
-        <p class="description">Uploaded</p>
+        <p class="description document-header">Uploaded (2)</p>
         <div class="linkcard uploaded" ng-repeat="document in uploaded_documents">
           <a ui-sref="menu.documentCategories" class="button button-full">
             <div class="row row-center">
               <div class="col col-20">
                 <p class="percentage" >
-                  5
+                  2
                 </p>
               </div>
               <div class="col col-70">
                 <h2 class="title">{{document.title}}</h2>
-                <p class="description">{{document.description}}</p>
+                <p class="description">{{document.projects}}</p>
               </div>
               <div class="col col-10">
                 <i class="icon icon ion-chevron-right"></i>
