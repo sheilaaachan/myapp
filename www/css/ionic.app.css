@@ -589,6 +589,7 @@ ion-view#documentDetail {
     ion-view#documentDetail div.linkcard input {
       color: #37474F; }
     ion-view#documentDetail div.linkcard div#pass_inputs {
+      display: none;
       width: 100%; }
       ion-view#documentDetail div.linkcard div#pass_inputs label {
         border: 0px;
