@@ -39,12 +39,12 @@
         <p class="description document-header">To Upload ({{toupload_documents.length}})</p>
         <div class="linkcard" id="toupload" ng-repeat="document in toupload_documents">
 
-          <a ui-sref="menu.documentCategories" class="button button-full">
+          <div class="button button-full" ng-click="gotoDocumentCate(document)">
             <div class="row row-center">
               <div class="col col-20">
                 <p class="percentage" >
                   <!-- <i class="icon icon ion-minus-round not-started"></i> -->
-                  0
+                  {{displayPercentage(document)}}
                 </p>
               </div>
               <div class="col col-70">
@@ -55,11 +55,11 @@
                 <i class="icon icon ion-chevron-right"></i>
               </div>
             </div>
-          </a>
+          </div>
         </div>
         <p class="description document-header">Uploaded (2)</p>
         <div class="linkcard uploaded" ng-repeat="document in uploaded_documents">
-          <a ui-sref="menu.documentCategories" class="button button-full">
+          <a class="button button-full">
             <div class="row row-center">
               <div class="col col-20">
                 <p class="percentage" >
