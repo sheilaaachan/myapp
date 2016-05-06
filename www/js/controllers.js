@@ -451,9 +451,10 @@ angular.module('app.controllers', ['ngCordova'])
     
     //ios licenseKey
     var licenseKey = "CROOBSOR-OQUHH4XA-BW6KREBH-GVNYR2UN-5AIM65BJ-VWNEN7AG-I36AMRX4-BZDWV7UM";
-
-    //android licenseKey
-    // var licenseKey = "4GDE4MRI-BTZHFJPG-XPLTIMRB-WL237B6X-JIGWZHUM-IH37BA3D-VDDO2MHI-GX4DU2YZ";
+    if(ionic.Platform.isAndroid()){
+        //android licenseKey
+        licenseKey = "4GDE4MRI-BTZHFJPG-XPLTIMRB-WL237B6X-JIGWZHUM-IH37BA3D-VDDO2MHI-GX4DU2YZ";
+    }
 
     cordova.plugins.blinkId.readCardId(success, fail, licenseKey);
   }
