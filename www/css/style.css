@@ -6,6 +6,7 @@
 
 .attachment-photo{
   width: 25%;
+  height: 120px;
   float: left;
 }
 

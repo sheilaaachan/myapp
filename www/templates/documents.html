@@ -36,10 +36,10 @@
           Scan Document
         </button>
       </div> -->
-        <p class="description document-header">To Upload ({{toupload_documents.length}})</p>
+        <p class="description document-header">To Upload ({{displayDocumentCount()}})</p>
         <div class="linkcard" id="toupload" ng-repeat="document in toupload_documents">
 
-          <div class="button button-full" ng-click="gotoDocumentCate(document)">
+          <div class="button button-full" style="margin-top:1px;margin-bottom:1px;" ng-click="gotoDocumentCate(document)" ng-show="!displayPassport(document)">
             <div class="row row-center">
               <div class="col col-20">
                 <p class="percentage" >
@@ -52,18 +52,18 @@
                 <p class="description">{{document.projects}}</p>
               </div>
               <div class="col col-10">
-                <i class="icon icon ion-chevron-right"></i>
+                <i class="icon icon ion-chevron-right" style="color:rgb(169, 167, 167)" ng-show="displayIcon(document)"></i>
               </div>
             </div>
           </div>
         </div>
-        <p class="description document-header">Uploaded (2)</p>
+        <p class="description document-header">Uploaded ({{displayUploadedDocumentCount()}})</p>
         <div class="linkcard uploaded" ng-repeat="document in uploaded_documents">
-          <a class="button button-full">
+          <div class="button button-full" style="margin-top:1px;margin-bottom:1px;" ng-click="gotoDocumentCate(document)" ng-show="displayUploadedPassport(document)">
             <div class="row row-center">
               <div class="col col-20">
                 <p class="percentage" >
-                  2
+                  {{displayUploadedPercentage(document)}}
                 </p>
               </div>
               <div class="col col-70">
@@ -71,10 +71,10 @@
                 <p class="description">{{document.projects}}</p>
               </div>
               <div class="col col-10">
-                <i class="icon icon ion-chevron-right"></i>
+                <i class="icon icon ion-chevron-right" style="color:rgb(169, 167, 167)" ng-show="displayIcon(document)"></i>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </ion-content>

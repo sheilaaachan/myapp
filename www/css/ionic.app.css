@@ -9051,6 +9051,7 @@ input:checked + .checkbox-icon:after {
     right: 0;
     padding: 0 48px 0 16px;
     max-width: 65%;
+    min-width: 220px;
     border: none;
     background: #fff;
     color: #333;

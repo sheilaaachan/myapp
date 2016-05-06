@@ -75,6 +75,11 @@ angular.module('app.controllers', ['ngCordova'])
       status: "Uploaded",
       projects: "H1-B, OPT Stem"
     },{
+      title: "Passport(s)",
+      description: "Copy of passport biographic and signature pages",
+      status: "To Upload",
+      projects: "H1-B, Angola Business Visa, China Business Visa, OPT Stem"
+    },{
       title: "Immigration Paperwork",
       description: "Copies of all previous U.S. immigration paperwork including prior approval notices (Form I-797), Form IAP-66, Form DS-2019, and/or Form(s) I-20, and/or Employment Authorization Card, if applicable",
       status: "Uploaded",
@@ -91,6 +96,60 @@ angular.module('app.controllers', ['ngCordova'])
       var count = 0;
       if((document.title == "Passport(s)")&&($scope.$storage.passports)){
           count = $scope.$storage.passports.length;
+      }
+      return count;
+    };
+
+    $scope.displayUploadedPercentage = function(document) {
+      var count = 2;
+      if((document.title == "Passport(s)")&&($scope.$storage.passports)){
+          count = $scope.$storage.passports.length;
+      }
+      return count;
+    };
+
+    $scope.displayPassport = function(document) {
+      var count = 0;
+      if((document.title == "Passport(s)")&&($scope.$storage.passports)){
+          count = $scope.$storage.passports.length;
+      }
+      return count;
+    };
+
+    $scope.displayUploadedPassport = function(document) {
+      var count = 0;
+      if((document.title == "Passport(s)")&&($scope.$storage.passports)){
+          count = $scope.$storage.passports.length;
+      }
+      if(document.title == "US Visa(s)"){
+          count = 1;
+      }
+      if(document.title == "Immigration Paperwork"){
+          count = 1;
+      }
+      return count;
+    };
+
+    $scope.displayIcon = function(document) {
+      var result = false;
+      if((document.title == "Passport(s)")&&($scope.$storage.passports)){
+          result = true;
+      }
+      return result;
+    };
+
+    $scope.displayDocumentCount = function() {
+      var count = $scope.toupload_documents.length;
+      if($scope.$storage.passports){
+          count = $scope.toupload_documents.length - 1;
+      }
+      return count;
+    };
+
+    $scope.displayUploadedDocumentCount = function() {
+      var count = $scope.uploaded_documents.length;
+      if(!$scope.$storage.passports){
+          count = $scope.uploaded_documents.length - 1;
       }
       return count;
     };
@@ -313,10 +372,10 @@ angular.module('app.controllers', ['ngCordova'])
 
           $cordovaCamera.getPicture(options).then(function(imageData) {
             // alert("OCR Complete");
-              $cordovaDialogs.alert('', 'OCR Complete', 'OK')
-                .then(function() {
-                  // callback success
-              });
+              // $cordovaDialogs.alert('', 'OCR Complete', 'OK')
+              //   .then(function() {
+              //     // callback success
+              // });
               if ($rootScope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
                   $scope.document.attachment.forEach(function(img) {
                       $rootScope.arrPhotos.push(img.FilePath);
@@ -348,10 +407,10 @@ angular.module('app.controllers', ['ngCordova'])
 
           $cordovaCamera.getPicture(options).then(function(imageData) {
             // alert("OCR Complete");
-             $cordovaDialogs.alert('', 'OCR Complete', 'OK')
-                .then(function() {
-                  // callback success
-              });
+             // $cordovaDialogs.alert('', 'OCR Complete', 'OK')
+             //    .then(function() {
+             //      // callback success
+             //  });
               if ($rootScope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
                   $scope.document.attachment.forEach(function(img) {
                       $rootScope.arrPhotos.push(img.FilePath);
@@ -390,9 +449,12 @@ angular.module('app.controllers', ['ngCordova'])
         console.log(error);
     }
     
-    
+    //ios licenseKey
     var licenseKey = "CROOBSOR-OQUHH4XA-BW6KREBH-GVNYR2UN-5AIM65BJ-VWNEN7AG-I36AMRX4-BZDWV7UM";
-    
+
+    //android licenseKey
+    // var licenseKey = "4GDE4MRI-BTZHFJPG-XPLTIMRB-WL237B6X-JIGWZHUM-IH37BA3D-VDDO2MHI-GX4DU2YZ";
+
     cordova.plugins.blinkId.readCardId(success, fail, licenseKey);
   }
 })
