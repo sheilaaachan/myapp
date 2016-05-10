@@ -7,17 +7,29 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.os.mobile.blinkid": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
         "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.ionicframework.myapp378600"
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ionicframework.myapp378600"
         },
-        "de.appplant.cordova.plugin.local-notification": {
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.myapp378600"
         },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
         }
     },
     "dependent_plugins": {
@@ -27,7 +39,22 @@
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.ionicframework.myapp378600"
         },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.myapp378600"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.myapp378600"
         }
     }

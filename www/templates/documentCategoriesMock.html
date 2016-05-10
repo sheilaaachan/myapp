@@ -4,7 +4,7 @@
   </ion-nav-buttons>
     <ion-content padding="false" class="has-header">
       <p class="description">Copies of all previous U.S. immigration paperwork including prior approval notices (Form I-797), Form IAP-66, Form DS-2019, and/or Form(s) I-20, and/or Employment Authorization Card, if applicable</p>
-      <div class="linkcard" ng-repeat="document in documents">
+      <div class="linkcard">
         <div class="button button-full" style="margin-top:1px;margin-bottom:1px;" ng-click="gotoDocumentDetail(document.id)">
           <div class="row row-center">
             <div class="col col-20">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="linkcard" ng-repeat="document in documents">
+      <div class="linkcard">
         <div class="button button-full" style="margin-top:1px;margin-bottom:1px;" ng-click="gotoDocumentDetail(document.id)">
           <div class="row row-center">
             <div class="col col-20">
