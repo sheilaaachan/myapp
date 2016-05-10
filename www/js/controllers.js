@@ -163,7 +163,14 @@ angular.module('app.controllers', ['ngCordova'])
       $scope.documents = $scope.$storage.passports;
   }
   $scope.gotoDocumentDetail = function(index) {
-      $state.go('menu.documentDetails',{"id":index});
+
+      if(($ionicHistory.currentView())&&($ionicHistory.currentView().stateName == 'menu.documentCategoriesMock')){
+          $state.go('menu.documentDetails');
+      }
+      else{
+          $state.go('menu.documentDetails',{"id":index});
+      }
+      
   };
 })
 
@@ -208,6 +215,20 @@ angular.module('app.controllers', ['ngCordova'])
   $scope.document = {};
   $scope.documentDetail = {};
   $scope.$storage = $localStorage;
+
+  if(($ionicHistory.backView())&&($ionicHistory.backView().stateName == 'menu.documentCategoriesMock')){
+      $scope.documentDetail.passportNum = 'G41252323';
+      $scope.documentDetail.surname = 'ZHANG';
+      $scope.documentDetail.givenName = 'JOHN';
+      $scope.documentDetail.nationality = 'CHN';
+      $scope.documentDetail.birthDate = '810305';
+      $scope.documentDetail.sex = 'M';
+      $scope.documentDetail.authority = 'CHN';
+      $scope.documentDetail.expiryDate = '220120';
+      var e = document.getElementById("documentType");
+      e.options[e.selectedIndex].text = 'Passport';
+      return;
+  }
 
   if(($ionicHistory.backView())&&($ionicHistory.backView().stateName == 'menu.documents')){
       $scope.documentDetail.passportNum = '';
