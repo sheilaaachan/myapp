@@ -157,7 +157,7 @@ angular.module('app.controllers', ['ngCordova'])
     };
 })
 
-.controller('documentCategoriesCtrl', function($scope, $localStorage, $state) {
+.controller('documentCategoriesCtrl', function($scope, $localStorage, $state, $ionicHistory) {
   $scope.$storage = $localStorage;
   if($scope.$storage.passports){
       $scope.documents = $scope.$storage.passports;
