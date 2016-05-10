@@ -56,6 +56,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('menu.documentCategoriesMock', {
+    url: '/document_categories_mock',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/documentCategoriesMock.html',
+        controller: 'documentCategoriesCtrl'
+      }
+    }
+  })
+
   .state('menu.status', {
     url: '/status',
     views: {

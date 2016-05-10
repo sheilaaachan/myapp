@@ -67,14 +67,14 @@ angular.module('app.controllers', ['ngCordova'])
       description: "Copy of up-to-date resume (CV) that includes dates with each employer, each position held, and duties",
       status: "To Upload",
       projects: "H1-B, OPT Stem"
-    }];
-  $scope.uploaded_documents = [
-    {
+    },{
       title: "US Visa(s)",
       description: "Copies of current U.S. visa and of all previous U.S. visas, if applicable",
       status: "Uploaded",
       projects: "H1-B, OPT Stem"
-    },{
+    }];
+  $scope.uploaded_documents = [
+    {
       title: "Passport(s)",
       description: "Copy of passport biographic and signature pages",
       status: "To Upload",
@@ -89,6 +89,8 @@ angular.module('app.controllers', ['ngCordova'])
     $scope.gotoDocumentCate = function(document) {
       if((document.title == "Passport(s)")&&($scope.$storage.passports)){
         $state.go('menu.documentCategories');
+      } else if (document.title == "Immigration Paperwork") {
+        $state.go('menu.documentCategoriesMock');
       }
     };
 
@@ -132,7 +134,7 @@ angular.module('app.controllers', ['ngCordova'])
 
     $scope.displayIcon = function(document) {
       var result = false;
-      if((document.title == "Passport(s)")&&($scope.$storage.passports)){
+      if((document.title == "Passport(s)")&&($scope.$storage.passports) || (document.title == "Immigration Paperwork") ){
           result = true;
       }
       return result;
@@ -343,7 +345,7 @@ angular.module('app.controllers', ['ngCordova'])
     $scope.documentDetail.projects = "H1-B, Angola Business Visa, China Business Visa, OPT Stem";
     var e = document.getElementById("documentType");
     $scope.documentDetail.type = e.options[e.selectedIndex].text;
-    // $scope.documentDetail.type = $scope.TypeSelected.label; 
+    // $scope.documentDetail.type = $scope.TypeSelected.label;
     $scope.documentDetail.photos = $rootScope.arrPhotos;
     $scope.$storage.passports.push($scope.documentDetail);
     $state.go('menu.documents');
@@ -444,11 +446,11 @@ angular.module('app.controllers', ['ngCordova'])
 
         $state.go($state.current, {}, {reload: true});
     }
-    
+
     var fail = function (error) {
         console.log(error);
     }
-    
+
     //ios licenseKey
     var licenseKey = "CROOBSOR-OQUHH4XA-BW6KREBH-GVNYR2UN-5AIM65BJ-VWNEN7AG-I36AMRX4-BZDWV7UM";
     if(ionic.Platform.isAndroid()){
@@ -596,4 +598,4 @@ angular.module('app.controllers', ['ngCordova'])
   };
   $scope.readFiles();
 
-});
+})

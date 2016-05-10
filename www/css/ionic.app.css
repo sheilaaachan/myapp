@@ -557,7 +557,8 @@ ion-view#documentCategory p.document-header {
 ion-view#documents div.linkcard,
 ion-view#projects div.linkcard,
 ion-view#documentCategory div.linkcard {
-  margin-top: 0px; }
+  margin-top: 0px;
+  background-color: white; }
   ion-view#documents div.linkcard a.button,
   ion-view#projects div.linkcard a.button,
   ion-view#documentCategory div.linkcard a.button {
@@ -569,6 +570,20 @@ ion-view#documentCategory div.linkcard {
     ion-view#documentCategory div.linkcard a.button h2.title {
       margin-top: 0px;
       margin-bottom: 5px; }
+  ion-view#documents div.linkcard div.button,
+  ion-view#projects div.linkcard div.button,
+  ion-view#documentCategory div.linkcard div.button {
+    background-color: white; }
+    ion-view#documents div.linkcard div.button i.ion-chevron-right::before,
+    ion-view#projects div.linkcard div.button i.ion-chevron-right::before,
+    ion-view#documentCategory div.linkcard div.button i.ion-chevron-right::before {
+      font-size: 20px;
+      color: #ECEFF1;
+      float: right; }
+    ion-view#documents div.linkcard div.button.activated,
+    ion-view#projects div.linkcard div.button.activated,
+    ion-view#documentCategory div.linkcard div.button.activated {
+      background-color: #f9fafa; }
 
 ion-view#documentCategory p {
   padding: 10px; }
@@ -9051,7 +9066,6 @@ input:checked + .checkbox-icon:after {
     right: 0;
     padding: 0 48px 0 16px;
     max-width: 65%;
-    min-width: 220px;
     border: none;
     background: #fff;
     color: #333;

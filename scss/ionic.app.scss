@@ -397,6 +397,7 @@ ion-view#documentCategory{
   }
   div.linkcard{
     margin-top: 0px;
+    background-color: white;
     a.button{
       padding-top: 7px;
       padding-bottom: 3px;
@@ -406,6 +407,19 @@ ion-view#documentCategory{
         margin-bottom: 5px;
       }
     }
+    div.button{
+      background-color: white;
+      i.ion-chevron-right::before{
+        font-size: 20px;
+        color: $grey-color-3;
+        float: right;
+      }
+      &.activated{
+        background-color: #f9fafa;
+      }
+    }
+
+
   }
 }
 
