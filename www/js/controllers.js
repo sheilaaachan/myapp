@@ -209,7 +209,7 @@ angular.module('app.controllers', ['ngCordova'])
 
 
 .controller('documentDetailsCtrl', function($scope, $state, $cordovaCamera, $ionicModal, $stateParams, $rootScope, $cordovaDialogs, $localStorage,
-    $sessionStorage, $ionicHistory) {
+    $sessionStorage, $ionicHistory, $cordovaOauth) {
   // $rootScope.arrPhotos = $stateParams.photos;
   $rootScope.arrPhotos = [];
   $scope.document = {};
@@ -318,7 +318,7 @@ angular.module('app.controllers', ['ngCordova'])
       //Commented temporary for google integration test
       // var client_id = "303684445331-3tblts89ihiuljohmldducuv9tfggtpu.apps.googleusercontent.com";//web-app
       // var scopes = ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/userinfo.email'];
-      // Drive.authenticate(client_id, scopes, {redirect_uri: 'http://localhost/callback'})
+      // // Drive.authenticate(client_id, scopes, {redirect_uri: 'http://localhost/callback'})
       // .then(function (response) {//authenticate
       //     if (response) {
       //         var token = response.access_token;
@@ -329,7 +329,22 @@ angular.module('app.controllers', ['ngCordova'])
       //   function (error) {
       //     console.log("" + error);
       //   });
-      $state.go('menu.localFile');
+
+     var client_id = "kdbtldhs9lfb46ik9jw7ny0ye220hvox";//web-app
+     var client_secret = "59qyWT2HwH4EESMUIqytlQ0bizg64nKC";
+      // $cordovaOauth.box(string clientId, string clientSecret, string state, object options);
+      $cordovaOauth.box(client_id, client_secret, "1234").then(function(result) {
+          console.log("Response Object -> " + JSON.stringify(result));
+      }, function(error) {
+          console.log("Error -> " + error);
+      });
+
+      // $cordovaOauth.google(client_id, scopes).then(function(result) {
+      //     console.log("Response Object -> " + JSON.stringify(result));
+      // }, function(error) {
+      //     console.log("Error -> " + error);
+      // });
+      // $state.go('menu.localFile');
   };
 
 
