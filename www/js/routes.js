@@ -95,10 +95,14 @@ angular.module('app.routes', [])
     controller: 'logInCtrl'
   })
 
-  .state('drive', {
+  .state('menu.drive', {
     url: '/drive',
-    templateUrl: 'templates/drive.html',
-    controller: 'DriveCtrl'
+     views: {
+         'side-menu21': {
+         templateUrl: 'templates/drive.html',
+         controller: 'DriveCtrl'
+         }
+     }
   })
 
   .state('menu.localFile', {

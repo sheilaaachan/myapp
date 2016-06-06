@@ -330,14 +330,23 @@ angular.module('app.controllers', ['ngCordova'])
       //     console.log("" + error);
       //   });
 
-     var client_id = "kdbtldhs9lfb46ik9jw7ny0ye220hvox";//web-app
-     var client_secret = "59qyWT2HwH4EESMUIqytlQ0bizg64nKC";
-      // $cordovaOauth.box(string clientId, string clientSecret, string state, object options);
-      $cordovaOauth.box(client_id, client_secret, "1234").then(function(result) {
-          console.log("Response Object -> " + JSON.stringify(result));
-      }, function(error) {
-          console.log("Error -> " + error);
-      });
+    if(($scope.$storage.refreshToken)&&($scope.$storage.accessToken)){
+        $state.go('menu.drive');
+    }
+    else{
+        var client_id = "kdbtldhs9lfb46ik9jw7ny0ye220hvox";//web-app
+        var client_secret = "59qyWT2HwH4EESMUIqytlQ0bizg64nKC";
+        // $cordovaOauth.box(string clientId, string clientSecret, string state, object options);
+        $cordovaOauth.box(client_id, client_secret, "1234").then(function(result) {
+            console.log("Response Object -> " + JSON.stringify(result));
+            $scope.$storage.refreshToken = result.refresh_token;
+            $scope.$storage.accessToken = result.access_token;
+            $state.go('menu.drive');
+        }, function(error) {
+            console.log("Error -> " + error);
+        });
+    }
+
 
       // $cordovaOauth.google(client_id, scopes).then(function(result) {
       //     console.log("Response Object -> " + JSON.stringify(result));
@@ -576,9 +585,9 @@ angular.module('app.controllers', ['ngCordova'])
   };
 })
 
-.controller('LocalFileCtrl', function ($scope) {
+.controller('LocalFileCtrl', function ($scope, $http, $localStorage, $cordovaFileTransfer, $cordovaDialogs) {
   $scope.files = [];
-
+  $scope.$storage = $localStorage;
   $scope.readFiles = function () {
     window.resolveLocalFileSystemURL(cordova.file.documentsDirectory + "Inbox/", function (fileSystem) {
       var reader = fileSystem.createReader();
@@ -595,7 +604,63 @@ angular.module('app.controllers', ['ngCordova'])
     });
   };
   $scope.readFiles();
+  $scope.uploadFile = function(fileEntry) {
 
+      var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
+      // The Box OAuth 2 Header. Add your access token.
+      var headers = {
+          Authorization: 'Bearer '+ $scope.$storage.accessToken
+      };
+
+      var form = new FormData();
+
+      // The content of the file
+      var fileBody = '<p>hey!<p>';
+
+      // JS file-like object
+      var blob = new Blob([fileBody], { type: 'text/xml'});
+      // var blob;
+      // function readFile(fileEntry) {
+
+      //     fileEntry.file(function (file) {
+      //         var reader = new FileReader();
+
+      //         reader.onloadend = function() {
+      //             console.log("Successful file read: " + this.result);
+      //             displayFileData(fileEntry.fullPath + ": " + this.result);
+      //             blob = new Blob([this.result], { type: 'text/xml'});
+      //         };
+
+      //         reader.readAsBinaryString(file);
+
+      //     }, onErrorReadFile);
+      // }
+  
+      // Add the file to the form
+      form.append('file', blob);
+
+      // Add the destination folder for the upload to the form
+      form.append('parent_id', '0');
+
+      $http({
+          url: uploadUrl,
+          headers: headers,
+          type: 'POST',
+          // This prevents JQuery from trying to append the form as a querystring
+          processData: false,
+          contentType: false,
+          data: form
+      }).success(function ( data ) {
+        // Log the JSON response to prove this worked
+        console.log(data);
+      }).error(function (data, status){
+          console.log(status);
+          $cordovaDialogs.alert(status+ ' : ' + data, 'Upload Failure', 'OK')
+            .then(function() {
+              // callback success
+          });
+      });
+  };
 })
 
 .controller('attachmentPhotosCtrl', function($scope, $state, $log, $ionicNavBarDelegate, $ionicModal, $ionicSlideBoxDelegate) {
@@ -621,17 +686,45 @@ angular.module('app.controllers', ['ngCordova'])
     };
 })
 
-.controller('DriveCtrl', function ($scope, Drive) {
+.controller('DriveCtrl', function ($scope, $rootScope, $http, $state, $localStorage, $cordovaDialogs) {
   $scope.files = [];
-
+  $scope.$storage = $localStorage;
   $scope.readFiles = function () {
-    Drive.readFiles().then(function (files) {
-      $scope.files = files;
-      console.log("FileRead: success.");
-    }, function () {
-      console.log("FileRead: error.");
+    // Drive.readFiles().then(function (files) {
+    //   $scope.files = files;
+    //   console.log("FileRead: success.");
+    // }, function () {
+    //   console.log("FileRead: error.");
+    // });
+
+    var folderUrl = 'https://api.box.com/2.0/folders/0';
+
+    // The Box OAuth 2 Header. Add your access token.
+    var headers = {
+        Authorization: 'Bearer '+ $scope.$storage.accessToken
+    };
+
+    $http({
+        url: folderUrl,
+        headers: headers,
+        type: 'GET'
+        // // This prevents JQuery from trying to append the form as a querystring
+        // processData: false,
+        // contentType: false
+    }).success(function ( data ) {
+        // Log the JSON response to prove this worked
+        console.log(data);
+        $scope.files = data.item_collection.entries;
+    }).error(function (data, status){
+        console.log(status);
+        $cordovaDialogs.alert(status+ ' : ' + data, 'Network Problem', 'OK')
+          .then(function() {
+            // callback success
+        });
     });
   };
   $scope.readFiles();
-
+  $scope.uploadFiles = function() {
+      $state.go('menu.localFile');
+  };
 })
