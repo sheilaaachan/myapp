@@ -96,13 +96,14 @@ angular.module('app.routes', [])
   })
 
   .state('menu.drive', {
+    cache: false,
     url: '/drive',
-     views: {
-         'side-menu21': {
-         templateUrl: 'templates/drive.html',
-         controller: 'DriveCtrl'
-         }
-     }
+    views: {
+       'side-menu21': {
+       templateUrl: 'templates/drive.html',
+       controller: 'DriveCtrl'
+       }
+    }
   })
 
   .state('menu.localFile', {

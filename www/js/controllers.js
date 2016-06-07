@@ -314,7 +314,7 @@ angular.module('app.controllers', ['ngCordova'])
       }
   };
 
-  $scope.getOpenInFiles = function() {
+  $scope.loginWithBox = function() {
       //Commented temporary for google integration test
       // var client_id = "303684445331-3tblts89ihiuljohmldducuv9tfggtpu.apps.googleusercontent.com";//web-app
       // var scopes = ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/userinfo.email'];
@@ -585,7 +585,7 @@ angular.module('app.controllers', ['ngCordova'])
   };
 })
 
-.controller('LocalFileCtrl', function ($scope, $http, $localStorage, $cordovaFileTransfer, $cordovaDialogs) {
+.controller('LocalFileCtrl', function ($scope, $http, $localStorage, $cordovaFileTransfer, $cordovaDialogs, $state) {
   $scope.files = [];
   $scope.$storage = $localStorage;
   $scope.readFiles = function () {
@@ -609,57 +609,61 @@ angular.module('app.controllers', ['ngCordova'])
       var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
       // The Box OAuth 2 Header. Add your access token.
       var headers = {
-          Authorization: 'Bearer '+ $scope.$storage.accessToken
+          Authorization: 'Bearer '+ $scope.$storage.accessToken,
+          "Content-Type": undefined
       };
 
       var form = new FormData();
 
-      // The content of the file
-      var fileBody = '<p>hey!<p>';
+      function readFile(fileEntry) {
 
-      // JS file-like object
-      var blob = new Blob([fileBody], { type: 'text/xml'});
-      // var blob;
-      // function readFile(fileEntry) {
+         fileEntry.file(function (file) {
+            var reader = new FileReader();
 
-      //     fileEntry.file(function (file) {
-      //         var reader = new FileReader();
+            reader.onloadend = function() {
+                console.log("Successful file read: " + this.result);
+            //                   displayFileData(fileEntry.fullPath + ": " + this.result);
+                // var blob = new Blob([this.result], { type: 'application/pdf'});
+                var blob = new Blob([this.result]);
+                // Add the file to the form
+                form.append('blob', blob, file.name);
+                // Add the destination folder for the upload to the form
+                form.append('parent_id', '0');
 
-      //         reader.onloadend = function() {
-      //             console.log("Successful file read: " + this.result);
-      //             displayFileData(fileEntry.fullPath + ": " + this.result);
-      //             blob = new Blob([this.result], { type: 'text/xml'});
-      //         };
+                $http({
+                    url: uploadUrl,
+                    headers: headers,
+                    method: 'POST',
+                    // This prevents JQuery from trying to append the form as a querystring
+                    //          processData: false,
+                    //          contentType: "multipart/form-data",
+                    data: form,
+                    transformRequest: function(data, headersGetterFunction) {
+                        return data;
+                    }}).success(function (data) {
+                        // Log the JSON response to prove this worked
+                        console.log(data);
+                        $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
+                        .then(function() {
+                            // callback success
+                            $state.go('menu.drive');
+                        });
+                    }).error(function (data, status){
+                        console.log(status);
+                        $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                            .then(function() {
+                                // callback success
+                        });
+                    });
+            };
 
-      //         reader.readAsBinaryString(file);
+            reader.readAsArrayBuffer(file);
 
-      //     }, onErrorReadFile);
-      // }
-  
-      // Add the file to the form
-      form.append('file', blob);
+          }, function (error) {
 
-      // Add the destination folder for the upload to the form
-      form.append('parent_id', '0');
-
-      $http({
-          url: uploadUrl,
-          headers: headers,
-          type: 'POST',
-          // This prevents JQuery from trying to append the form as a querystring
-          processData: false,
-          contentType: false,
-          data: form
-      }).success(function ( data ) {
-        // Log the JSON response to prove this worked
-        console.log(data);
-      }).error(function (data, status){
-          console.log(status);
-          $cordovaDialogs.alert(status+ ' : ' + data, 'Upload Failure', 'OK')
-            .then(function() {
-              // callback success
           });
-      });
+      }
+      readFile(fileEntry);
   };
 })
 
@@ -707,19 +711,27 @@ angular.module('app.controllers', ['ngCordova'])
     $http({
         url: folderUrl,
         headers: headers,
-        type: 'GET'
+        method: 'GET'
         // // This prevents JQuery from trying to append the form as a querystring
         // processData: false,
         // contentType: false
     }).success(function ( data ) {
         // Log the JSON response to prove this worked
         console.log(data);
-        $scope.files = data.item_collection.entries;
+        data.item_collection.entries.forEach(function(obj) {
+            if(obj.type=='file'){
+                $scope.files.push(obj);
+            }
+        });
+        
     }).error(function (data, status){
         console.log(status);
-        $cordovaDialogs.alert(status+ ' : ' + data, 'Network Problem', 'OK')
+        $scope.$storage.refreshToken = null;
+        $scope.$storage.accessToken = null;
+        $cordovaDialogs.alert(status+ ' : ' + data, 'Session is out', 'OK')
           .then(function() {
             // callback success
+            $state.go('menu.documentDetails');
         });
     });
   };
