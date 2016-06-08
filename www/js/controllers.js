@@ -401,79 +401,7 @@ angular.module('app.controllers', ['ngCordova'])
   };
 
   $scope.getPhoto = function() {
-    $cordovaDialogs.confirm('Please take photo or pick photo from Camera Roll', '', ['Camera','Camera Roll'])
-        .then(function(buttonIndex) {
-        var btnIndex = buttonIndex;
-        if(buttonIndex == 1){
-          var options = {
-              quality: 100,
-              destinationType: Camera.DestinationType.DATA_URL,
-              sourceType: Camera.PictureSourceType.CAMERA,
-              allowEdit: false,
-              encodingType: Camera.EncodingType.JPEG,
-              targetWidth: 525,
-              targetHeight: 745,
-              popoverOptions: CameraPopoverOptions,
-              saveToPhotoAlbum: false
-          };
-
-          $cordovaCamera.getPicture(options).then(function(imageData) {
-            // alert("OCR Complete");
-              // $cordovaDialogs.alert('', 'OCR Complete', 'OK')
-              //   .then(function() {
-              //     // callback success
-              // });
-              if ($rootScope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
-                  $scope.document.attachment.forEach(function(img) {
-                      $rootScope.arrPhotos.push(img.FilePath);
-                  });
-              }
-              $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
-              _updateDisplayPhoto();
-              document.getElementById("form_textarea").style.display = "none";
-              document.getElementById("pass_inputs").style.display = "block";
-
-              // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
-              // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
-          }, function(err) {
-              console.log(err);
-          });
-        }
-        else{
-          var options = {
-              quality: 100,
-              destinationType: Camera.DestinationType.DATA_URL,
-              sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-              allowEdit: false,
-              encodingType: Camera.EncodingType.JPEG,
-              targetWidth: 525,
-              targetHeight: 745,
-              popoverOptions: CameraPopoverOptions,
-              saveToPhotoAlbum: false
-          };
-
-          $cordovaCamera.getPicture(options).then(function(imageData) {
-            // alert("OCR Complete");
-             // $cordovaDialogs.alert('', 'OCR Complete', 'OK')
-             //    .then(function() {
-             //      // callback success
-             //  });
-              if ($rootScope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
-                  $scope.document.attachment.forEach(function(img) {
-                      $rootScope.arrPhotos.push(img.FilePath);
-                  });
-              }
-              $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
-              _updateDisplayPhoto();
-              document.getElementById("form_textarea").style.display = "none";
-              document.getElementById("pass_inputs").style.display = "block";
-              // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
-              // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
-          }, function(err) {
-              console.log(err);
-          });
-        }
-    });
+    
   };
 
   $scope.getOCR = function() {
@@ -606,15 +534,6 @@ angular.module('app.controllers', ['ngCordova'])
   $scope.readFiles();
   $scope.uploadFile = function(fileEntry) {
 
-      var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
-      // The Box OAuth 2 Header. Add your access token.
-      var headers = {
-          Authorization: 'Bearer '+ $scope.$storage.accessToken,
-          "Content-Type": undefined
-      };
-
-      var form = new FormData();
-
       function readFile(fileEntry) {
 
          fileEntry.file(function (file) {
@@ -625,6 +544,15 @@ angular.module('app.controllers', ['ngCordova'])
             //                   displayFileData(fileEntry.fullPath + ": " + this.result);
                 // var blob = new Blob([this.result], { type: 'application/pdf'});
                 var blob = new Blob([this.result]);
+
+                var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
+                // The Box OAuth 2 Header. Add your access token.
+                var headers = {
+                    Authorization: 'Bearer '+ $scope.$storage.accessToken,
+                    "Content-Type": undefined
+                };
+
+                var form = new FormData();
                 // Add the file to the form
                 form.append('blob', blob, file.name);
                 // Add the destination folder for the upload to the form
@@ -690,7 +618,7 @@ angular.module('app.controllers', ['ngCordova'])
     };
 })
 
-.controller('DriveCtrl', function ($scope, $rootScope, $http, $state, $localStorage, $cordovaDialogs) {
+.controller('DriveCtrl', function ($scope, $rootScope, $http, $state, $localStorage, $cordovaDialogs, $cordovaCamera) {
   $scope.files = [];
   $scope.$storage = $localStorage;
   $scope.readFiles = function () {
@@ -737,6 +665,119 @@ angular.module('app.controllers', ['ngCordova'])
   };
   $scope.readFiles();
   $scope.uploadFiles = function() {
-      $state.go('menu.localFile');
+      $cordovaDialogs.confirm('Please take photo or upload documents from other apps', '', ['Camera','Camera Roll','Upload from other apps'])
+        .then(function(buttonIndex) {
+        var btnIndex = buttonIndex;
+        if(buttonIndex == 3){
+          $state.go('menu.localFile');
+          return;
+        }
+        var options = null;
+        if (buttonIndex == 1){
+          options = {
+              quality: 100,
+              destinationType: Camera.DestinationType.FILE_URI,
+              sourceType: Camera.PictureSourceType.CAMERA,
+              allowEdit: false,
+              encodingType: Camera.EncodingType.JPEG,
+              targetWidth: 525,
+              targetHeight: 745,
+              popoverOptions: CameraPopoverOptions,
+              saveToPhotoAlbum: false
+          };
+        }
+        else{
+          options = {
+              quality: 100,
+              destinationType: Camera.DestinationType.FILE_URI,
+              sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+              allowEdit: false,
+              encodingType: Camera.EncodingType.JPEG,
+              targetWidth: 525,
+              targetHeight: 745,
+              popoverOptions: CameraPopoverOptions,
+              saveToPhotoAlbum: false
+          };
+        }
+        $cordovaCamera.getPicture(options).then(function(imageURI) {
+            // alert("OCR Complete");
+              // $cordovaDialogs.alert('', 'OCR Complete', 'OK')
+              //   .then(function() {
+              //     // callback success
+              // });
+              // if ($rootScope.arrPhotos.length === 0 && $scope.document.attachment && $scope.document.attachment.length > 0) {
+              //     $scope.document.attachment.forEach(function(img) {
+              //         $rootScope.arrPhotos.push(img.FilePath);
+              //     });
+              // }
+              // $rootScope.arrPhotos.push("data:image/jpeg;base64," + imageData);
+              // _updateDisplayPhoto();
+              // document.getElementById("form_textarea").style.display = "none";
+              // document.getElementById("pass_inputs").style.display = "block";
+
+              // $state.go($state.current, {"photos":$rootScope.arrPhotos}, {reload: true});
+              // $state.go('menu.documentDetails',{"photos":$rootScope.arrPhotos});
+              window.resolveLocalFileSystemURL(imageURI, function(fileEntry) {
+                  fileEntry.file(function (file) {
+                  var reader = new FileReader();
+
+                  reader.onloadend = function() {
+                      var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
+                      // The Box OAuth 2 Header. Add your access token.
+                      var headers = {
+                          Authorization: 'Bearer '+ $scope.$storage.accessToken,
+                          "Content-Type": undefined
+                      };
+
+                      var form = new FormData();
+                      console.log("Successful file read: " + this.result);
+                  //                   displayFileData(fileEntry.fullPath + ": " + this.result);
+                      // var blob = new Blob([this.result], { type: 'application/pdf'});
+                      var blob = new Blob([this.result]);
+                      // Add the file to the form
+                      form.append('blob', blob, file.name);
+                      // Add the destination folder for the upload to the form
+                      form.append('parent_id', '0');
+
+                      $http({
+                          url: uploadUrl,
+                          headers: headers,
+                          method: 'POST',
+                          // This prevents JQuery from trying to append the form as a querystring
+                          //          processData: false,
+                          //          contentType: "multipart/form-data",
+                          data: form,
+                          transformRequest: function(data, headersGetterFunction) {
+                              return data;
+                          }}).success(function (data) {
+                              // Log the JSON response to prove this worked
+                              console.log(data);
+                              $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
+                              .then(function() {
+                                  // callback success
+                                  // $state.go('menu.drive');
+                                  $state.go($state.current, {}, {reload: true});
+                              });
+                          }).error(function (data, status){
+                              console.log(status);
+                              $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                                  .then(function() {
+                                      // callback success
+                              });
+                          });
+                  };
+
+                  reader.readAsArrayBuffer(file);
+
+                }, function (error) {
+
+                });
+              }, function (err) {
+                console.log(err);
+              });
+          }, function(err) {
+              console.log(err);
+          });
+      });
   };
 })
