@@ -98,6 +98,9 @@ angular.module('app.routes', [])
   .state('menu.drive', {
     cache: false,
     url: '/drive',
+    params:{
+      "documentType":""
+    },
     views: {
        'side-menu21': {
        templateUrl: 'templates/drive.html',
@@ -108,12 +111,16 @@ angular.module('app.routes', [])
 
   .state('menu.localFile', {
     url: '/localfile',
-     views: {
-         'side-menu21': {
-         templateUrl: 'templates/localFile.html',
-         controller: 'LocalFileCtrl'
-         }
-     }
+    cache: false,
+    params:{
+      "documentType":""
+    },
+    views: {
+       'side-menu21': {
+       templateUrl: 'templates/localFile.html',
+       controller: 'LocalFileCtrl'
+       }
+    }
   })
 
   .state('menu.notification', {

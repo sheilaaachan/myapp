@@ -329,9 +329,9 @@ angular.module('app.controllers', ['ngCordova'])
       //   function (error) {
       //     console.log("" + error);
       //   });
-
+    var e = document.getElementById("documentType");
     if(($scope.$storage.refreshToken)&&($scope.$storage.accessToken)){
-        $state.go('menu.drive');
+        $state.go('menu.drive',{"documentType":e.options[e.selectedIndex].text});
     }
     else{
         var client_id = "kdbtldhs9lfb46ik9jw7ny0ye220hvox";//web-app
@@ -341,7 +341,8 @@ angular.module('app.controllers', ['ngCordova'])
             console.log("Response Object -> " + JSON.stringify(result));
             $scope.$storage.refreshToken = result.refresh_token;
             $scope.$storage.accessToken = result.access_token;
-            $state.go('menu.drive');
+            // $scope.documentDetail.type = e.options[e.selectedIndex].text;
+            $state.go('menu.drive',{"documentType":e.options[e.selectedIndex].text});
         }, function(error) {
             console.log("Error -> " + error);
         });
@@ -513,7 +514,7 @@ angular.module('app.controllers', ['ngCordova'])
   };
 })
 
-.controller('LocalFileCtrl', function ($scope, $http, $localStorage, $cordovaFileTransfer, $cordovaDialogs, $state) {
+.controller('LocalFileCtrl', function ($scope, $http, $localStorage, $cordovaFileTransfer, BoxService, $cordovaDialogs, $state, $stateParams) {
   $scope.files = [];
   $scope.$storage = $localStorage;
   $scope.readFiles = function () {
@@ -541,48 +542,67 @@ angular.module('app.controllers', ['ngCordova'])
 
             reader.onloadend = function() {
                 console.log("Successful file read: " + this.result);
-            //                   displayFileData(fileEntry.fullPath + ": " + this.result);
-                // var blob = new Blob([this.result], { type: 'application/pdf'});
-                var blob = new Blob([this.result]);
 
-                var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
-                // The Box OAuth 2 Header. Add your access token.
-                var headers = {
-                    Authorization: 'Bearer '+ $scope.$storage.accessToken,
-                    "Content-Type": undefined
-                };
+                function createFolder(folderName) {
 
-                var form = new FormData();
-                // Add the file to the form
-                form.append('blob', blob, file.name);
-                // Add the destination folder for the upload to the form
-                form.append('parent_id', '0');
+                    var createFolderUrl = 'https://api.box.com/2.0/folders';
+                    var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
+                    var token = $scope.$storage.accessToken;
+                    var blob = new Blob([this.result]);
+                    var jsonBody =     {
+                        "name": folderName,
+                        "parent": {"id": "0"}
+                    };
+                    var form = new FormData();
+                    // Add the file to the form
+                    form.append('blob', blob, file.name);
 
-                $http({
-                    url: uploadUrl,
-                    headers: headers,
-                    method: 'POST',
-                    // This prevents JQuery from trying to append the form as a querystring
-                    //          processData: false,
-                    //          contentType: "multipart/form-data",
-                    data: form,
-                    transformRequest: function(data, headersGetterFunction) {
-                        return data;
-                    }}).success(function (data) {
-                        // Log the JSON response to prove this worked
-                        console.log(data);
-                        $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
-                        .then(function() {
-                            // callback success
-                            $state.go('menu.drive');
-                        });
-                    }).error(function (data, status){
-                        console.log(status);
-                        $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                    BoxService.boxPostJson(createFolderUrl,token,jsonBody,
+                    function success(data){
+                        form.append('parent_id', data.id);
+                        BoxService.boxPostForm(uploadUrl,token,form,
+                        function success(data){
+                            $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
                             .then(function() {
                                 // callback success
+                                $state.go('menu.drive');
+                            });
+                        },
+                        function error(data,status){
+                            $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                                .then(function() {
+                                    // callback success
+                            });
                         });
+                    },
+                    function error(data, status){
+                        if((status==409)&&(data.code=='item_name_in_use')){
+                            form.append('parent_id', data.context_info.conflicts[0].id);
+                            BoxService.boxPostForm(uploadUrl,token,form,
+                            function success(data){
+                                $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
+                                .then(function() {
+                                    // callback success
+                                    $state.go('menu.drive');
+                                });
+                            },
+                            function errror(data,status){
+                                $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                                    .then(function() {
+                                        // callback success
+                                });
+                            });
+                        }
+                        else{
+                            $cordovaDialogs.alert(status+ ' : ' + data.message, 'Folder Failure', 'OK')
+                            .then(function() {
+                                // callback success
+                            });
+                        }
                     });
+                }
+
+                createFolder($stateParams.documentType);
             };
 
             reader.readAsArrayBuffer(file);
@@ -618,7 +638,7 @@ angular.module('app.controllers', ['ngCordova'])
     };
 })
 
-.controller('DriveCtrl', function ($scope, $rootScope, $http, $state, $localStorage, $cordovaDialogs, $cordovaCamera) {
+.controller('DriveCtrl', function ($scope, $rootScope, $http, $state, $stateParams, BoxService, $localStorage, $cordovaDialogs, $cordovaCamera) {
   $scope.files = [];
   $scope.$storage = $localStorage;
   $scope.readFiles = function () {
@@ -646,11 +666,12 @@ angular.module('app.controllers', ['ngCordova'])
     }).success(function ( data ) {
         // Log the JSON response to prove this worked
         console.log(data);
-        data.item_collection.entries.forEach(function(obj) {
-            if(obj.type=='file'){
-                $scope.files.push(obj);
-            }
-        });
+        $scope.files = data.item_collection.entries;
+        // data.item_collection.entries.forEach(function(obj) {
+        //     if(obj.type=='file'){
+        //         $scope.files.push(obj);
+        //     }
+        // });
         
     }).error(function (data, status){
         console.log(status);
@@ -669,7 +690,7 @@ angular.module('app.controllers', ['ngCordova'])
         .then(function(buttonIndex) {
         var btnIndex = buttonIndex;
         if(buttonIndex == 3){
-          $state.go('menu.localFile');
+          $state.go('menu.localFile',{"documentType":$stateParams.documentType});
           return;
         }
         var options = null;
@@ -722,49 +743,64 @@ angular.module('app.controllers', ['ngCordova'])
                   var reader = new FileReader();
 
                   reader.onloadend = function() {
+                      var createFolderUrl = 'https://api.box.com/2.0/folders';
                       var uploadUrl = 'https://upload.box.com/api/2.0/files/content';
-                      // The Box OAuth 2 Header. Add your access token.
-                      var headers = {
-                          Authorization: 'Bearer '+ $scope.$storage.accessToken,
-                          "Content-Type": undefined
-                      };
-
-                      var form = new FormData();
-                      console.log("Successful file read: " + this.result);
-                  //                   displayFileData(fileEntry.fullPath + ": " + this.result);
-                      // var blob = new Blob([this.result], { type: 'application/pdf'});
+                      var token = $scope.$storage.accessToken;
                       var blob = new Blob([this.result]);
-                      // Add the file to the form
-                      form.append('blob', blob, file.name);
-                      // Add the destination folder for the upload to the form
-                      form.append('parent_id', '0');
-
-                      $http({
-                          url: uploadUrl,
-                          headers: headers,
-                          method: 'POST',
-                          // This prevents JQuery from trying to append the form as a querystring
-                          //          processData: false,
-                          //          contentType: "multipart/form-data",
-                          data: form,
-                          transformRequest: function(data, headersGetterFunction) {
-                              return data;
-                          }}).success(function (data) {
-                              // Log the JSON response to prove this worked
-                              console.log(data);
-                              $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
-                              .then(function() {
-                                  // callback success
-                                  // $state.go('menu.drive');
-                                  $state.go($state.current, {}, {reload: true});
-                              });
-                          }).error(function (data, status){
-                              console.log(status);
-                              $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                      function createFolder(folderName) {
+                          var jsonBody =     {
+                              "name": folderName,
+                              "parent": {"id": "0"}
+                          };
+                          var form = new FormData();
+                          // Add the file to the form
+                          form.append('blob', blob, file.name);
+                          BoxService.boxPostJson(createFolderUrl,token,jsonBody,
+                          function success(data){
+                              form.append('parent_id', data.id);
+                              BoxService.boxPostForm(uploadUrl,token,form,
+                              function success(data){
+                                  $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
                                   .then(function() {
                                       // callback success
+                                      $state.go($state.current, {}, {reload: true});
+                                  });
+                              },
+                              function error(data,status){
+                                  $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                                      .then(function() {
+                                          // callback success
+                                  });
                               });
+                          },
+                          function error(data, status){
+                              if((status==409)&&(data.code=='item_name_in_use')){
+                                  form.append('parent_id', data.context_info.conflicts[0].id);
+                                  BoxService.boxPostForm(uploadUrl,token,form,
+                                  function success(data){
+                                      $cordovaDialogs.alert('', 'Upload Succeeded', 'OK')
+                                      .then(function() {
+                                          // callback success
+                                          $state.go($state.current, {}, {reload: true});
+                                      });
+                                  },
+                                  function errror(data,status){
+                                      $cordovaDialogs.alert(status+ ' : ' + data.message, 'Upload Failure', 'OK')
+                                          .then(function() {
+                                              // callback success
+                                      });
+                                  });
+                              }
+                              else{
+                                  $cordovaDialogs.alert(status+ ' : ' + data.message, 'Folder Failure', 'OK')
+                                  .then(function() {
+                                      // callback success
+                                  });
+                              }
                           });
+                      }
+
+                      createFolder($stateParams.documentType);
                   };
 
                   reader.readAsArrayBuffer(file);
