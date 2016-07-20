@@ -288,17 +288,6 @@ static NSString* toBase64(NSData* data) {
     if([navigationController isKindOfClass:[UIImagePickerController class]]){
         UIImagePickerController* cameraPicker = (UIImagePickerController*)navigationController;
         
-        if(cameraPicker.sourceType == UIImagePickerControllerSourceTypeCamera){
-            UIImageView *overlayImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlay.png"]];
-            NSLog(@"%f",[UIScreen mainScreen].bounds.size.width);
-            NSLog(@"%f",[UIScreen mainScreen].bounds.size.height);
-            CGRect overlayRect = CGRectMake(([UIScreen mainScreen].bounds.size.width-260)/2, ([UIScreen mainScreen].bounds.size.height-368-20)/2, 260, 368);
-            
-            [overlayImage setFrame:overlayRect];
-            
-            [cameraPicker setCameraOverlayView:overlayImage];
-        }
-        
         if(![cameraPicker.mediaTypes containsObject:(NSString*)kUTTypeImage]){
             [viewController.navigationItem setTitle:NSLocalizedString(@"Videos", nil)];
         }
