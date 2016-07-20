@@ -426,7 +426,7 @@ angular.module('app.controllers', ['ngCordova'])
     }
 
     //ios licenseKey
-    var licenseKey = "CROOBSOR-OQUHH4XA-BW6KREBH-GVNYR2UN-5AIM65BJ-VWNEN7AG-I36AMRX4-BZDWV7UM";
+    var licenseKey = "U5PU53QC-GHEAJFKG-7KFZYSDZ-PS7IPW7N-34T66ZV7-XPJ3AZEH-3PW57JZ2-HTYBRDU4"
     if(ionic.Platform.isAndroid()){
         //android licenseKey
         licenseKey = "4GDE4MRI-BTZHFJPG-XPLTIMRB-WL237B6X-JIGWZHUM-IH37BA3D-VDDO2MHI-GX4DU2YZ";
